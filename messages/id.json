@@ -11,7 +11,10 @@
         "contact": "Kontak",
         "resume": "Resume",
         "tools": "Peralatan",
+        "intelligence": "AI Intelligence",
         "menu": {
+            "intelligence": "Pain Miner & Intelligence",
+            "intelligenceDesc": "Mesin otonom friksi pasar & peluang A2A",
             "achievements": "Pencapaian",
             "achievementsDesc": "Sertifikasi, penghargaan, dan pencapaian",
             "skills": "Keahlian",

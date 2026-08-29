@@ -11,7 +11,10 @@
         "contact": "Contact",
         "resume": "Resume",
         "tools": "Tools",
+        "intelligence": "AI Intelligence",
         "menu": {
+            "intelligence": "Pain Miner & Intelligence",
+            "intelligenceDesc": "A2A autonomous market friction & opportunity engine",
             "achievements": "Achievements",
             "achievementsDesc": "Certifications, awards, and milestones",
             "skills": "Skills",
