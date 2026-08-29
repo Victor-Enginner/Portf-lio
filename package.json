@@ -1,5 +1,6 @@
 {
-    "name": "personal-portfolio",
+    "name": "victor-borsari-intelligence",
+    "description": "Victor Borsari - AI Systems Engineering & Market Friction Intelligence Platform",
     "version": "1.0.0",
     "private": true,
     "scripts": {
