@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # Agente 1: Coletor de Dados & Webhook Ingestion 24/7
+  collector-agent:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM python:3.11-slim
+        WORKDIR /app
+        COPY scraper_orchestrator.py .
+        RUN pip install --no-cache-dir requests beautifulsoup4
+        CMD ["python", "scraper_orchestrator.py", "--daemon"]
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DASHBOARD_WEBHOOK_URL=http://frontend:3001/api/intelligence
+    restart: unless-stopped
+    depends_on:
+      - frontend
+
+  # Dashboard Frontend Command Center (Next.js 16)
+  frontend:
+    build:
+      context: ./portfolio
+      dockerfile_inline: |
+        FROM node:20-alpine
+        WORKDIR /app
+        COPY package.json pnpm-lock.yaml ./
+        RUN npm install -g pnpm && pnpm install --ignore-scripts
+        COPY . .
+        RUN pnpm run build
+        EXPOSE 3001
+        CMD ["pnpm", "start", "-p", "3001"]
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+    restart: unless-stopped
+
+  # Mock de Inferência Local / Vast.ai Gateway (Ollama / vLLM / Falcon-11B)
+  llm-inference-gateway:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_storage:/root/.ollama
+    restart: unless-stopped
+
+volumes:
+  ollama_storage:
