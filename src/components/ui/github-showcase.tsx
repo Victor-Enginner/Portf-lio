@@ -25,7 +25,7 @@ import { motion, AnimatePresence, useInView, animate } from 'framer-motion';
 import { useIsInStack } from './showcase-stack';
 import { useLenis } from 'lenis/react';
 
-const GITHUB_USER = "Arfazrll";
+const GITHUB_USER = "Victor-Enginner";
 
 const PINNED_REPOS = [
   {
@@ -34,7 +34,7 @@ const PINNED_REPOS = [
     stars: 67,
     forks: 12,
     lang: "TypeScript",
-    url: "https://github.com/Arfazrll/PersonalBlog"
+    url: "https://github.com/Victor-Enginner/PersonalBlog"
   },
   {
     name: "Browser-Automation-Agent",
@@ -42,7 +42,7 @@ const PINNED_REPOS = [
     stars: 10,
     forks: 2,
     lang: "Python",
-    url: "https://github.com/Arfazrll/Browser-Automation-Agent"
+    url: "https://github.com/Victor-Enginner/Browser-Automation-Agent"
   },
   {
     name: "Security-Automation-GenAI",
@@ -50,7 +50,7 @@ const PINNED_REPOS = [
     stars: 9,
     forks: 2,
     lang: "Jupyter Notebook",
-    url: "https://github.com/Arfazrll/Security-Automation-GenAI"
+    url: "https://github.com/Victor-Enginner/Security-Automation-GenAI"
   },
   {
     name: "POLABDC",
@@ -58,7 +58,7 @@ const PINNED_REPOS = [
     stars: 8,
     forks: 15,
     lang: "TypeScript",
-    url: "https://github.com/Arfazrll/POLABDC"
+    url: "https://github.com/Victor-Enginner/POLABDC"
   },
   {
     name: "Digilibzx",
@@ -66,7 +66,7 @@ const PINNED_REPOS = [
     stars: 12,
     forks: 2,
     lang: "TypeScript",
-    url: "https://github.com/Arfazrll/Digilibzx"
+    url: "https://github.com/Victor-Enginner/Digilibzx"
   },
   {
     name: "Swarm-Agent-Orchestrator",
@@ -74,7 +74,7 @@ const PINNED_REPOS = [
     stars: 10,
     forks: 5,
     lang: "Vue",
-    url: "https://github.com/Arfazrll/Swarm-Agent-Orchestrator"
+    url: "https://github.com/Victor-Enginner/Swarm-Agent-Orchestrator"
   }
 ];
 

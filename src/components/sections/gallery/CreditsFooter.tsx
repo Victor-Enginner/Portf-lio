@@ -11,7 +11,7 @@ export default function CreditsFooter() {
     const credits = [
         {
             role: "Directed By",
-            name: "Arfazrll"
+            name: "Victor-Enginner"
         },
         {
             role: "Visual Engineering",

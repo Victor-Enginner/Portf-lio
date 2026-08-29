@@ -6,7 +6,7 @@ export const portfolioData: PortfolioData = {
         title: 'AI Systems Engineer',
         subtitle: 'AI Systems Engineer • Autonomous Agent Architect | Orpheus Intelligence Engine',
         bio: 'AI Systems Engineer and Autonomous Intelligence Architect specializing in Multi-Agent Orchestration (A2A), LLM Quantization (4-bit NF4), High-Throughput Inference Pipelines, and Financial Friction Data Mining. Driven to eliminate corporate operational waste and regulatory penalties through deterministic AI engineering.',
-        avatar: '/about/arfazrll.webp',
+        avatar: '/about/victor_enginner.webp',
         location: 'São Paulo, Brasil',
         email: 'shoponsup@gmail.com',
         phone: '+55 11 99999-9999',
@@ -55,7 +55,7 @@ export const portfolioData: PortfolioData = {
             techStack: ['Python 3.11+', 'browser-use', 'Gemini', 'Groq'],
             tools: ['VS Code', 'CLI', 'uv'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/Browser-Automation-Agent.git',
+            repoUrl: 'https://github.com/Victor-Enginner/Browser-Automation-Agent.git',
             demoUrl: '#',
             startDate: '2026-04-01',
             role: 'AI Engineer',
@@ -92,7 +92,7 @@ export const portfolioData: PortfolioData = {
             installation: [
                 {
                     title: 'Clone and Setup',
-                    code: 'git clone https://github.com/Arfazrll/Browser-Automation-Agent.git\ncd Browser-Automation-Agent\npython -m venv venv\nvenv\\Scripts\\activate',
+                    code: 'git clone https://github.com/Victor-Enginner/Browser-Automation-Agent.git\ncd Browser-Automation-Agent\npython -m venv venv\nvenv\\Scripts\\activate',
                     type: 'code'
                 },
                 {
@@ -137,7 +137,7 @@ export const portfolioData: PortfolioData = {
             techStack: ['Vue.js 3', 'Vite 5', 'TypeScript', 'Tailwind CSS 3', 'GSAP 3', 'Python', 'Flask', 'Pydantic v2', 'Groq API', 'Llama 3.3 70B', 'FPDF2'],
             tools: ['VS Code', 'Vercel', 'Postman', 'GitHub'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/Swarm-Agent-Orchestrator',
+            repoUrl: 'https://github.com/Victor-Enginner/Swarm-Agent-Orchestrator',
             demoUrl: 'https://swarmagentblog.vercel.app/',
             startDate: '2025-03-01',
             role: 'AI Engineer & Full Stack Developer',
@@ -185,7 +185,7 @@ export const portfolioData: PortfolioData = {
             installation: [
                 {
                     title: 'Clone the Repository',
-                    code: 'git clone https://github.com/Arfazrll/Swarm-Agent-Orchestrator.git\ncd Swarm-Agent-Orchestrator',
+                    code: 'git clone https://github.com/Victor-Enginner/Swarm-Agent-Orchestrator.git\ncd Swarm-Agent-Orchestrator',
                     type: 'code'
                 },
                 {
@@ -235,8 +235,8 @@ export const portfolioData: PortfolioData = {
             techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Three.js', 'Framer Motion', 'GSAP'],
             tools: ['VS Code', 'Figma', 'GitHub'],
             status: 'completed',
-            demoUrl: 'https://syahrilarfianalmazril.vercel.app',
-            repoUrl: 'https://github.com/Arfazrll/PersonalBlog',
+            demoUrl: 'https://victor-enginner.vercel.app',
+            repoUrl: 'https://github.com/Victor-Enginner/PersonalBlog',
             startDate: '2025-01-20',
             highlights: ['3D animations', 'Scroll effects', 'Bilingual EN/ID'], // Keep for backward compatibility if needed, or rely on features
             category: 'Creative Tech',
@@ -278,7 +278,7 @@ export const portfolioData: PortfolioData = {
             installation: [
                 {
                     title: 'Clone the Repository',
-                    code: 'git clone https://github.com/Arfazrll/PersonalBlog.git\ncd PersonalBlog',
+                    code: 'git clone https://github.com/Victor-Enginner/PersonalBlog.git\ncd PersonalBlog',
                     type: 'code'
                 },
                 {
@@ -292,7 +292,7 @@ export const portfolioData: PortfolioData = {
                     code:
                         `Create a .env.local file in the root directory:
 
-NEXT_PUBLIC_GITHUB_USERNAME=Arfazrll
+NEXT_PUBLIC_GITHUB_USERNAME=Victor-Enginner
 WAKATIME_API_KEY=your_wakatime_key`
                 },
                 {
@@ -328,7 +328,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
             tools: ['VS Code', 'GitHub', 'Figma', 'Vercel'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/SNBTIn',
+            repoUrl: 'https://github.com/Victor-Enginner/SNBTIn',
             demoUrl: 'https://snbtin.vercel.app/',
             startDate: '2025-01-01',
             customTimeline: 'Mar 2025 – Apr 2025',
@@ -372,7 +372,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             installation: [
                 {
                     title: 'Clone the Repository',
-                    code: 'git clone https://github.com/Arfazrll/SNBTIn.git\ncd SNBTIn',
+                    code: 'git clone https://github.com/Victor-Enginner/SNBTIn.git\ncd SNBTIn',
                     type: 'code'
                 },
                 {
@@ -418,7 +418,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Next.js', 'Go', 'Gin', 'Firebase', 'Docker', 'ESP32', 'C++', 'React', 'Tailwind CSS'],
             tools: ['VS Code', 'Docker', 'Firebase Console', 'PlatformIO'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/TerraflowPlatform',
+            repoUrl: 'https://github.com/Victor-Enginner/TerraflowPlatform',
             demoUrl: 'https://terraflowio.vercel.app/',
             startDate: '2025-10-01',
             customTimeline: 'Oct 2025 - Dec 2025',
@@ -497,7 +497,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Python', 'Flask', 'LangChain', 'Ollama', 'ChromaDB', 'Docker'],
             tools: ['VS Code', 'Docker', 'Ollama'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/RAG-DocsInsight-Engine',
+            repoUrl: 'https://github.com/Victor-Enginner/RAG-DocsInsight-Engine',
             demoUrl: '#', // Set to '#' to trigger specific disabled state
             startDate: '2024-11-01',
             role: 'AI Engineer',
@@ -542,7 +542,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             installation: [
                 {
                     title: 'Clone and Setup',
-                    code: 'git clone https://github.com/Arfazrll/RAG-DocsInsight-Engine.git\ncd rag-docsinsight-engine',
+                    code: 'git clone https://github.com/Victor-Enginner/RAG-DocsInsight-Engine.git\ncd rag-docsinsight-engine',
                     type: 'code'
                 },
                 {
@@ -671,7 +671,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Python', 'TensorFlow', 'Keras', 'Transformers', 'Pandas', 'Scikit-learn', 'Adaptive Attention'],
             tools: ['VS Code', 'Jupyter Notebook', 'Google Colab', 'Wireshark'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/Security-Automation-GenAI',
+            repoUrl: 'https://github.com/Victor-Enginner/Security-Automation-GenAI',
             demoUrl: '#', // Research-based platform
             startDate: '2024-09-01',
             role: 'AI Developer',
@@ -717,7 +717,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             installation: [
                 {
                     title: 'Setup Environment',
-                    code: 'git clone https://github.com/Arfazrll/Security-Automation-GenAI.git\ncd security-automation-ai-genai\n# Recommended: use a virtual environment',
+                    code: 'git clone https://github.com/Victor-Enginner/Security-Automation-GenAI.git\ncd security-automation-ai-genai\n# Recommended: use a virtual environment',
                     type: 'code'
                 },
                 {
@@ -756,7 +756,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Solidity', 'Hardhat', 'Next.js', 'Ethereum', 'Web3.js', 'MetaMask', 'Ethers.js'],
             tools: ['VS Code', 'MetaMask', 'Remix IDE', 'Vercel'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/Web3GuestbookDapp',
+            repoUrl: 'https://github.com/Victor-Enginner/Web3GuestbookDapp',
             demoUrl: 'https://metamaskguestbook.vercel.app/',
             startDate: '2025-01-01',
             role: 'Blockchain Developer',
@@ -802,7 +802,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             installation: [
                 {
                     title: 'Clone & Install',
-                    code: 'git clone https://github.com/Arfazrll/Web3GuestbookDapp.git\ncd web3guestbookdapp\nnpm install',
+                    code: 'git clone https://github.com/Victor-Enginner/Web3GuestbookDapp.git\ncd web3guestbookdapp\nnpm install',
                     type: 'code'
                 },
                 {
@@ -841,7 +841,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Java', 'Spring Boot 3', 'Next.js 14', 'TypeScript', 'MySQL', 'Spring Security', 'Hibernate', 'Docker', 'Tailwind CSS', 'Shadcn UI', 'Google Gemini', 'OpenAI', 'Swagger', 'Recharts'],
             tools: ['IntelliJ IDEA', 'VS Code', 'Docker Desktop', 'MySQL Workbench', 'Maven', 'pnpm'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/Digilibzx',
+            repoUrl: 'https://github.com/Victor-Enginner/Digilibzx',
             demoUrl: '#', // Internal system
             startDate: '2024-08-01',
             role: 'Lead & Full Stack Dev',
@@ -887,7 +887,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             installation: [
                 {
                     title: 'Docker Method (Recommended)',
-                    code: 'git clone https://github.com/Arfazrll/Digilibzx.git\ncd digilibzx\n# Update .env and application.properties\ndocker-compose up --build',
+                    code: 'git clone https://github.com/Victor-Enginner/Digilibzx.git\ncd digilibzx\n# Update .env and application.properties\ndocker-compose up --build',
                     type: 'code'
                 },
                 {
@@ -926,7 +926,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Next.js 14', 'Express.js', 'Prisma', 'Supabase', 'PostgreSQL', 'Python', 'TypeScript', 'Tailwind CSS', 'Shadcn UI', 'JWT', 'Google Gemini'],
             tools: ['VS Code', 'Supabase Dashboard', 'Prisma Studio', 'Figma', 'Postman'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/POLABDC',
+            repoUrl: 'https://github.com/Victor-Enginner/POLABDC',
             demoUrl: 'https://polabdc.my.id/',
             startDate: '2024-07-01',
             role: 'Backend Developer',
@@ -1013,7 +1013,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Python', 'TensorFlow', 'Keras', 'Streamlit', 'Plotly', 'NumPy', 'SciPy', 'MobileNetV2', 'Pillow'],
             tools: ['Jupyter Notebook', 'Google Colab', 'Streamlit Cloud', 'VS Code'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/CA-Modul03-HandsOn',
+            repoUrl: 'https://github.com/Victor-Enginner/CA-Modul03-HandsOn',
             demoUrl: 'https://ca-modul03-handson.streamlit.app/',
             startDate: '2024-06-01',
             role: 'AI Research Engineer',
@@ -1059,7 +1059,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             installation: [
                 {
                     title: 'Environment Setup',
-                    code: 'git clone https://github.com/Arfazrll/CA-Modul03-HandsOn.git\ncd CA-Modul03-HandsOn\npython -m venv venv\nsource venv/bin/activate',
+                    code: 'git clone https://github.com/Victor-Enginner/CA-Modul03-HandsOn.git\ncd CA-Modul03-HandsOn\npython -m venv venv\nsource venv/bin/activate',
                     type: 'code'
                 },
                 {
@@ -1098,7 +1098,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Python', 'Streamlit', 'Ollama', 'LangChain', 'Nomic Embed', 'Llama 3.2', 'Pandas', 'Scikit-learn'],
             tools: ['VS Code', 'Ollama Runtime', 'Streamlit Cloud', 'Jupyter Notebook'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/OllamaLLM-RecomendationSystem',
+            repoUrl: 'https://github.com/Victor-Enginner/OllamaLLM-RecomendationSystem',
             demoUrl: '#', // Local AI service
             startDate: '2024-05-01',
             role: 'Ai & Software Developer',
@@ -1149,7 +1149,7 @@ WAKATIME_API_KEY=your_wakatime_key`
                 },
                 {
                     title: 'Environment Launch',
-                    code: 'git clone https://github.com/Arfazrll/OllamaLLM-RecomendationSystem.git\npip install -r requirements.txt\nstreamlit run OllamaLLM.py',
+                    code: 'git clone https://github.com/Victor-Enginner/OllamaLLM-RecomendationSystem.git\npip install -r requirements.txt\nstreamlit run OllamaLLM.py',
                     type: 'code'
                 }
             ],
@@ -1178,7 +1178,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Python', 'TensorFlow', 'Keras', 'Scikit-learn', 'Gensim', 'Pandas', 'NumPy', 'google-play-scraper'],
             tools: ['Jupyter Notebook', 'Git LFS', 'VS Code', 'Google Play Store API'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/MyTelkomsel-Sentiment-Insights',
+            repoUrl: 'https://github.com/Victor-Enginner/MyTelkomsel-Sentiment-Insights',
             demoUrl: '#', // Internal Data Tool
             startDate: '2024-03-01',
             role: 'Data Scientist',
@@ -1224,7 +1224,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             installation: [
                 {
                     title: 'Base Setup',
-                    code: 'git clone https://github.com/Arfazrll/MyTelkomsel-Sentiment-Insights.git\ncd mytelkomsel-sentiment-analysis\ngit lfs install\ngit lfs pull\npip install -r requirements.txt',
+                    code: 'git clone https://github.com/Victor-Enginner/MyTelkomsel-Sentiment-Insights.git\ncd mytelkomsel-sentiment-analysis\ngit lfs install\ngit lfs pull\npip install -r requirements.txt',
                     type: 'code'
                 },
                 {
@@ -1263,7 +1263,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Python', 'OpenCV', 'YOLOv3', 'Darknet-53', 'NumPy', 'CUDA', 'OpenCL', 'COCO Dataset'],
             tools: ['VS Code', 'Darknet CLI', 'Git LFS', 'PowerShell'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/NeuroVision-Smarter-RealTime-Detection',
+            repoUrl: 'https://github.com/Victor-Enginner/NeuroVision-Smarter-RealTime-Detection',
             demoUrl: '#', // Hardware-dependent live feed
             startDate: '2025-01-01',
             role: 'CV Developer',
@@ -1309,7 +1309,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             installation: [
                 {
                     title: 'Repository & Env',
-                    code: 'git clone https://github.com/Arfazrll/NeuroVision-Smarter-RealTime-Detection.git\ncd neurovision-real-time-detection\npip install opencv-python numpy',
+                    code: 'git clone https://github.com/Victor-Enginner/NeuroVision-Smarter-RealTime-Detection.git\ncd neurovision-real-time-detection\npip install opencv-python numpy',
                     type: 'code'
                 },
                 {
@@ -1348,7 +1348,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Node.js', 'Express.js', 'PostgreSQL', 'React.js', 'AI (NLP)', 'TLS 1.3', 'AES-256'],
             tools: ['VS Code', 'Redis', 'UML Design', 'Figma'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/Voices-Unheard-ASE',
+            repoUrl: 'https://github.com/Victor-Enginner/Voices-Unheard-ASE',
             demoUrl: '#', // Restricted secure platform
             startDate: '2025-07-01',
             role: 'System Analyst',
@@ -1518,7 +1518,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Python', 'TensorFlow', 'Keras', 'Scikit-learn', 'Physics-Informed Neural Network', 'NSRDB API'],
             tools: ['Jupyter Notebook', 'Google Colab', 'Matplotlib', 'Seaborn', 'LaTeX'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/Photovoltaic-Physics-Informed-Neural-Network',
+            repoUrl: 'https://github.com/Victor-Enginner/Photovoltaic-Physics-Informed-Neural-Network',
             demoUrl: '#', // Research-based model
             startDate: '2025-07-01',
             role: 'Data Scientist',
@@ -1564,7 +1564,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             installation: [
                 {
                     title: 'Environment Setup',
-                    code: 'git clone https://github.com/Arfazrll/Photovoltaic-Physics-Informed-Neural-Network.git\npip install tensorflow pandas scikit-learn matplotlib',
+                    code: 'git clone https://github.com/Victor-Enginner/Photovoltaic-Physics-Informed-Neural-Network.git\npip install tensorflow pandas scikit-learn matplotlib',
                     type: 'code'
                 },
                 {
@@ -1603,7 +1603,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Python', 'TensorFlow', 'Keras', 'LSTM', 'Scikit-learn', 'SMOTE'],
             tools: ['Jupyter Notebook', 'Hugging Face Spaces', 'Pandas', 'Seaborn', 'SMOTE'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/CreditRisk_Analysis',
+            repoUrl: 'https://github.com/Victor-Enginner/CreditRisk_Analysis',
             demoUrl: 'https://huggingface.co/spaces/Alfazril/CreditRisk_Analysis',
             startDate: '2025-07-01',
             role: 'Data Scientist',
@@ -1649,7 +1649,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             installation: [
                 {
                     title: 'Model Environment',
-                    code: 'git clone https://github.com/Arfazrll/CreditRisk_Analysis\npip install -r requirements.txt',
+                    code: 'git clone https://github.com/Victor-Enginner/CreditRisk_Analysis\npip install -r requirements.txt',
                     type: 'code'
                 },
                 {
@@ -1688,7 +1688,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Python', 'MediaPipe', 'OpenCV'],
             tools: ['VS Code', 'Git LFS', 'PowerShell'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/Hand-Gesture-Recognition',
+            repoUrl: 'https://github.com/Victor-Enginner/Hand-Gesture-Recognition',
             demoUrl: '#', // Desktop CV application
             startDate: '2024-12-01',
             role: 'CV Developer',
@@ -1734,7 +1734,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             installation: [
                 {
                     title: 'Environment & Setup',
-                    code: 'git clone https://github.com/Arfazrll/Hand-Gesture-Recognition.git\npython -m venv HandTracking-env',
+                    code: 'git clone https://github.com/Victor-Enginner/Hand-Gesture-Recognition.git\npython -m venv HandTracking-env',
                     type: 'code'
                 },
                 {
@@ -1773,7 +1773,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             techStack: ['Python', 'Streamlit', 'Plotly', 'Pandas', 'NumPy', 'Dash'],
             tools: ['VS Code', 'Jupyter Notebook', 'Git LFS', 'PowerShell'],
             status: 'completed',
-            repoUrl: 'https://github.com/Arfazrll/Data-Analyst-Dashboard',
+            repoUrl: 'https://github.com/Victor-Enginner/Data-Analyst-Dashboard',
             demoUrl: '#', // Desktop/Server application
             startDate: '2024-07-01',
             role: 'Data Analyst',
@@ -1819,7 +1819,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             installation: [
                 {
                     title: 'Clone & Environment',
-                    code: 'git clone https://github.com/Arfazrll/Data-Analyst-Dashboard.git\ncd Data-Analyst-Dashboard',
+                    code: 'git clone https://github.com/Victor-Enginner/Data-Analyst-Dashboard.git\ncd Data-Analyst-Dashboard',
                     type: 'code'
                 },
                 {
@@ -1897,7 +1897,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             location: `Bandung, West Java, Indonesia · Hybrid`,
             type: `contract`,
             externalLink: [
-                `https://github.com/Arfazrll/GeoPollute`,
+                `https://github.com/Victor-Enginner/GeoPollute`,
                 `https://github.com/ekshalasi-langit-biru/orion-pax`,
                 `https://biru-langit.com/`,
             ],
@@ -1979,7 +1979,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             location: `Indonesia · Remote`,
             type: `internship`,
             externalLink: [
-                `https://github.com/Arfazrll/Audit-Engagement`,
+                `https://github.com/Victor-Enginner/Audit-Engagement`,
                 `https://www.cisometric.com/academy`,
             ],
             logo: `/assets/cisometriclogo.webp`,
@@ -2008,7 +2008,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             location: `Remote`,
             type: `freelance`,
             logo: `/assets/dicodinglogo.webp?v=2`,
-            externalLink: `https://github.com/Arfazrll/Dicoding-Reviews-Submission`,
+            externalLink: `https://github.com/Victor-Enginner/Dicoding-Reviews-Submission`,
         },
         {
             id: `prof-2`,
@@ -2058,7 +2058,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             location: `Hybrid`,
             type: `internship`,
             logo: `/assets/HumicLogo.webp`,
-            externalLink: `https://github.com/Arfazrll/Security-Automation-GenAI`,
+            externalLink: `https://github.com/Victor-Enginner/Security-Automation-GenAI`,
         },
         {
             id: `prof-4`,
@@ -2108,7 +2108,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             location: `Remote`,
             type: `internship`,
             logo: `/assets/aselablogo.webp`,
-            externalLink: `https://github.com/Arfazrll/Voices-Unheard-ASE`,
+            externalLink: `https://github.com/Victor-Enginner/Voices-Unheard-ASE`,
         },
         {
             id: `prof-6`,
@@ -2526,7 +2526,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             location: `Bandung`,
             type: `contract`,
             logo: `/assets/logogdsc.webp`,
-            externalLink: `https://g.dev/Arfazrll`,
+            externalLink: `https://g.dev/Victor-Enginner`,
         },
     ],
     education: [
@@ -2655,7 +2655,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             title: 'elevAIte with Dicoding Program 2025',
             issuer: 'Dicoding Indonesia',
             date: '2025-01-01',
-            credentialUrl: 'https://learn.microsoft.com/en-us/users/arfazrlll-6195/achievements/8752dbgw',
+            credentialUrl: 'https://learn.microsoft.com/en-us/users/victor_enginnerl-6195/achievements/8752dbgw',
             category: 'certification',
             image: '/certificate/elevAIte with Dicoding Program 2025.webp',
         },
@@ -2984,7 +2984,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             date: '2026-03-20',
             category: 'applied-ai',
             tags: ['AI', 'Agents', 'Enterprise'],
-            author: { name: 'Azril', avatar: '/about/arfazrll.webp' },
+            author: { name: 'Victor Borsari', avatar: '/about/victor_enginner.webp' },
             readTime: '5'
         },
         {
@@ -2997,7 +2997,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             date: '2026-03-15',
             category: 'more',
             tags: ['Web3', 'Blockchain', 'UX'],
-            author: { name: 'Azril', avatar: '/about/arfazrll.webp' },
+            author: { name: 'Victor Borsari', avatar: '/about/victor_enginner.webp' },
             readTime: '4'
         },
         {
@@ -3010,7 +3010,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             date: '2026-03-05',
             category: 'software-development',
             tags: ['Next.js', 'React', 'Performance'],
-            author: { name: 'Azril', avatar: '/about/arfazrll.webp' },
+            author: { name: 'Victor Borsari', avatar: '/about/victor_enginner.webp' },
             readTime: '6'
         },
         {
@@ -3023,7 +3023,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             date: '2026-02-28',
             category: 'applied-ai',
             tags: ['AI', 'Security', 'Deep Learning'],
-            author: { name: 'Azril', avatar: '/about/arfazrll.webp' },
+            author: { name: 'Victor Borsari', avatar: '/about/victor_enginner.webp' },
             readTime: '7'
         },
         {
@@ -3036,7 +3036,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             date: '2026-02-15',
             category: 'applied-ai',
             tags: ['LLM', 'Python', 'Ollama'],
-            author: { name: 'Azril', avatar: '/about/arfazrll.webp' },
+            author: { name: 'Victor Borsari', avatar: '/about/victor_enginner.webp' },
             readTime: '8'
         },
         {
@@ -3049,7 +3049,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             date: '2026-02-01',
             category: 'more',
             tags: ['Solidity', 'Ethereum', 'Security'],
-            author: { name: 'Azril', avatar: '/about/arfazrll.webp' },
+            author: { name: 'Victor Borsari', avatar: '/about/victor_enginner.webp' },
             readTime: '5'
         },
         {
@@ -3062,7 +3062,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             date: '2026-01-25',
             category: 'software-development',
             tags: ['React', 'Zustand', 'Architecture'],
-            author: { name: 'Azril', avatar: '/about/arfazrll.webp' },
+            author: { name: 'Victor Borsari', avatar: '/about/victor_enginner.webp' },
             readTime: '4'
         },
         {
@@ -3075,7 +3075,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             date: '2026-01-10',
             category: 'software-development',
             tags: ['IoT', 'ESP32', 'Edge'],
-            author: { name: 'Azril', avatar: '/about/arfazrll.webp' },
+            author: { name: 'Victor Borsari', avatar: '/about/victor_enginner.webp' },
             readTime: '6'
         },
         {
@@ -3088,7 +3088,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             date: '2026-01-05',
             category: 'applied-ai',
             tags: ['Healthcare', 'AI', 'Ethics'],
-            author: { name: 'Azril', avatar: '/about/arfazrll.webp' },
+            author: { name: 'Victor Borsari', avatar: '/about/victor_enginner.webp' },
             readTime: '7'
         },
         {
@@ -3101,7 +3101,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             date: '2026-03-31',
             category: 'about-me',
             tags: ['Philosophy', 'Engineering', 'About Me'],
-            author: { name: 'Azril', avatar: '/about/arfazrll.webp' },
+            author: { name: 'Victor Borsari', avatar: '/about/victor_enginner.webp' },
             readTime: '5'
         }
     ],
