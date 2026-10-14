@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowUpRight, Cpu, Briefcase, Rocket, Award } from 'lucide-react';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolio } from '@/data/usePortfolio';
 
 const PreviewCard = ({
     title,

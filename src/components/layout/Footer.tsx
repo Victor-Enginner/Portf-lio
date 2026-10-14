@@ -86,6 +86,7 @@ function SocialCard({ social }: { social: SocialLink }) {
 }
 
 export function Footer() {
+    const tu = useTranslations('ui');
     const { theme } = useTheme();
     const tNav = useTranslations('navigation');
     const t = useTranslations('footer');
@@ -205,7 +206,7 @@ export function Footer() {
                                             >
                                                 {copyrightIndex === 0
                                                     ? `${portfolioData.personal.name}.`
-                                                    : "Todos os direitos reservados."}
+                                                    : tu('rights')}
                                             </motion.span>
                                         )}
                                     </AnimatePresence>
@@ -391,7 +392,7 @@ export function Footer() {
                                                 rel="noopener noreferrer"
                                                 className="text-zinc-900 dark:text-white text-[1.2vw] min-text-[14px] font-medium tracking-tight hover:text-zinc-500 dark:hover:text-zinc-400 transition-colors inline-block"
                                             >
-                                                São Paulo, Brasil
+                                                {tu('city')}
                                             </a>
                                         </FooterColumn>
 

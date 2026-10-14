@@ -4,7 +4,9 @@ import { ArrowRight, ChevronDown, Github, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import MagneticEffect from "@/components/ui/MagneticEffect";
-import { portfolioData } from "@/data/portfolio";
+import { usePortfolio } from '@/data/usePortfolio';
+import type { PortfolioData } from '@/types';
+import { useTranslations } from 'next-intl';
 
 interface ProjectData {
   title: string;
@@ -17,8 +19,8 @@ interface ProjectData {
 
 // Destaques da home: vêm direto de portfolioData (projetos com print)
 const DESTAQUES = ['inovare-pintura', 'nexus-scan', 'repass-ai', 'whatsapp-automation', 'victor-ads'];
-const PROJECT_DATA: ProjectData[] = DESTAQUES
-  .map(slug => portfolioData.projects.find(p => p.slug === slug))
+const montarDestaques = (dados: PortfolioData): ProjectData[] => DESTAQUES
+  .map(slug => dados.projects.find(p => p.slug === slug))
   .filter((p): p is NonNullable<typeof p> => !!p && !!p.image)
   .map(p => ({
     title: p.title,
@@ -30,6 +32,8 @@ const PROJECT_DATA: ProjectData[] = DESTAQUES
   }));
 
 export function ArgentLoopInfiniteSlider() {
+  const PROJECT_DATA = montarDestaques(usePortfolio());
+  const tu = useTranslations('ui.slider');
   const containerRef = React.useRef<HTMLDivElement>(null);
   
   const { scrollYProgress } = useScroll({
@@ -305,7 +309,7 @@ export function ArgentLoopInfiniteSlider() {
                                 href={`/projects/${data.slug}`} 
                                 className="pointer-events-auto font-medium text-[10px] opacity-60 hover:opacity-100 hover:text-black transition-all duration-300 text-right group/link"
                             >
-                              <span className="border-b border-black/10 group-hover/link:border-black pb-1">Ver mais</span>
+                              <span className="border-b border-black/10 group-hover/link:border-black pb-1">{tu('seeMore')}</span>
                             </Link>
                           </div>
                         </div>
@@ -339,7 +343,7 @@ export function ArgentLoopInfiniteSlider() {
                   <MagneticEffect>
                     <div className="group-projects flex items-center gap-2">
                       <Link href="/projects" className="custom-btn group-hover:scale-105 active:scale-95 group-hover:shadow-[0_0_30px_rgba(193,228,74,0.3)]">
-                        View More
+                        {tu("viewMore")}
                       </Link>
                       <Link href="/projects" className="custom-btn-arrow group-hover:scale-110 active:scale-95 transition-transform shadow-xl">
                         <ArrowUpRight className="w-6 h-6 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -356,7 +360,7 @@ export function ArgentLoopInfiniteSlider() {
           style={{ opacity: useTransform(smoothProgress, [0, 0.05, projectArea, projectArea + 0.05], [0, 1, 1, 0]) }}
           className="slide-overlay"
         >
-           <span className="text-foreground/40 font-mono text-[10px] tracking-[0.5em] uppercase">Page</span>
+           <span className="text-foreground/40 font-mono text-[10px] tracking-[0.5em] uppercase">{tu("page")}</span>
            <div className="slide-line bg-foreground/10">
               <motion.div 
                 className="slide-progress bg-foreground" 

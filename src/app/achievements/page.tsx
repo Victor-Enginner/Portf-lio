@@ -6,7 +6,7 @@ import { motion, AnimatePresence, useMotionValue, useSpring, useMotionTemplate, 
 import { useTranslations } from 'next-intl';
 import { Search, SortAsc, SortDesc, ExternalLink, X, Calendar, Building2, Trophy, Medal, Award, Target, ChevronRight, ChevronLeft, MousePointer2, Eye, Share2, PanelLeftClose, PanelLeftOpen, LayoutGrid, List } from 'lucide-react';
 import { cn, formatDate } from '@/lib/utils';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolio } from '@/data/usePortfolio';
 import { Achievement } from '@/types';
 import dynamic from 'next/dynamic';
 
@@ -41,6 +41,7 @@ const AchievementCard = React.memo(React.forwardRef<HTMLDivElement, {
     viewMode?: 'grid' | 'list';
 }>(
     ({ achievement, onClick, index, isLowPowerMode, viewMode = 'grid' }, ref) => {
+    const tu = useTranslations('ui');
         const [isHovered, setIsHovered] = useState(false);
         const mouseX = useMotionValue(0);
         const mouseY = useMotionValue(0);
@@ -241,7 +242,7 @@ const AchievementCard = React.memo(React.forwardRef<HTMLDivElement, {
                         )}>
                             <div className="flex items-center gap-2">
                                 <Eye className="w-4 h-4 text-muted-foreground/40" />
-                                <span className="text-[10px] text-muted-foreground/50 font-bold uppercase tracking-wider">Abrir</span>
+                                <span className="text-[10px] text-muted-foreground/50 font-bold uppercase tracking-wider">{tu('open')}</span>
                             </div>
                             <motion.div
                                 animate={{ x: isHovered ? [0, 4, 0] : 0 }}
@@ -556,6 +557,8 @@ const AchievementModal = React.forwardRef<HTMLDivElement, {
 });
 
 export default function AchievementsPage() {
+    const tu = useTranslations('ui');
+    const portfolioData = usePortfolio();
     const t = useTranslations('achievements');
     const { isLowPowerMode } = usePerformance();
     const [searchQuery, setSearchQuery] = useState('');
@@ -861,16 +864,16 @@ export default function AchievementsPage() {
                             animate="show"
                         >
                             <motion.div variants={staggerItem}>
-                                <NavItem label="Todos" active={activeCategory === 'all'} onClick={() => setActiveCategory('all')} count={getCategoryCount('all')} isCollapsed={isSidebarCollapsed} />
+                                <NavItem label={tu('all')} active={activeCategory === 'all'} onClick={() => setActiveCategory('all')} count={getCategoryCount('all')} isCollapsed={isSidebarCollapsed} />
                             </motion.div>
                             <motion.div variants={staggerItem}>
-                                <NavItem label="Certificados" active={activeCategory === 'certification'} onClick={() => setActiveCategory('certification')} count={getCategoryCount('certification')} isCollapsed={isSidebarCollapsed} />
+                                <NavItem label={tu('certLabel')} active={activeCategory === 'certification'} onClick={() => setActiveCategory('certification')} count={getCategoryCount('certification')} isCollapsed={isSidebarCollapsed} />
                             </motion.div>
                             <motion.div variants={staggerItem}>
-                                <NavItem label="Prêmios" active={activeCategory === 'award'} onClick={() => setActiveCategory('award')} count={getCategoryCount('award')} isCollapsed={isSidebarCollapsed} />
+                                <NavItem label={tu('awards')} active={activeCategory === 'award'} onClick={() => setActiveCategory('award')} count={getCategoryCount('award')} isCollapsed={isSidebarCollapsed} />
                             </motion.div>
                             <motion.div variants={staggerItem}>
-                                <NavItem label="Competições" active={activeCategory === 'competition'} onClick={() => setActiveCategory('competition')} count={getCategoryCount('competition')} isCollapsed={isSidebarCollapsed} />
+                                <NavItem label={tu('competitions')} active={activeCategory === 'competition'} onClick={() => setActiveCategory('competition')} count={getCategoryCount('competition')} isCollapsed={isSidebarCollapsed} />
                             </motion.div>
                         </motion.nav>
 
@@ -1028,10 +1031,10 @@ export default function AchievementsPage() {
                             className="text-center mb-12"
                         >
                             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-3">
-                                Tecnologias
+                                {tu('techTitle')}
                             </h2>
                             <p className="text-sm text-muted-foreground/60 max-w-lg mx-auto leading-relaxed">
-                                As ferramentas que uso para construir sites, automações e agentes.
+                                {tu('techDesc')}
                             </p>
                         </motion.div>
 
@@ -1044,7 +1047,7 @@ export default function AchievementsPage() {
                         >
                             <ErrorBoundary fallback={<div className="text-center opacity-50">Visuals Unavailable</div>}>
                                 <FallingText
-                                    text="TypeScript Next.js React Nodejs Python Tailwind Threejs Ollama Agentes Automação WhatsApp Docker Vercel AWS"
+                                    text={tu('techCloud')}
                                     highlightWords={['Python', 'TensorFlow', 'LangChain', 'Blockchain', 'DeepLearning']}
                                     trigger="scroll"
                                     gravity={0.8}

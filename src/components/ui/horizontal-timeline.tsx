@@ -1,4 +1,5 @@
 "use client";
+import { useTranslations } from 'next-intl';
 import { cn } from "@/lib/utils";
 import {
   useScroll,
@@ -16,6 +17,7 @@ export interface TimelineEntry {
 }
 
 export const HorizontalTimeline = ({ data }: { data: TimelineEntry[] }) => {
+    const tu = useTranslations('ui');
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -107,7 +109,7 @@ export const HorizontalTimeline = ({ data }: { data: TimelineEntry[] }) => {
             whileHover={{ scale: 1.02, originX: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
           >
-            Trajetória
+            {tu('tabJourney')}
           </motion.h2>
           <motion.p
             className="text-neutral-600 dark:text-neutral-400 text-base md:text-xl max-w-2xl leading-relaxed"
@@ -115,7 +117,7 @@ export const HorizontalTimeline = ({ data }: { data: TimelineEntry[] }) => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Clientes atendidos, produtos lançados e o que vem pela frente.
+            {tu('journeyDesc')}
           </motion.p>
         </motion.div>
       </div>

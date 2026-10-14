@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 import { X, Calendar, Code, Box, Award, Share2, ExternalLink, Github, Terminal, ChevronRight, ChevronLeft, CheckCircle2, Copy, Check, Maximize2, ArrowUpRight, Zap, Sparkles, Cpu, Info } from 'lucide-react';
 import { cn, formatDate } from '@/lib/utils';
 import { Project } from '@/types';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolio } from '@/data/usePortfolio';
 import { TechStack } from './TechStack';
 
 // --- Animated Terminal Component ---

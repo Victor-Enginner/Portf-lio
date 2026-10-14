@@ -10,7 +10,7 @@ import { TechStack } from './TechStack';
 import { ProjectPlaceholder } from './ProjectPlaceholder';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolio } from '@/data/usePortfolio';
 
 // --- Animated Terminal Component ---
 const TerminalBlock = ({ title, code }: { title: string; code: string }) => {
@@ -171,6 +171,7 @@ const Typewriter = ({ examples }: { examples: string[] }) => {
 };
 
 export function ProjectPageContent({ project, isLowPowerMode }: { project: Project; isLowPowerMode?: boolean }) {
+    const portfolioData = usePortfolio();
     const t = useTranslations('projects');
     const tCommon = useTranslations('common');
     const router = useRouter();

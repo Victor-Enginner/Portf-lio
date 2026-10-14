@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
@@ -211,6 +212,8 @@ export default function CardNav({
     theme = "dark",
     pathname = "/"
 }: CardNavProps) {
+    const tu = useTranslations('ui');
+    const tNav = useTranslations('navigation');
     const [isExpanded, setIsExpanded] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -225,7 +228,7 @@ export default function CardNav({
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    const aboutItem = items.find(i => i.label === "Sobre") || items[0];
+    const aboutItem = items[0];
     const allHrefs = ['/projects', '/experience', '/skills', '/achievements', '/blog', '/gallery', '/resume'];
     const isActive = useMemo(() => {
         return allHrefs.some(href => pathname === href || pathname.startsWith(`${href}/`));
@@ -290,14 +293,14 @@ export default function CardNav({
                             <div className="flex-1 p-5 flex flex-col gap-4">
                                 {/* Top 2 big boxes */}
                                 <div className="grid grid-cols-2 gap-4">
-                                    <MegaBoxBig href="/projects" icon={Rocket} title="Projetos" desc="Tudo que está no ar" theme={theme} pathname={pathname} />
-                                    <MegaBoxBig href="/experience" icon={Briefcase} title="Experiência" desc="Clientes e trabalhos" theme={theme} pathname={pathname} />
+                                    <MegaBoxBig href="/projects" icon={Rocket} title={tNav('projects')} desc={tu('navProjectsDesc')} theme={theme} pathname={pathname} />
+                                    <MegaBoxBig href="/experience" icon={Briefcase} title={tNav('experience')} desc={tu('navExpDesc')} theme={theme} pathname={pathname} />
                                 </div>
                                 {/* Bottom 3 small boxes */}
                                 <div className="grid grid-cols-3 gap-4">
-                                    <MegaBoxSmall href="/skills" icon={Navigation} title="Habilidades" desc="O que eu uso" theme={theme} pathname={pathname} />
-                                    <MegaBoxSmall href="/achievements" icon={Trophy} title="Certificados" desc="Cursos verificáveis" theme={theme} pathname={pathname} />
-                                    <MegaBoxSmall href="/contact" icon={MessageCircle} title="Contato" desc="Pedir orçamento" theme={theme} pathname={pathname} />
+                                    <MegaBoxSmall href="/skills" icon={Navigation} title={tNav('skills')} desc={tu('navSkillsDesc')} theme={theme} pathname={pathname} />
+                                    <MegaBoxSmall href="/achievements" icon={Trophy} title={tNav('achievements')} desc={tu('navCertsDesc')} theme={theme} pathname={pathname} />
+                                    <MegaBoxSmall href="/contact" icon={MessageCircle} title={tNav('contact')} desc={tu('navContactDesc')} theme={theme} pathname={pathname} />
                                 </div>
                             </div>
 
@@ -308,7 +311,7 @@ export default function CardNav({
                             )}>
                                 <SidebarLink href="https://wa.me/5516982141822" icon={MessageCircle} title="WhatsApp" desc="(16) 98214-1822" theme={theme} pathname={pathname} />
                                 <SidebarLink href="https://www.instagram.com/engenheiro.ai/" icon={ImageIcon} title="Instagram" desc="@engenheiro.ai" theme={theme} pathname={pathname} />
-                                <SidebarLink href="https://github.com/Victor-Enginner" icon={FileText} title="GitHub" desc="Código dos projetos" theme={theme} pathname={pathname} />
+                                <SidebarLink href="https://github.com/Victor-Enginner" icon={FileText} title="GitHub" desc={tu('navGithubDesc')} theme={theme} pathname={pathname} />
                             </div>
                         </div>
                     </motion.div>

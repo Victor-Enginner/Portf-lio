@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect, useRef } from "react";
 import {
@@ -120,6 +121,7 @@ interface GitHubActivity {
 }
 
 export const GitHubShowcase = () => {
+    const tu = useTranslations('ui');
   const [mounted, setMounted] = useState(false);
   const [loading, setLoading] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -536,7 +538,7 @@ export const GitHubShowcase = () => {
                               <BookOpen size={14} className="text-[#39d353]" />
                               <span className="text-sm font-black group-hover/repo:text-[#39d353] transition-colors">{repo.name}</span>
                             </div>
-                            <p className="text-[10px] leading-relaxed opacity-50 line-clamp-2">{repo.desc}</p>
+                            <p className="text-[10px] leading-relaxed opacity-50 line-clamp-2">{tu.has(`repo_${repo.name}`) ? tu(`repo_${repo.name}`) : repo.desc}</p>
                             <div className="flex items-center gap-4 text-[9px] font-bold opacity-40">
                               <span className="flex items-center gap-1"><Star size={10} />{repo.stars}</span>
                               <span className="flex items-center gap-1"><GitFork size={10} />{repo.forks}</span>

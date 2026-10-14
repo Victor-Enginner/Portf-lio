@@ -5,7 +5,7 @@ import { motion, useTransform, useSpring, easeOut, easeInOut, circOut, useMotion
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
-import { portfolioData } from "@/data/portfolio";
+import { usePortfolio } from '@/data/usePortfolio';
 import { InfiniteMarquee } from "@/components/ui/InfiniteMarquee";
 import { BrandScroller, BrandScrollerReverse } from "@/components/ui/brand-scroller";
 import { cn } from "@/lib/utils";
@@ -54,6 +54,7 @@ interface IdentitySequenceProps {
 }
 
 export const IdentitySequence = ({ scrollYProgress, isVisible }: IdentitySequenceProps) => {
+    const portfolioData = usePortfolio();
     const t = useTranslations("about");
     const [isHovered, setIsHovered] = React.useState(false);
     const [isTextAnimated, setIsTextAnimated] = React.useState(false);

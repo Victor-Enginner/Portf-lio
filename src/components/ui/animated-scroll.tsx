@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform, useMotionValueEvent, useSpring, useMotionValue } from 'framer-motion';
 import { cn } from "@/lib/utils";
@@ -7,16 +8,18 @@ import { HoverScrambleText } from '@/components/ui/hover-scramble-text';
 import { ChevronDown } from 'lucide-react';
 import Loader from './Loader';
 
-const pages = [
+const usePages = () => {
+    const t = useTranslations('ui');
+    return [
     {
         leftBgImage: null,
         rightBgImage: null,
         leftComponent: <Loader type="ai" />,
         leftContent: null,
         rightContent: {
-            heading: 'Agentes de IA',
-            description: 'Agentes que trabalham por você: encontram empresas, auditam o site, decidem a abordagem e escrevem a mensagem. Rodando com LLMs locais (Ollama) ou APIs.',
-            skills: ["Multiagente", "Ollama", "LLMs", "Prospecção", "OSINT", "Automação"],
+            heading: t('feat1Title'),
+            description: t('feat1Desc'),
+            skills: t('feat1Skills').split('|'),
             hoverColor: "bg-red-600/10"
         },
     },
@@ -26,9 +29,9 @@ const pages = [
         leftComponent: null,
         rightComponent: <Loader type="software" />,
         leftContent: {
-            heading: 'Sites que vendem',
-            description: 'Sites e landing pages pensados para converter visita em contato. Design, código, domínio e deploy — entregue no ar, inclusive para cliente fora do Brasil.',
-            skills: ["Next.js", "TypeScript", "Tailwind", "Three.js", "SEO local", "Vercel"],
+            heading: t('feat2Title'),
+            description: t('feat2Desc'),
+            skills: t('feat2Skills').split('|'),
             hoverColor: "bg-blue-600/10"
         },
         rightContent: null,
@@ -39,20 +42,22 @@ const pages = [
         leftComponent: <Loader type="softskill" />,
         leftContent: null,
         rightContent: {
-            heading: 'Automação de WhatsApp',
-            description: 'Campanhas e fluxos automáticos para atender e prospectar sem ficar o dia inteiro no celular. Você foca em fechar, o sistema cuida do resto.',
-            skills: ["Campanhas", "Funil", "Atendimento", "Dashboard", "Python", "Node.js"],
+            heading: t('feat3Title'),
+            description: t('feat3Desc'),
+            skills: t('feat3Skills').split('|'),
             hoverColor: "bg-purple-600/10"
         },
     },
     {
         isBridge: true,
-        heading: 'Veja os projetos que já estão no ar',
-        subheading: 'ROLE PARA VER',
+        heading: t('bridgeTitle'),
+        subheading: t('bridgeSub'),
     }
 ];
+};
 
 export default function ScrollAdventure() {
+    const pages = usePages();
     const [currentPage, setCurrentPage] = useState(1);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -122,6 +127,7 @@ export default function ScrollAdventure() {
 }
 
 function PageSlide({ page, isActive, scrollProgress, index }: { page: any, isActive: boolean, scrollProgress: any, index: number }) {
+    const pages = usePages();
     const leftHasVisual = !!page.leftBgImage || !!page.leftComponent;
     const rightHasVisual = !!page.rightBgImage || !!page.rightComponent;
 
@@ -220,6 +226,7 @@ function PageSlide({ page, isActive, scrollProgress, index }: { page: any, isAct
 }
 
 function BridgeSlide({ page, isActive, scrollProgress, index }: { page: any, isActive: boolean, scrollProgress: any, index: number }) {
+    const pages = usePages();
     const step = 1 / pages.length;
     const base = index * step;
 
@@ -300,12 +307,13 @@ function BlendedVisual({ src, component, side }: { src?: string, component?: Rea
 }
 
 function EditorialContent({ content, index }: { content: any, index: number }) {
+    const tu = useTranslations('ui');
     return (
         <div className="flex flex-col items-start text-left space-y-12 max-w-2xl w-full relative z-10">
             <div className="space-y-6">
                 <div className="flex items-center gap-6">
                     <span className="text-[11px] font-mono font-black tracking-[0.5em] text-primary uppercase opacity-60">
-                        FEATURE — 0{index + 1}
+                        {tu('feature')} — 0{index + 1}
                     </span>
                     <div className="h-[1px] w-12 bg-primary/20" />
                 </div>

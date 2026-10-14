@@ -5,7 +5,8 @@ import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { Menu, X, Moon, Sun, Globe, ChevronDown, Focus } from 'lucide-react';
+import { Menu, X, Moon, Sun, ChevronDown, Focus } from 'lucide-react';
+import { LanguageSwitcher } from './LanguageSwitcher';
 import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
 
@@ -44,15 +45,15 @@ function Clock() {
 // Sub-links do menu "Sobre"
 const useNavItems = () => {
     const t = useTranslations('navigation.menu');
+    const tNav = useTranslations('navigation');
     return [
         {
-            label: "Sobre",
+            label: tNav('about'),
             links: [
                 { label: t('projects'), href: "/projects", description: t('projectsDesc') },
                 { label: t('experience'), href: "/experience", description: t('experienceDesc') },
                 { label: t('skills'), href: "/skills", description: t('skillsDesc') },
                 { label: t('achievements'), href: "/achievements", description: t('achievementsDesc') },
-                { label: t('intelligence'), href: "/intelligence", description: t('intelligenceDesc') },
             ]
         }
     ];
@@ -119,12 +120,6 @@ export function Navbar() {
         setIsMenuOpen((prev) => !prev);
     }, []);
 
-    const toggleLocale = useCallback(() => {
-        const newLocale = currentLocale === 'pt' ? 'en' : 'pt';
-        document.cookie = `locale=${newLocale};path=/;max-age=31536000`;
-        setCurrentLocale(newLocale);
-        window.location.reload();
-    }, [currentLocale]);
 
     const closeMenu = useCallback(() => {
         setIsMenuOpen(false);
@@ -191,23 +186,6 @@ export function Navbar() {
                                 pathname={pathname}
                             />
 
-                            {/* AI INTELLIGENCE & PAIN MINER */}
-                            <Link
-                                href="/intelligence"
-                                className={cn(
-                                    'relative px-4 py-1.5 text-xs font-mono font-bold transition-all duration-300 rounded-full group flex items-center gap-1.5 border',
-                                    pathname === '/intelligence' 
-                                        ? 'bg-primary text-white border-primary shadow-lg shadow-primary/20' 
-                                        : 'bg-primary/10 border-primary/30 text-primary hover:bg-primary/20'
-                                )}
-                            >
-                                <span className="relative flex h-2 w-2">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                                </span>
-                                <span>{t('intelligence')}</span>
-                            </Link>
-
                             {/* CONTACT (Direct Link) */}
                             <Link
                                 href="/contact"
@@ -232,16 +210,7 @@ export function Navbar() {
                                     <Focus className="w-4 h-4" />
                                 </Link>
                             </motion.button>
-
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                onClick={toggleLocale}
-                                className="p-2 md:p-2.5 rounded-full bg-muted/80 hover:bg-muted transition-colors"
-                                aria-label="Toggle language"
-                            >
-                                <Globe className="w-4 h-4" />
-                            </motion.button>
+                            <LanguageSwitcher />
 
                             {mounted && (
                                 <AnimatedThemeToggler />
@@ -339,12 +308,7 @@ export function Navbar() {
                                     transition={{ delay: 0.5 }}
                                     className="flex items-center gap-4 mt-12"
                                 >
-                                    <button
-                                        onClick={toggleLocale}
-                                        className="px-6 py-3 rounded-full glass-card text-sm font-medium hover:bg-muted/50 transition-colors"
-                                    >
-                                        {currentLocale === 'pt' ? 'Português' : 'English'}
-                                    </button>
+                                    <LanguageSwitcher variant="list" />
                                     {mounted && (
                                         <AnimatedThemeToggler
                                             className="px-6 py-6 glass-card text-sm font-medium hover:bg-muted/50 flex items-center gap-2"

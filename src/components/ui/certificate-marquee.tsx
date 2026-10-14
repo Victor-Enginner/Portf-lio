@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import { motion, MotionValue, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
@@ -11,9 +12,10 @@ const reais = ["ZETD6UKC", "XEA9XJ5X", "MPSUID7O", "0SW9FA4V"].map(id => `/certi
 const certificates = [...reais, ...reais, ...reais];
 
 function ScrambleButton({ href }: { href: string }) {
-  const [displayText, setDisplayText] = useState("Ver certificados");
+    const tu = useTranslations('ui');
+  const [displayText, setDisplayText] = useState(tu('statCertsCta'));
   const [isScrambling, setIsScrambling] = useState(false);
-  const originalText = "Ver certificados";
+  const originalText = tu('statCertsCta');
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
 
   const scramble = () => {
@@ -85,6 +87,7 @@ const Column = ({ images, y }: ColumnProps) => {
 };
 
 export function CertificateShowcase() {
+    const tu = useTranslations('ui');
   const gallery = useRef<HTMLDivElement>(null);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
@@ -134,13 +137,13 @@ export function CertificateShowcase() {
           <div className="space-y-6 w-full">
             <div className="space-y-4">
               <h2 className="text-sm font-bold tracking-[0.2em] text-primary/60 uppercase">
-                Certificados
+                {tu('certLabel')}
               </h2>
               <h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] tracking-tight max-w-none text-foreground">
-                Aprendizado <span className="text-shiny">verificável</span>.
+                {tu('certTitleA')} <span className="text-shiny">{tu('certTitleB')}</span>.
               </h3>
               <p className="text-lg text-muted-foreground max-w-none leading-relaxed lg:whitespace-nowrap">
-                Cursos de IA, agentes e cloud concluídos na DIO, em parceria com IBM, Santander e AWS — cada um com código de validação.
+                {tu('certDesc')}
               </p>
             </div>
           </div>

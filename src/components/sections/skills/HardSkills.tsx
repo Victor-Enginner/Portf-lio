@@ -1,12 +1,15 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { portfolioData } from "@/data/portfolio";
+import { usePortfolio } from '@/data/usePortfolio';
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 export const HardSkills = () => {
+    const tu = useTranslations('ui');
+    const portfolioData = usePortfolio();
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
     ai: false,
     software: false,
@@ -54,7 +57,7 @@ export const HardSkills = () => {
             viewport={{ once: true }}
             className="tracking-tighter text-balance text-4xl font-bold md:text-5xl lg:text-6xl text-foreground mb-4"
           >
-            Foco
+            {tu('focus')}
           </motion.h2>
           <motion.span
             initial={{ opacity: 0, y: 10 }}
@@ -63,7 +66,7 @@ export const HardSkills = () => {
             transition={{ delay: 0.1 }}
             className="text-xs font-bold text-muted-foreground uppercase tracking-[0.4em] bg-muted/50 px-4 py-2 rounded-full"
           >
-            O que eu sei fazer
+            {tu('whatIDo')}
           </motion.span>
         </div>
 
@@ -75,15 +78,15 @@ export const HardSkills = () => {
             className="hidden md:flex w-full items-center bg-white dark:bg-[#111111] border border-black/5 dark:border-white/10 rounded-full mb-8 shadow-sm relative z-20 overflow-hidden"
         >
           <div className="flex-1 text-center py-4 font-bold text-sm cursor-default relative z-10 overflow-hidden transition-colors duration-700 text-foreground hover:text-white dark:hover:text-black before:content-[''] before:absolute before:inset-0 before:bg-black dark:before:bg-white before:-z-10 before:transition-transform before:duration-700 before:ease-in-out before:origin-left before:scale-x-0 hover:before:scale-x-100">
-            IA aplicada
+            {tu('appliedAI')}
           </div>
           <div className="w-px h-8 bg-black/10 dark:bg-white/10 shrink-0 relative z-20"></div>
           <div className="flex-1 text-center py-4 font-bold text-sm cursor-default relative z-10 overflow-hidden transition-colors duration-700 text-foreground hover:text-white dark:hover:text-black before:content-[''] before:absolute before:inset-0 before:bg-black dark:before:bg-white before:-z-10 before:transition-transform before:duration-700 before:ease-in-out before:origin-bottom before:scale-y-0 hover:before:scale-y-100">
-            Desenvolvimento
+            {tu('development')}
           </div>
           <div className="w-px h-8 bg-black/10 dark:bg-white/10 shrink-0 relative z-20"></div>
           <div className="flex-1 text-center py-4 font-bold text-sm cursor-default relative z-10 overflow-hidden transition-colors duration-700 text-foreground hover:text-white dark:hover:text-black before:content-[''] before:absolute before:inset-0 before:bg-black dark:before:bg-white before:-z-10 before:transition-transform before:duration-700 before:ease-in-out before:origin-right before:scale-x-0 hover:before:scale-x-100">
-            Outras habilidades
+            {tu('otherSkills')}
           </div>
         </motion.div>
 
@@ -99,7 +102,7 @@ export const HardSkills = () => {
             className="flex flex-col bg-black/5 dark:bg-[#0a0a0a] border border-black/5 dark:border-white/5 rounded-[2rem] p-4 lg:p-6 shadow-sm h-full max-h-[650px]"
           >
             <div className="shrink-0 md:hidden inline-block px-6 py-2.5 bg-foreground text-background rounded-full font-bold text-sm mb-4 text-center w-max mx-auto shadow-md">
-              IA aplicada
+              {tu('appliedAI')}
             </div>
             <div
               data-lenis-prevent={expanded.ai ? "true" : undefined}
@@ -140,7 +143,7 @@ export const HardSkills = () => {
             className="flex flex-col bg-black/5 dark:bg-[#0a0a0a] border border-black/5 dark:border-white/5 rounded-[2rem] p-4 lg:p-6 shadow-sm h-full max-h-[650px]"
           >
             <div className="shrink-0 md:hidden inline-block px-6 py-2.5 bg-foreground text-background rounded-full font-bold text-sm mb-4 text-center w-max mx-auto shadow-md">
-              Desenvolvimento
+              {tu('development')}
             </div>
             <div
               data-lenis-prevent={expanded.software ? "true" : undefined}
@@ -181,7 +184,7 @@ export const HardSkills = () => {
             className="flex flex-col bg-black/5 dark:bg-[#0a0a0a] border border-black/5 dark:border-white/5 rounded-[2rem] p-4 lg:p-6 shadow-sm h-full max-h-[650px]"
           >
             <div className="shrink-0 md:hidden inline-block px-6 py-2.5 bg-foreground text-background rounded-full font-bold text-sm mb-4 text-center w-max mx-auto shadow-md">
-              Outras habilidades
+              {tu('otherSkills')}
             </div>
             <div
               data-lenis-prevent={expanded.additional ? "true" : undefined}

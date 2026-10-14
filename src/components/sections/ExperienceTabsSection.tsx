@@ -1,11 +1,12 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GraduationCap, Briefcase, Rocket, ChevronDown, ChevronRight, Calendar, MapPin } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { cn, formatDate } from '@/lib/utils';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolio } from '@/data/usePortfolio';
 import { Education, Experience } from '@/types/index';
 
 type TabType = 'education' | 'journey' | 'experience';
@@ -44,6 +45,8 @@ function TabButton({ label, isActive, onClick, icon }: TabButtonProps) {
 }
 
 function EducationContent() {
+    const tu = useTranslations('ui');
+    const portfolioData = usePortfolio();
     const [showTimeline, setShowTimeline] = useState(false);
     const education = portfolioData.education[0];
 
@@ -149,7 +152,7 @@ function EducationContent() {
                                         <h4 className="font-semibold text-foreground">{edu.institution}</h4>
                                         <p className="text-sm text-muted-foreground">{edu.degree} - {edu.major}</p>
                                         <p className="text-xs text-muted-foreground mt-1">
-                                            {formatDate(edu.startDate)} - {edu.endDate ? formatDate(edu.endDate) : 'Atual'}
+                                            {formatDate(edu.startDate)} - {edu.endDate ? formatDate(edu.endDate) : tu('present')}
                                         </p>
                                     </div>
                                     {edu.gpa && (
@@ -166,6 +169,8 @@ function EducationContent() {
 }
 
 function JourneyContent() {
+    const tu = useTranslations('ui');
+    const portfolioData = usePortfolio();
     const experiences = portfolioData.experiences;
 
     const groupedExperiences = useMemo(() => {
@@ -197,7 +202,7 @@ function JourneyContent() {
         >
             <div className="space-y-2">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                    Minha trajetória
+                    {tu('myJourney')}
                 </h2>
                 <p className="text-muted-foreground max-w-lg">
                     I've been working on various projects and roles. Here's a timeline of my professional journey.
@@ -242,7 +247,7 @@ function JourneyContent() {
                                                 </p>
                                             </div>
                                             <span className="text-xs font-mono text-muted-foreground bg-secondary/50 px-2 py-1 rounded whitespace-nowrap">
-                                                {formatDate(exp.startDate)} - {exp.endDate ? formatDate(exp.endDate) : 'Atual'}
+                                                {formatDate(exp.startDate)} - {exp.endDate ? formatDate(exp.endDate) : tu('present')}
                                             </span>
                                         </div>
 
@@ -283,6 +288,7 @@ function JourneyContent() {
 }
 
 function ExperienceContent() {
+    const tu = useTranslations('ui');
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -294,7 +300,7 @@ function ExperienceContent() {
             <div className="p-4 rounded-2xl bg-primary/10">
                 <Rocket className="w-12 h-12 text-primary" />
             </div>
-            <h3 className="text-2xl font-bold text-foreground">Em breve</h3>
+            <h3 className="text-2xl font-bold text-foreground">{tu('comingSoon')}</h3>
             <p className="text-muted-foreground max-w-md">
                 Detailed experience breakdown with project highlights and achievements will be available here soon.
             </p>
@@ -303,6 +309,7 @@ function ExperienceContent() {
 }
 
 export default function ExperienceTabsSection() {
+    const tu = useTranslations('ui');
     const [activeTab, setActiveTab] = useState<TabType>('journey');
     const { resolvedTheme } = useTheme();
 
@@ -326,14 +333,14 @@ export default function ExperienceTabsSection() {
                     {activeTab === 'experience' && <Rocket className="w-8 h-8 text-primary" />}
                 </div>
                 <h3 className="text-2xl font-bold text-center text-foreground capitalize">
-                    {activeTab === 'education' && 'Formação'}
-                    {activeTab === 'journey' && 'Trajetória'}
-                    {activeTab === 'experience' && 'Projetos'}
+                    {activeTab === 'education' && tu('tabEdu')}
+                    {activeTab === 'journey' && tu('tabJourney')}
+                    {activeTab === 'experience' && tu('tabProjects')}
                 </h3>
                 <p className="text-center text-muted-foreground mt-2 max-w-md mx-auto">
-                    {activeTab === 'education' && 'Cursos concluídos e verificáveis'}
-                    {activeTab === 'journey' && 'Clientes e trabalhos entregues'}
-                    {activeTab === 'experience' && 'O que construí e publiquei'}
+                    {activeTab === 'education' && tu('tabEduDesc')}
+                    {activeTab === 'journey' && tu('tabJourneyDesc')}
+                    {activeTab === 'experience' && tu('tabProjectsDesc')}
                 </p>
             </motion.div>
 

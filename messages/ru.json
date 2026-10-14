@@ -1,0 +1,683 @@
+{
+    "navigation": {
+        "home": "Главная",
+        "about": "Обо мне",
+        "projects": "Проекты",
+        "experience": "Опыт",
+        "skills": "Навыки",
+        "achievements": "Сертификаты",
+        "blog": "Блог",
+        "gallery": "Галерея",
+        "contact": "Контакты",
+        "resume": "Резюме",
+        "tools": "Инструменты",
+        "menu": {
+            "achievements": "Сертификаты",
+            "achievementsDesc": "Пройденные курсы с проверкой",
+            "skills": "Навыки",
+            "skillsDesc": "Технологии и инструменты",
+            "experience": "Опыт",
+            "experienceDesc": "Клиенты и выполненные работы",
+            "projects": "Проекты",
+            "projectsDesc": "Всё, что уже работает",
+            "blog": "Блог",
+            "blogDesc": "Скоро",
+            "gallery": "Галерея",
+            "galleryDesc": "Скоро"
+        },
+        "shortcuts": {
+            "volume1": "Том I: Кто я",
+            "volume2": "Том II: Путь",
+            "volume3": "Том III: Навыки",
+            "volume4": "Том IV: Проекты",
+            "preview": "Предпросмотр",
+            "idRef": "ID_REF"
+        }
+    },
+    "hero": {
+        "greeting": "Добро пожаловать",
+        "subtitle": "Сайты • Автоматизация • AI-агенты",
+        "cta": {
+            "primary": "Смотреть проекты",
+            "secondary": "Написать в WhatsApp",
+            "exploreMore": "Подробнее"
+        },
+        "badge": "Принимаю проекты",
+        "scroll": "Листайте вниз",
+        "role": "AI-инженер",
+        "description": "Создаю <span class='text-primary font-semibold'>сайты</span>, <span class='text-secondary font-semibold'>автоматизацию</span> и <span class='text-accent font-semibold'>AI-агентов</span>, которые приводят клиентов в ваш бизнес."
+    },
+    "about": {
+        "title": "Обо мне",
+        "subtitle": "От брифа до запуска",
+        "description": "Разработчик, ориентированный на результат: сайты, автоматизация WhatsApp и AI-агенты, чтобы малый бизнес продавал больше.",
+        "stats": {
+            "experience": "Лет обучения",
+            "projects": "Проектов онлайн",
+            "certifications": "Сертификаты",
+            "competitions": "Соревнования"
+        },
+        "identity": "Личность подтверждена",
+        "architecting": "Создаю",
+        "digitalReality": "Цифровая реальность",
+        "leadIn": {
+            "label": "ЧТО Я ДЕЛАЮ",
+            "tagline": "ФОКУС",
+            "headlineAI": "Прикладной AI.",
+            "headlineData": "Автоматизация.",
+            "headlineSoftware": "Сайты, которые продают",
+            "thesis": "Создаю умные системы и <span class='text-primary italic font-serif-elegant font-normal'>цифровое присутствие</span>, которое превращает посетителей в клиентов.",
+            "scope": "Инструменты поиска клиентов, автономные агенты и автоматизация WhatsApp — всё опубликовано и работает.",
+            "bridging": "От идеи до работающего сайта.",
+            "integration": "Не только код: дизайн, контент, домен и запуск. Вы получаете готовый к работе проект.",
+            "signature": "Vitor Borsari",
+            "role": "AI-инженер и веб-разработчик",
+            "aboutMe": "Обо мне",
+            "scroll": "Листайте дальше",
+            "shortStory": "Моя история"
+        },
+        "coreEngineering": {
+            "label": "Инженерия",
+            "title": "Простой <span class='text-primary italic font-serif font-light lowercase'>стек.</span> <br /> Работающий <span class='italic font-serif font-light text-foreground'>результат.</span>",
+            "p1": "Разрабатываю AI-агентов на локальных LLM (Ollama) и API: поиск лидов, аудит сайтов и написание предложений.",
+            "p2": "Фронтенд — Next.js, TypeScript и Tailwind, а при необходимости 3D на Three.js.",
+            "p3": "Весь код в GitHub, публикация на Vercel, собственные домены для клиентов.",
+            "gpa": "Сертификаты",
+            "projects": "Проектов онлайн",
+            "years": "Клиенты"
+        },
+        "emergingResearch": {
+            "label": "Сейчас изучаю",
+            "title": "АГЕНТЫ <span class='italic font-serif font-light text-primary lowercase'>и</span> АВТОМАТИЗАЦИЯ",
+            "agentic": {
+                "title": "МУЛЬТИАГЕНТНЫЕ СИСТЕМЫ",
+                "desc": "Оркестрация агентов, работающих командой: у каждого своя роль, и они проверяют работу друг друга."
+            },
+            "web3": {
+                "title": "ОБЛАКО И ДЕПЛОЙ",
+                "desc": "Основы AWS и облачных вычислений, чтобы перенести агентов с локального компьютера в продакшен."
+            }
+        },
+        "profile": {
+            "title": "Технологии, которые <br /> помогают продавать.",
+            "narrativeLabel": "Моя история",
+            "narrative": "Я начал программировать сам, без вложений, создавая инструменты для своей задачи: поиска клиентов.",
+            "narrative2": "Сегодня я делаю сайты, автоматизацию и AI-агентов для бизнеса в Бразилии и Португалии — каждый проект здесь опубликован, его можно проверить.",
+            "pillars": {
+                "reliable": {
+                    "title": "Для конверсии",
+                    "desc": "У каждой страницы одна цель: чтобы посетитель связался с вами."
+                },
+                "optimized": {
+                    "title": "Запущено",
+                    "desc": "Никаких забытых прототипов: домен, деплой и всё работает."
+                },
+                "maintainable": {
+                    "title": "Легко развивать",
+                    "desc": "Чистый код в системе контроля версий, готовый расти вместе с бизнесом."
+                },
+                "evolvable": {
+                    "title": "AI, который работает",
+                    "desc": "Агенты ищут клиентов, квалифицируют их и пишут предложение за вас."
+                }
+            }
+        },
+        "closing": {
+            "experience": {
+                "label": "ПУТЬ",
+                "title1": "ВЫПОЛНЕННЫЕ",
+                "title2": "РАБОТЫ",
+                "viewMore": "Смотреть всё"
+            },
+            "projects": {
+                "label": "ПОРТФОЛИО",
+                "title1": "ИЗБРАННЫЕ",
+                "title2": "ПРОЕКТЫ",
+                "viewMore": "Все проекты"
+            },
+            "experiencesList": [
+                {
+                    "company": "Inovare Pintura (Португалия)",
+                    "role": "ВЕБ-РАЗРАБОТЧИК — ФРИЛАНС",
+                    "desc": "Сайт компании по покраске и ремонту в Ольяне: портфолио работ, услуги и заявки на расчёт. Работает на inovarepintura.com."
+                },
+                {
+                    "company": "Victor Digital Solutions",
+                    "role": "ОСНОВАТЕЛЬ",
+                    "desc": "Сайты, автоматизация WhatsApp и AI-инструменты поиска клиентов для малого бизнеса."
+                }
+            ],
+            "projectsList": [
+                {
+                    "title": "NEXUS SCAN",
+                    "desc": "Сканирует Google Maps города, находит бизнесы без сайта и готовит сообщение для WhatsApp."
+                },
+                {
+                    "title": "REPASS AI",
+                    "desc": "Агентный OSINT-движок для локальных лидов с автогенерацией 3D-сайтов."
+                },
+                {
+                    "title": "Prospector 3D",
+                    "desc": "Команда локальных AI-агентов (Ollama) находит компании, проверяет сайт и готовит предложение в 3D-офисе."
+                },
+                {
+                    "title": "Inovare Pintura",
+                    "desc": "Сайт для клиента в Португалии с собственным доменом и заявками на расчёт."
+                },
+                {
+                    "title": "WhatsApp Automation",
+                    "desc": "Панель для создания и отслеживания автоматических рассылок в WhatsApp."
+                }
+            ],
+            "discoverMore": "Подробнее"
+        }
+    },
+    "projects": {
+        "title": "Проекты",
+        "subtitle": "Всё, что я создал и что уже работает",
+        "search": "Поиск проектов...",
+        "viewAll": "Все проекты",
+        "viewProject": "Открыть проект",
+        "liveDemo": "Открыть сайт",
+        "sourceCode": "Код",
+        "techStack": "Технологии",
+        "tools": "Инструменты",
+        "highlights": "Главное",
+        "challenges": "Сложности",
+        "filters": {
+            "all": "Все",
+            "ongoing": "В работе",
+            "completed": "Завершённые"
+        },
+        "sections": {
+            "missionBrief": "Кратко",
+            "keyFeatures": "Возможности",
+            "engineeringChronicles": "За кадром",
+            "visualGallery": "Галерея",
+            "installation": "Как запустить",
+            "projectAccess": "Доступ",
+            "technologies": "Технологии",
+            "contents": "Содержание",
+            "moreProjects": "Другие проекты",
+            "backToProjects": "Назад к проектам",
+            "viewMore": "Показать больше",
+            "viewLess": "Свернуть",
+            "solution": "Решение",
+            "liveDemo": "Открыть сайт",
+            "sourceCode": "Код"
+        },
+        "status": {
+            "ongoing": "В разработке",
+            "completed": "Завершён"
+        },
+        "metadata": {
+            "role": "Роль",
+            "timeline": "Период",
+            "team": "Команда",
+            "techStack": "Технологии",
+            "roleValue": "Full Stack",
+            "teamValue": "Индивидуально",
+            "techStackValue": "Технологий: {count}"
+        }
+    },
+    "experience": {
+        "title": "Опыт",
+        "subtitle": "Клиенты и выполненные работы",
+        "showDetail": "Подробнее",
+        "hideDetail": "Скрыть",
+        "tasks": "ЗАДАЧИ",
+        "learned": "ЧЕМУ НАУЧИЛСЯ",
+        "impact": "РЕЗУЛЬТАТ",
+        "present": "Сейчас",
+        "responsibilities": "Обязанности",
+        "skills": "Навыки",
+        "month": "мес.",
+        "months": "мес.",
+        "year": "г.",
+        "years": "г.",
+        "type": {
+            "full-time": "Полная занятость",
+            "part-time": "Частичная занятость",
+            "internship": "Стажировка",
+            "freelance": "Фриланс",
+            "contract": "Контракт",
+            "apprenticeship": "Ученичество",
+            "volunteer": "Волонтёрство"
+        },
+        "filters": {
+            "all": "Все",
+            "latest": "Сначала новые",
+            "oldest": "Сначала старые",
+            "ongoing": "Текущие"
+        },
+        "education": {
+            "title": "Обучение"
+        }
+    },
+    "expertise": {
+        "title": "Что я делаю",
+        "subtitle": "Технологии, которые приводят клиентов и экономят время",
+        "dragHint": "Перетащите, чтобы посмотреть"
+    },
+    "skills": {
+        "title": "Навыки и инструменты",
+        "subtitle": "Чем я пользуюсь каждый день",
+        "hard": "Технические навыки",
+        "soft": "Личные качества",
+        "technical": "Технический уровень",
+        "tools": "Инструменты",
+        "pillars": "Принципы",
+        "achievements": "Сертификаты",
+        "level": {
+            "beginner": "Начальный",
+            "intermediate": "Средний",
+            "advanced": "Продвинутый",
+            "expert": "Эксперт"
+        }
+    },
+    "achievements": {
+        "title": "Сертификаты",
+        "subtitle": "Пройденные курсы с кодом проверки",
+        "search": "Поиск...",
+        "viewCredential": "Открыть сертификат",
+        "category": {
+            "all": "Все",
+            "certification": "Сертификат",
+            "award": "Награда",
+            "publication": "Публикация",
+            "competition": "Соревнование"
+        },
+        "sort": {
+            "newest": "Сначала новые",
+            "oldest": "Сначала старые"
+        },
+        "stats": {
+            "total": "Всего",
+            "awards": "Награды",
+            "certifications": "Сертификаты"
+        }
+    },
+    "contact": {
+        "title": "Контакты",
+        "subtitle": "Давайте воплотим ваш проект",
+        "form": {
+            "name": "Ваше имя",
+            "email": "Ваш e-mail",
+            "subject": "Тема",
+            "message": "Сообщение",
+            "messagePlaceholder": "Расскажите, что вам нужно...",
+            "send": "Отправить",
+            "submit": "ОТПРАВИТЬ",
+            "sending": "ОТПРАВКА...",
+            "sent": "ОТПРАВЛЕНО!",
+            "success": "Сообщение отправлено!",
+            "error": "Что-то пошло не так. Попробуйте ещё раз."
+        },
+        "social": {
+            "title": "Соцсети"
+        },
+        "faq": {
+            "title": "Частые вопросы"
+        },
+        "info": {
+            "email": "E-mail",
+            "phone": "WhatsApp",
+            "location": "Город",
+            "availability": "Принимаю проекты"
+        },
+        "hero": {
+            "title": "ДАВАЙТЕ ОБСУДИМ",
+            "subtitle": "Есть идея? Напишите мне, и мы её запустим.",
+            "ticker": {
+                "build": "Давайте создадим что-то · ",
+                "freelance": "Открыт для проектов · "
+            }
+        },
+        "faqData": [
+            {
+                "q": "Чем ты занимаешься?",
+                "a": "Продающие сайты, автоматизация WhatsApp и AI-агенты, которые находят клиентов для вашего бизнеса и связываются с ними."
+            },
+            {
+                "q": "Работаешь с другими странами?",
+                "a": "Да. Я сделал сайт Inovare Pintura в Португалии, полностью удалённо."
+            },
+            {
+                "q": "Какие технологии используешь?",
+                "a": "Next.js, TypeScript и Tailwind на фронтенде; Node.js и Python для автоматизации; Ollama и LLM для агентов; деплой на Vercel."
+            },
+            {
+                "q": "Сколько времени занимает сайт?",
+                "a": "Зависит от объёма. Простой лендинг готов за несколько дней; напишите мне — назову точные сроки и цену."
+            },
+            {
+                "q": "Как начать?",
+                "a": "Напишите в WhatsApp +55 16 98214-1822 или на e-mail shoponsup@gmail.com, что вам нужно."
+            }
+        ]
+    },
+    "footer": {
+        "copyright": "Все права защищены.",
+        "madeWith": "Сделано с",
+        "more": "Ещё",
+        "marquee": [
+            "Принимаю проекты",
+            "Сайты, которые продают",
+            "Автоматизация WhatsApp",
+            "AI-агенты",
+            "3D-интерфейсы",
+            "Поиск клиентов по данным"
+        ],
+        "cta": {
+            "title": "Давайте работать",
+            "titleHighlight": "вместе",
+            "subtitle": "Есть проект? Давайте создадим то, что решит реальную задачу."
+        },
+        "links": "ССЫЛКИ",
+        "socials": "СОЦСЕТИ",
+        "localTime": "МЕСТНОЕ ВРЕМЯ",
+        "version": "ВЕРСИЯ",
+        "versionEdition": "Издание 2026"
+    },
+    "ctaSection": {
+        "title": "Давайте создадим",
+        "together": "вместе",
+        "subtitle": "Сайты, автоматизация и AI-агенты, чтобы ваш бизнес продавал больше. Напишите мне — покажу, как.",
+        "start": "Написать в WhatsApp",
+        "work": "Смотреть проекты",
+        "words": {
+            "amazing": "удивительное",
+            "innovative": "новое",
+            "intelligent": "умное",
+            "creative": "креативное"
+        },
+        "ribbon1": "Next.js • React • TypeScript • Node.js • Python • Tailwind • Three.js • Ollama • Vercel",
+        "ribbon2": "Сайты • Лендинги • Автоматизация WhatsApp • AI-агенты • Поиск клиентов • 3D-интерфейсы"
+    },
+    "stats": {
+        "systemStatus": "System Status: Analytics Active",
+        "portfolio": "Engineering Metrics",
+        "totalPulse": "Total Pulse",
+        "peakActivity": "Peak Activity",
+        "dailyAverage": "Daily Average",
+        "currentSprint": "Current Sprint",
+        "engageFlow": "Engage Flow",
+        "weeklyEffort": "Weekly Coding Effort",
+        "processSpeed": "Process Speed",
+        "avgPerf": "Average Performance",
+        "latency": "LATENCY: 14MS",
+        "system": "SYSTEM: DARWIN_X64_STABLE",
+        "scanning": "SCANNING_LIVE_RESOURCES",
+        "engineering": "ENGINEERING",
+        "metrics": "METRICS",
+        "analyticsSub": "ANALYTICS / INFRASTRUCTURE / PERFORMANCE DATA",
+        "statusOnline": "STATUS: ONLINE",
+        "loadStable": "SYSTEM_LOAD: STABLE"
+    },
+    "projectHeader": {
+        "title": "Работающие проекты",
+        "subtitle": "Всё здесь опубликовано — откройте и попробуйте. <span class='font-bold text-foreground'>AI-агенты</span>, автоматизация, поиск клиентов и сайты для реальных заказчиков."
+    },
+    "common": {
+        "loading": "Загрузка...",
+        "error": "Что-то пошло не так",
+        "notFound": "Страница не найдена",
+        "backHome": "На главную",
+        "viewMore": "Подробнее",
+        "readMore": "Читать",
+        "close": "Закрыть",
+        "download": "Скачать",
+        "share": "Поделиться",
+        "scrollAudit": "Листайте дальше"
+    },
+    "technical": {
+        "github": {
+            "title": "Активность на GitHub",
+            "description": "Моя активность за последний год.",
+            "total": "Всего",
+            "thisWeek": "На этой неделе",
+            "best": "Лучший день",
+            "average": "В среднем",
+            "less": "Меньше",
+            "more": "Больше"
+        },
+        "wakatime": {
+            "title": "WakaTime Stats",
+            "description": "Coding activity over the last 7 days.",
+            "lastUpdate": "Last Updated",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "dailyAverage": "Daily Average",
+            "totalWeek": "Total This Week",
+            "bestDay": "Best Day",
+            "totalSince": "Total Since Joined",
+            "topLanguages": "Top Languages"
+        }
+    },
+    "blog": {
+        "title": "Thoughts & Explorations",
+        "subtitle": "Bridging the gap between technical complexity and practical implementation. A collection of insights on AI, Web3, and Software Engineering.",
+        "sectionBadge": "The Digital Archive",
+        "search": "Search articles...",
+        "readTime": "min read",
+        "readMore": "Read Post",
+        "back": "Back to Blog",
+        "noResults": "No articles found",
+        "categories": {
+            "applied-ai": "Applied AI",
+            "software-development": "Software Dev",
+            "about-me": "About Me",
+            "more": "More"
+        }
+    },
+    "gallery": {
+        "title": "Visual Archive",
+        "subtitle": "A curated collection of project highlights, technical documentation, and creative visual explorations.",
+        "filter": {
+            "all": "All Media",
+            "image": "Photos",
+            "video": "Videos"
+        },
+        "viewMedia": "View Media"
+    },
+    "chatbot": {
+        "title": "Ассистент",
+        "subtitle": "Спросите о Виторе",
+        "placeholder": "Введите сообщение...",
+        "greeting": "Привет! Я ассистент **{name}**. 👋\n\nМогу рассказать о:\n- Услугах и навыках\n- Проектах\n- Как начать работу\n\nЧто вас интересует?",
+        "suggestions": [
+            "Чем ты занимаешься?",
+            "Какой твой лучший проект?",
+            "Работаешь с другими странами?",
+            "Как тебя нанять?"
+        ],
+        "error": "Произошла ошибка. Попробуйте ещё раз.",
+        "invalidResponse": "Некорректный ответ сервера.",
+        "unknownError": "Неизвестная ошибка.",
+        "retry": "Повторить",
+        "inputHint": "Enter — отправить, Shift+Enter — новая строка",
+        "close": "Закрыть чат"
+    },
+    "ui": {
+        "heroIntro": "Привет, я {name}. Создаю сайты, автоматизацию и AI-агентов, которые приводят клиентов.",
+        "heroHub": "Открыть Victor Hub AI",
+        "heroBot": "Поговорить с моим AI-ассистентом",
+        "heroRemote": "Работаю с Бразилией и другими странами — полностью удалённо.",
+        "heroLocation": "САН-ПАУЛУ, BR — 2026",
+        "heroQuote": "Узнать стоимость",
+        "heroBadge": "ПРИНИМАЮ ПРОЕКТЫ",
+        "heroCard": "{name} создаёт сайты, автоматизацию WhatsApp и AI-агентов, чтобы малый бизнес продавал больше. От брифа до запуска, проекты работают в Бразилии и Португалии.",
+        "feature": "НАПРАВЛЕНИЕ",
+        "feat1Title": "AI-агенты",
+        "feat1Desc": "Агенты, которые работают за вас: находят компании, проверяют сайт, выбирают подход и пишут сообщение. На локальных LLM (Ollama) или через API.",
+        "feat1Skills": "Мультиагенты|Ollama|LLM|Поиск клиентов|OSINT|Автоматизация",
+        "feat2Title": "Сайты, которые продают",
+        "feat2Desc": "Сайты и лендинги, которые превращают посетителей в заявки. Дизайн, код, домен и запуск — в том числе для клиентов за пределами Бразилии.",
+        "feat2Skills": "Next.js|TypeScript|Tailwind|Three.js|Локальное SEO|Vercel",
+        "feat3Title": "Автоматизация WhatsApp",
+        "feat3Desc": "Автоматические рассылки и сценарии для поддержки и продаж без постоянного сидения в телефоне. Вы закрываете сделки, система делает остальное.",
+        "feat3Skills": "Рассылки|Воронка|Поддержка|Дашборд|Python|Node.js",
+        "bridgeTitle": "Посмотрите проекты, которые уже работают",
+        "bridgeSub": "ЛИСТАЙТЕ ВНИЗ",
+        "liveTitle": "Работающие проекты",
+        "liveDesc": "Сайты, автоматизация и AI-агенты уже опубликованы — откройте и попробуйте.",
+        "seeProjects": "Смотреть проекты",
+        "statsBadge": "В цифрах",
+        "statsLine1": "Сайты, которые продают. AI, который работает.",
+        "statsLine2": "Проекты, которые работают.",
+        "statsLine3": "Всё здесь настоящее",
+        "statsLine4": "и это можно открыть и проверить.",
+        "statLive": "Проектов онлайн",
+        "statClient": "Зарубежный клиент",
+        "statClientCta": "Открыть сайт",
+        "statCerts": "Сертификаты",
+        "statCertsCta": "Смотреть сертификаты",
+        "statTech": "Технологии и инструменты",
+        "statTechCta": "Смотреть навыки",
+        "certLabel": "Сертификаты",
+        "certTitleA": "Проверяемое",
+        "certTitleB": "обучение",
+        "certDesc": "Курсы по AI, агентам и облаку на платформе DIO совместно с IBM, Santander и AWS — у каждого есть код проверки.",
+        "certHeroDesc": "Курсы по AI, агентам и облаку — у каждого есть код проверки.",
+        "scrollToSee": "Листайте вниз",
+        "open": "Открыть",
+        "all": "Все",
+        "awards": "Награды",
+        "competitions": "Соревнования",
+        "techTitle": "Технологии",
+        "techDesc": "Инструменты, с которыми я создаю сайты, автоматизацию и агентов.",
+        "techCloud": "TypeScript Next.js React Nodejs Python Tailwind Threejs Ollama Агенты Автоматизация WhatsApp Docker Vercel AWS",
+        "catAll": "Все",
+        "catAI": "Искусственный интеллект",
+        "catSoftware": "Сайты и системы",
+        "catCreative": "Креативные",
+        "archive": "Архив проектов",
+        "seeAll": "Показать все",
+        "seeLess": "Свернуть",
+        "view": "открыть",
+        "statusOngoing": "в работе",
+        "statusLive": "онлайн",
+        "impact": "Результат",
+        "impactTitle": "Сделано, чтобы работать",
+        "impactDesc": "Идеи, ставшие опубликованными проектами, — их можно открыть прямо сейчас",
+        "statProjects": "Проекты",
+        "statTechShort": "Технологии",
+        "statSites": "Сайтов онлайн",
+        "connectTag": "/ Давайте обсудим",
+        "connectTitle": "Готовы воплотить идею в жизнь?",
+        "connectDesc": "Сайты, автоматизация и AI-агенты, чтобы ваш бизнес продавал больше. Напишите мне в WhatsApp.",
+        "connectQ1": "Нужен сайт, который продаёт?",
+        "connectQ2": "Хотите автоматизировать WhatsApp?",
+        "connectQ3": "Нужен AI-агент, который ищет клиентов за вас?",
+        "talkToMe": "Связаться",
+        "topic": "ТЕМА:",
+        "expHero": "ОПЫТ",
+        "expHeroTitle": "От кода к клиенту.",
+        "expHeroDesc": "Выполненные работы, опубликованные проекты и то, что я изучаю.",
+        "eduTitle": "Учусь",
+        "eduHighlight": "каждый день",
+        "eduDesc": "Самоучка, постоянно учусь на DIO: AI, агенты и облако — совместно с IBM, Santander и AWS.",
+        "jourTitle": "С нуля",
+        "jourHighlight": "до клиентов",
+        "jourDesc": "Я начал с инструментов для поиска собственных клиентов. Сегодня работаю для бизнеса в Бразилии и Португалии.",
+        "projTitle": "Идеи",
+        "projHighlight": "в работе",
+        "projDesc": "Настоящие проекты, опубликованные и работающие. Откройте и попробуйте.",
+        "tabEdu": "Обучение",
+        "tabEduDesc": "Пройденные курсы с проверкой.",
+        "tabJourney": "Путь",
+        "tabJourneyDesc": "Клиенты и выполненные работы.",
+        "tabProjects": "Проекты",
+        "tabProjectsDesc": "Что я создал и опубликовал.",
+        "catWork": "Работы",
+        "catLead": "Лидерство",
+        "catVolunteer": "Волонтёрство",
+        "back": "Назад",
+        "nothing": "Здесь пока пусто.",
+        "present": "Сейчас",
+        "myJourney": "Мой путь",
+        "journeyDesc": "Клиенты, запущенные продукты и планы на будущее.",
+        "seeProjectAt": "Проект доступен на",
+        "comingSoon": "Скоро",
+        "node1": "Постоянное обучение: AI, агенты и облако.",
+        "node2": "AI корпоративного уровня для разработчиков.",
+        "node3": "Акселерация: проект на Lovable.",
+        "node4": "Введение в облачные вычисления.",
+        "node5Label": "Первый продукт",
+        "node5": "Сканер лидов запущен (июль 2026).",
+        "node6Label": "Автоматизация",
+        "node6": "Рассылки в WhatsApp.",
+        "node7Label": "Агенты",
+        "node7": "REPASS AI и Prospector 3D.",
+        "node8Label": "Клиент в Португалии",
+        "node8": "Сайт Inovare Pintura запущен.",
+        "node9": "Сайт для клиента в Португалии.",
+        "node10": "Поиск клиентов через Google Places.",
+        "node11": "OSINT + генерация 3D-сайтов.",
+        "node12": "Цифровая карта для инвесторов.",
+        "skillsHero": "НАВЫКИ",
+        "coreTech": "ТЕХНОЛОГИИ",
+        "coreTechTitle": "Основа всего",
+        "coreTechDesc": "Языки и фреймворки, с помощью которых я запускаю сайты, автоматизацию и агентов.",
+        "focus": "Фокус",
+        "whatIDo": "Что я умею",
+        "appliedAI": "Прикладной AI",
+        "development": "Разработка",
+        "otherSkills": "Другие навыки",
+        "seeMoreN": "Ещё ({n})",
+        "workflow": "РАБОЧИЙ ПРОЦЕСС",
+        "toolsTitle": "Инструменты",
+        "toolsDesc": "Чем я пользуюсь для кода, версий, дизайна и публикации.",
+        "buildYours": "Давайте создадим",
+        "buildYours2": "ваш",
+        "whatsappCta": "Написать в WhatsApp",
+        "techUsage": "{name} в ежедневной работе.",
+        "tech_Python": "Автоматизация и скрипты для данных.",
+        "tech_TypeScript": "Типизированный и надёжный код.",
+        "tech_JavaScript": "Интерактивность в вебе.",
+        "tech_React": "Интерфейсы из компонентов.",
+        "tech_Nextjs": "Быстрые сайты, готовые к SEO.",
+        "tech_Nodejs": "Бэкенд и агенты.",
+        "tech_TailwindCSS": "Быстрый и единый дизайн.",
+        "tech_Docker": "Изолированные воспроизводимые среды.",
+        "faqTitle": "Частые вопросы",
+        "social_GitHub": "Код",
+        "social_LinkedIn": "Профиль",
+        "social_Instagram": "Контент",
+        "social_WhatsApp": "Расчёт",
+        "connect": "Связаться",
+        "waGreeting": "Здравствуйте, Витор! Меня зовут {name}.",
+        "waSubject": "Тема",
+        "waEmail": "Мой e-mail",
+        "navProjectsDesc": "Всё, что работает",
+        "navExpDesc": "Клиенты и работы",
+        "navSkillsDesc": "Чем пользуюсь",
+        "navCertsDesc": "Проверяемые курсы",
+        "navContactDesc": "Узнать стоимость",
+        "navGithubDesc": "Код проектов",
+        "rights": "Все права защищены.",
+        "city": "Сан-Паулу, Бразилия",
+        "repo_Scanner-Leads": "NEXUS SCAN: сканирует Google Maps города, находит бизнесы без сайта и готовит сообщение для WhatsApp.",
+        "repo_VIRTUAL-3D-": "Prospector: команда локальных AI-агентов (Ollama) находит компании, проверяет сайт и готовит предложение в 3D-офисе.",
+        "repo_REPASSAI": "Агентный OSINT-движок для локальных лидов с автогенерацией 3D-сайтов.",
+        "repo_orquestrador": "Мультиагентный оркестратор: поиск с доказательствами, проверка с правом вето и симуляция.",
+        "repo_Inovarepintura": "Сайт для клиента в Португалии (inovarepintura.com).",
+        "repo_Whatsapp-automation-campaign": "Панель автоматических рассылок в WhatsApp.",
+        "about": {
+            "present": "Сейчас",
+            "seeProjects": "Смотреть проекты",
+            "allProjects": "Все проекты",
+            "seeMore": "Подробнее",
+            "open": "Открыть"
+        },
+        "slider": {
+            "seeMore": "Подробнее",
+            "viewMore": "Все проекты",
+            "page": "Страница"
+        },
+        "skills": {
+            "howTitle": "Как я работаю",
+            "howDesc": "Ориентация на результат: от брифа до работающего сайта, с прямым общением."
+        }
+    }
+}

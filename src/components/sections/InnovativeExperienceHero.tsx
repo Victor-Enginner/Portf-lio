@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, ArrowRight } from 'lucide-react';
@@ -25,22 +26,22 @@ interface InnovativeExperienceHeroProps {
 // Nós reais (cursos, marcos e projetos) com prints dos próprios projetos
 const NODES_DATA: Record<string, NodeData[]> = {
     education: [
-        { label: 'DIO', description: 'Formação contínua em IA, agentes e cloud.', orbitIndex: 0, position: 0.1, imageUrl: '/projetos/protocolo.webp' },
-        { label: 'IBM Bootcamp', description: 'IA de nível empresarial para devs.', orbitIndex: 1, position: 0.35, imageUrl: '/projetos/victor-hub.webp' },
-        { label: 'Santander', description: 'Aceleração: projeto com Lovable.', orbitIndex: 0, position: 0.6, imageUrl: '/projetos/victor-ads.webp' },
-        { label: 'AWS', description: 'Introdução à computação em nuvem.', orbitIndex: 1, position: 0.85, imageUrl: '/projetos/golgotha.webp' },
+        { label: 'DIO', description: 'node1', orbitIndex: 0, position: 0.1, imageUrl: '/projetos/protocolo.webp' },
+        { label: 'IBM Bootcamp', description: 'node2', orbitIndex: 1, position: 0.35, imageUrl: '/projetos/victor-hub.webp' },
+        { label: 'Santander', description: 'node3', orbitIndex: 0, position: 0.6, imageUrl: '/projetos/victor-ads.webp' },
+        { label: 'AWS', description: 'node4', orbitIndex: 1, position: 0.85, imageUrl: '/projetos/golgotha.webp' },
     ],
     journey: [
-        { label: 'Primeiro produto', description: 'Scanner de leads publicado (jul/2026).', orbitIndex: 0, position: 0.15, imageUrl: '/projetos/nexus-scan.webp' },
-        { label: 'Automação', description: 'Campanhas de WhatsApp.', orbitIndex: 1, position: 0.4, imageUrl: '/projetos/whatsapp-automation.webp' },
-        { label: 'Agentes', description: 'REPASS AI e Prospector 3D.', orbitIndex: 0, position: 0.65, imageUrl: '/projetos/repassai.webp' },
-        { label: 'Cliente PT', description: 'Inovare Pintura no ar.', orbitIndex: 1, position: 0.9, imageUrl: '/projetos/inovare.webp' },
+        { label: 'node5Label', description: 'node5', orbitIndex: 0, position: 0.15, imageUrl: '/projetos/nexus-scan.webp' },
+        { label: 'node6Label', description: 'node6', orbitIndex: 1, position: 0.4, imageUrl: '/projetos/whatsapp-automation.webp' },
+        { label: 'node7Label', description: 'node7', orbitIndex: 0, position: 0.65, imageUrl: '/projetos/repassai.webp' },
+        { label: 'node8Label', description: 'node8', orbitIndex: 1, position: 0.9, imageUrl: '/projetos/inovare.webp' },
     ],
     experience: [
-        { label: 'Inovare Pintura', description: 'Site para cliente em Portugal.', orbitIndex: 0, position: 0.2, imageUrl: '/projetos/inovare.webp' },
-        { label: 'NEXUS SCAN', description: 'Prospecção local com Google Places.', orbitIndex: 1, position: 0.45, imageUrl: '/projetos/nexus-scan.webp' },
-        { label: 'REPASS AI', description: 'OSINT + geração de sites 3D.', orbitIndex: 0, position: 0.7, imageUrl: '/projetos/repassai.webp' },
-        { label: 'Tranquilin', description: 'Mapa digital para investidores.', orbitIndex: 1, position: 0.95, imageUrl: '/projetos/tranquilin.webp' },
+        { label: 'Inovare Pintura', description: 'node9', orbitIndex: 0, position: 0.2, imageUrl: '/projetos/inovare.webp' },
+        { label: 'NEXUS SCAN', description: 'node10', orbitIndex: 1, position: 0.45, imageUrl: '/projetos/nexus-scan.webp' },
+        { label: 'REPASS AI', description: 'node11', orbitIndex: 0, position: 0.7, imageUrl: '/projetos/repassai.webp' },
+        { label: 'Tranquilin', description: 'node12', orbitIndex: 1, position: 0.95, imageUrl: '/projetos/tranquilin.webp' },
     ]
 };
 
@@ -48,7 +49,12 @@ const OUTER_PATH = "M 100,300 a 400,180 -15 1,0 800,0 a 400,180 -15 1,0 -800,0";
 const INNER_PATH = "M 250,300 a 250,110 -15 1,0 500,0 a 250,110 -15 1,0 -500,0";
 
 export function InnovativeExperienceHero({ type, title, highlight, description }: InnovativeExperienceHeroProps) {
-    const rawNodes = NODES_DATA[type] || NODES_DATA.experience;
+    const tu = useTranslations('ui');
+    const rawNodes = (NODES_DATA[type] || NODES_DATA.experience).map(n => ({
+        ...n,
+        label: tu.has(n.label) ? tu(n.label) : n.label,
+        description: tu(n.description),
+    }));
     const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
     return (
@@ -78,7 +84,7 @@ export function InnovativeExperienceHero({ type, title, highlight, description }
                                 href="/projects"
                                 className="group flex items-center gap-2 w-fit px-6 py-3 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white font-bold text-sm transition-all hover:bg-neutral-200 dark:hover:bg-neutral-700"
                             >
-                                Ver projetos <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                {tu('seeProjects')} <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                             </Link>
                         </div>
                     </motion.div>

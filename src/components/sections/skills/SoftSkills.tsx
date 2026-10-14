@@ -1,7 +1,8 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolio } from '@/data/usePortfolio';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -46,6 +47,8 @@ const EXTRA_SKILLS = [
 ];
 
 export const SoftSkills = () => {
+    const tu = useTranslations('ui');
+    const portfolioData = usePortfolio();
     const skills = portfolioData.softSkills.slice(0, 7); // Use top 7 skills for a tight bento
 
     return (
@@ -69,7 +72,7 @@ export const SoftSkills = () => {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="text-foreground text-lg font-sans max-w-2xl pt-6 leading-relaxed border-t border-border mt-4"
                     >
-                        Foco em entregar resultado: do briefing ao site no ar, com comunicação direta.
+                        {tu('skills.howDesc')}
                     </motion.p>
                 </div>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import { ArrowUp, ExternalLink } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 import { motion, AnimatePresence, useMotionValue, useTransform, animate, useInView } from "framer-motion";
@@ -23,6 +24,7 @@ function Counter({ value, decimals = 0 }: { value: number; decimals?: number }) 
 }
 
 export default function Testimonial1() {
+    const tu = useTranslations('ui');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   interface StatItem {
@@ -40,33 +42,33 @@ export default function Testimonial1() {
       value: portfolioData.projects.filter(p => p.demoUrl).length,
       decimals: 0,
       suffix: "",
-      label: "Projetos no ar",
+      label: tu('statLive'),
       href: "/projects",
-      cta: "Ver projetos",
+      cta: tu('seeProjects'),
     },
     {
       value: portfolioData.experiences.filter(e => e.type === 'freelance').length,
       decimals: 0,
       suffix: "",
-      label: "Cliente internacional",
+      label: tu('statClient'),
       href: "https://inovarepintura.com",
-      cta: "Ver o site",
+      cta: tu('statClientCta'),
     },
     {
       value: portfolioData.achievements.filter(a => a.category === 'certification').length,
       decimals: 0,
       suffix: "",
-      label: "Certificados",
+      label: tu('statCerts'),
       href: "/achievements",
-      cta: "Ver certificados",
+      cta: tu('statCertsCta'),
     },
     {
       value: portfolioData.techStack.length + portfolioData.tools.length,
       decimals: 0,
       suffix: "",
-      label: "Tecnologias e ferramentas",
+      label: tu('statTech'),
       href: "/skills",
-      cta: "Ver habilidades",
+      cta: tu('statTechCta'),
     },
   ];
 
@@ -91,17 +93,17 @@ export default function Testimonial1() {
               />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]" />
             </span>
-            Em números
+            {tu('statsBadge')}
           </div>
         </div>
 
         {/* Main Heading with Refined Block Reveal Animation */}
         <div className="text-center max-w-5xl mx-auto relative text-neutral-900 dark:text-white px-4 space-y-1 md:space-y-2">
           {[
-            { text: "Sites que vendem. IA que trabalha.", color: "#6366f1", delay: 0 },
-            { text: "Projetos no ar.", color: "#10b981", delay: 0.15 },
-            { text: "Tudo que está aqui é real", color: "#f59e0b", delay: 0.3 },
-            { text: "e você pode clicar e testar.", color: "#ef4444", delay: 0.45 }
+            { text: tu('statsLine1'), color: "#6366f1", delay: 0 },
+            { text: tu('statsLine2'), color: "#10b981", delay: 0.15 },
+            { text: tu('statsLine3'), color: "#f59e0b", delay: 0.3 },
+            { text: tu('statsLine4'), color: "#ef4444", delay: 0.45 }
           ].map((line, i) => (
             <div key={i} className="relative block overflow-hidden py-1.5">
               <motion.h1

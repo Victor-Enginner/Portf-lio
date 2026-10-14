@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { portfolioData } from '@/data/portfolio';
 import Image from 'next/image';
@@ -20,6 +21,7 @@ const toolLogos: Record<string, string> = {
 };
 
 export const ToolsSection = () => {
+    const tu = useTranslations('ui');
     const topRow = portfolioData.tools.slice(0, 5);
     const bottomRow = portfolioData.tools.slice(5, 10);
 
@@ -46,13 +48,13 @@ export const ToolsSection = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-xs font-bold uppercase tracking-[0.4em] text-foreground block mb-6"
                 >
-                    FLUXO DE TRABALHO
+                    {tu('workflow')}
                 </motion.span>
                 <h2 className="text-5xl md:text-8xl font-bold tracking-tighter text-foreground mb-8 max-w-4xl mx-auto leading-[1.1]">
-                    Ferramentas
+                    {tu('toolsTitle')}
                 </h2>
                 <p className="max-w-3xl mx-auto text-lg md:text-xl text-foreground/60 leading-relaxed font-medium px-4">
-                    O que uso para programar, versionar, desenhar e publicar.
+                    {tu('toolsDesc')}
                 </p>
             </motion.div>
 

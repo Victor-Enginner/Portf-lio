@@ -1,4 +1,5 @@
 // ReactLenis removed - using global provider
+import { useTranslations } from 'next-intl';
 import {
     motion,
     useMotionTemplate,
@@ -63,6 +64,7 @@ const Hero = ({ isLowPowerMode }: { isLowPowerMode: boolean }) => {
 };
 
 const CenterImage = ({ scrollY }: { scrollY: MotionValue<number> }) => {
+    const tu = useTranslations('ui');
     // Animation: Scale from 50% to 100%
     const scale = useTransform(scrollY, [0, SECTION_HEIGHT], [0.5, 1]);
     const borderRadius = useTransform(scrollY, [0, SECTION_HEIGHT], [24, 0]);
@@ -118,13 +120,13 @@ const CenterImage = ({ scrollY }: { scrollY: MotionValue<number> }) => {
                     <div className="absolute inset-0 bg-primary/2 rounded-[clamp(2rem,6vw,4rem)] pointer-events-none" />
 
                     <h1 className="text-[clamp(3.5rem,15vw,15rem)] font-black text-foreground dark:text-white tracking-[-0.06em] leading-[0.8] uppercase text-center mb-[clamp(24px,4vh,48px)] -ml-2">
-                        EXPERIÊNCIA
+                        {tu('expHero')}
                     </h1>
 
                     <p className="w-full max-w-4xl text-center text-[clamp(10px,1.2vw,14px)] font-bold text-foreground/50 dark:text-white/50 tracking-[clamp(0.1em,0.4em,0.4em)] leading-relaxed md:leading-[2.2] uppercase">
-                        Do código ao cliente.
+                        {tu('expHeroTitle')}
                         <br className="hidden md:block" />
-                        Trabalhos entregues, projetos publicados e o que estou estudando.
+                        {tu('expHeroDesc')}
                     </p>
                 </motion.div>
             </div>

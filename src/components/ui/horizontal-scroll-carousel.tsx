@@ -2,7 +2,9 @@
 
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
-import { portfolioData } from "@/data/portfolio";
+import { usePortfolio } from '@/data/usePortfolio';
+import type { PortfolioData } from '@/types';
+import { useTranslations } from 'next-intl';
 import {
   Users, Brain, Users2, MessageSquare, Puzzle,
   RefreshCw, BookOpen, Network, LineChart, Search
@@ -36,7 +38,7 @@ const skillVisuals: Record<string, string> = {
   'Research Skills': 'https://illustrations.popsy.co/white/presentation.svg',
 };
 
-const allCards = portfolioData.softSkills.slice(0, 10).map((skill, index) => ({
+const montarCards = (dados: PortfolioData) => dados.softSkills.slice(0, 10).map((skill, index) => ({
   id: index + 1,
   title: skill.name,
   description: skill.description,
@@ -45,6 +47,8 @@ const allCards = portfolioData.softSkills.slice(0, 10).map((skill, index) => ({
 }));
 
 export const HorizontalScrollCarousel = () => {
+  const allCards = montarCards(usePortfolio());
+  const tu = useTranslations('ui.skills');
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -68,11 +72,11 @@ export const HorizontalScrollCarousel = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-foreground to-foreground/40 leading-[0.9] pb-2">
-              Como eu trabalho
+              {tu('howTitle')}
             </h2>
             <div className="w-20 h-1.5 bg-primary mt-4 mb-4 rounded-full opacity-80"></div>
             <p className="text-muted-foreground text-base md:text-lg lg:text-xl font-medium max-w-2xl leading-relaxed">
-              Foco em entregar resultado: do briefing ao site no ar, com comunicação direta.
+              {tu('howDesc')}
             </p>
           </motion.div>
         </div>
@@ -90,7 +94,7 @@ export const HorizontalScrollCarousel = () => {
   );
 };
 
-const Card = ({ card }: { card: typeof allCards[0] }) => {
+const Card = ({ card }: { card: ReturnType<typeof montarCards>[number] }) => {
   const { Icon } = card;
   return (
     <div

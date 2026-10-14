@@ -1,10 +1,11 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ZoomParallax } from "@/components/ui/zoom-parallax";
 import { Book } from "@/components/ui/book";
-import { portfolioData } from "@/data/portfolio";
+import { usePortfolio } from '@/data/usePortfolio';
 import Link from "next/link";
 import { ArrowUpRight, BookOpen, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -16,6 +17,8 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 
 export default function StatsSection({ scrollYProgress, showOnly }: { scrollYProgress?: any, showOnly?: 'top' | 'bottom' }) {
+    const tu = useTranslations('ui');
+    const portfolioData = usePortfolio();
     const [images, setImages] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -72,7 +75,7 @@ export default function StatsSection({ scrollYProgress, showOnly }: { scrollYPro
                             viewport={{ once: true }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight"
                         >
-                            Projetos no ar
+                            {tu('liveTitle')}
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0 }}
@@ -81,7 +84,7 @@ export default function StatsSection({ scrollYProgress, showOnly }: { scrollYPro
                             transition={{ delay: 0.2 }}
                             className="text-muted-foreground/80 text-lg md:text-xl font-medium max-w-2xl mx-auto"
                         >
-                            Sites, automações e agentes de IA publicados — clique e teste cada um.
+                            {tu('liveDesc')}
                         </motion.p>
                     </div>
 
@@ -92,7 +95,7 @@ export default function StatsSection({ scrollYProgress, showOnly }: { scrollYPro
                                 href="/projects" 
                                 className="group flex items-center gap-3 px-6 py-3.5 bg-foreground text-background rounded-full font-bold uppercase tracking-widest text-xs hover:scale-105 active:scale-95 transition-all shadow-xl border border-border/10"
                             >
-                                Ver projetos
+                                {tu('seeProjects')}
                                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                             </Link>
                         </ZoomParallax>

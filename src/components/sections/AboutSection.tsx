@@ -10,7 +10,9 @@ import { useTheme } from "next-themes";
 import ImageTrail from "@/components/ImageTrail";
 import Image from "next/image";
 import InfiniteMenu from "@/components/InfiniteMenu";
-import { portfolioData } from "@/data/portfolio";
+import { usePortfolio } from '@/data/usePortfolio';
+import { portfolioData as portfolioBase } from '@/data/portfolio';
+import type { PortfolioData } from '@/types';
 import { BeamDivider } from "@/components/ui/BeamDivider";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Github, Linkedin, Instagram, MessageSquare, ArrowRight, ArrowUpRight } from "lucide-react";
@@ -34,29 +36,30 @@ const imagemPorLink: Record<string, string> = {
     'https://inovarepintura.com': '/projetos/inovare.webp',
     'https://victor-solu-es-digitais.vercel.app': '/projetos/solucoes-digitais.webp',
 };
-const showcaseMembers = [
-    ...portfolioData.experiences.map(exp => {
+type Showcase = { id: string; name: string; role?: string; description?: string; period?: string; image: string; social?: { website: string } };
+const montarShowcase = (dados: PortfolioData, t: (k: string) => string): Showcase[] => [
+    ...dados.experiences.map(exp => {
         const link = Array.isArray(exp.externalLink) ? exp.externalLink[0] : exp.externalLink;
         return {
             id: exp.id,
             name: exp.company,
             role: exp.position,
             description: exp.description,
-            period: exp.isOngoing ? 'Atual' : new Date(exp.startDate).getFullYear().toString(),
+            period: exp.isOngoing ? t('present') : new Date(exp.startDate).getFullYear().toString(),
             image: (link && imagemPorLink[link]) || '/projetos/victor-hub.webp',
             social: link ? { website: link } : undefined,
         };
     }),
     {
         id: 'view-more',
-        name: 'Ver projetos',
-        role: 'Todos os projetos',
+        name: t('seeProjects'),
+        role: t('allProjects'),
         image: '/projetos/nexus-scan.webp',
         social: { website: '/projects' }
     }
 ];
 
-const GALLERY_IMAGES = portfolioData.projects.filter(p => p.image).map(p => p.image as string);
+const GALLERY_IMAGES = portfolioBase.projects.filter(p => p.image).map(p => p.image as string);
 
 const AboutLeadInImageStack = () => {
     const [randomData, setRandomData] = useState<{ src: string, rotate: number, x: number, y: number }[]>([]);
@@ -529,6 +532,9 @@ const ScrollHijackSection = () => {
 };
 
 export default function AboutSection() {
+    const portfolioData = usePortfolio();
+    const tu = useTranslations('ui.about');
+    const showcaseMembers = montarShowcase(portfolioData, tu);
     const containerRef = useRef<HTMLElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -580,7 +586,7 @@ export default function AboutSection() {
                             </div>
                             <div className="w-full pb-0">
                                 <HorizontalTimeline data={showcaseMembers.map((member) => ({
-                                    title: member.id === 'view-more' ? 'Ver todos os projetos' : (member.role || member.name),
+                                    title: member.id === 'view-more' ? tu('allProjects') : (member.role || member.name),
                                     isEnd: member.id === 'view-more',
                                     period: 'period' in member ? member.period : undefined,
                                     content: member.id === 'view-more' ? (
@@ -593,7 +599,7 @@ export default function AboutSection() {
                                                     <ArrowUpRight className="w-8 h-8 text-neutral-600 dark:text-neutral-400 transition-all duration-500 group-hover:text-primary-foreground group-hover:rotate-45 group-hover:scale-110" />
                                                 </div>
                                                 <span className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white opacity-0 -translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 whitespace-nowrap drop-shadow-sm">
-                                                    Ver mais
+                                                    {tu('seeMore')}
                                                 </span>
                                             </div>
                                         </Link>
@@ -622,7 +628,7 @@ export default function AboutSection() {
                                                 {member.social?.website && (
                                                     <div className="absolute inset-0 bg-black/50 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
                                                         <Link href={member.social.website} target="_blank" className="px-5 py-2.5 bg-white text-black text-xs font-bold rounded-full hover:scale-105 transition-transform">
-                                                            Abrir
+                                                            {tu('open')}
                                                         </Link>
                                                     </div>
                                                 )}

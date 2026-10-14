@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Code2, Award, Sparkles, TrendingUp } from 'lucide-react';
 import { portfolioData } from '@/data/portfolio';
@@ -95,30 +96,31 @@ const StatCard = ({ value, label, icon, delay, gradient, isLowPowerMode }: StatC
 };
 
 export function ProjectStats({ isLowPowerMode }: { isLowPowerMode?: boolean }) {
+    const tu = useTranslations('ui');
     const metrics = calculateMetrics();
 
     const stats = [
         {
             value: `${metrics.projects}`,
-            label: 'Projetos',
+            label: tu('statProjects'),
             icon: <Code2 className="w-6 h-6 text-primary" />,
             gradient: 'rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3), rgba(59, 130, 246, 0.3)'
         },
         {
             value: `${metrics.clientes}`,
-            label: 'Cliente internacional',
+            label: tu('statClient'),
             icon: <TrendingUp className="w-6 h-6 text-emerald-500" />,
             gradient: 'rgba(16, 185, 129, 0.3), rgba(6, 182, 212, 0.3), rgba(16, 185, 129, 0.3)'
         },
         {
             value: `${metrics.techCount}`,
-            label: 'Tecnologias',
+            label: tu('statTechShort'),
             icon: <Code2 className="w-6 h-6 text-violet-500" />,
             gradient: 'rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.3), rgba(139, 92, 246, 0.3)'
         },
         {
             value: `${metrics.noAr}`,
-            label: 'Sites no ar',
+            label: tu('statSites'),
             icon: <Award className="w-6 h-6 text-amber-500" />,
             gradient: 'rgba(245, 158, 11, 0.3), rgba(251, 146, 60, 0.3), rgba(245, 158, 11, 0.3)'
         }
@@ -143,16 +145,16 @@ export function ProjectStats({ isLowPowerMode }: { isLowPowerMode?: boolean }) {
                     >
                         <Sparkles className="w-4 h-4 text-primary" />
                         <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-wider">
-                            Impacto
+                            {tu('impact')}
                         </span>
                     </motion.div>
 
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-3">
-                        Feito para funcionar
+                        {tu('impactTitle')}
                     </h2>
 
                     <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Ideias transformadas em projetos publicados, que você pode abrir agora
+                        {tu('impactDesc')}
                     </p>
                 </motion.div>
 

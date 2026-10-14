@@ -2,10 +2,16 @@
 # Mantém a estrutura de chaves do template (lida de en.json) e sobrescreve só o conteúdo.
 import json
 import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from ui_textos import ui_para
+from textos_es_ru import ES_TEXTOS, RU_TEXTOS, EXPERIENCIAS_ES, EXPERIENCIAS_RU, PROJETOS_ES, PROJETOS_RU, FAQ_ES, FAQ_RU
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 EN = RAIZ / 'messages' / 'en.json'
 PT = RAIZ / 'messages' / 'pt.json'
+BASE = json.loads(EN.read_text(encoding='utf-8'))  # estrutura de chaves do template
 
 # Conteúdo real que vale para os dois idiomas (substitui as invenções do template)
 EXPERIENCIAS = {
@@ -233,16 +239,23 @@ def mesclar(base, extra):
 
 
 def gerar(idioma, textos):
-    dados = json.loads(EN.read_text(encoding='utf-8'))
+    dados = json.loads(json.dumps(BASE))
     mesclar(dados, textos)
     dados['about']['closing']['experiencesList'] = EXPERIENCIAS[idioma]
     dados['about']['closing']['projectsList'] = PROJETOS[idioma]
     dados['contact']['faqData'] = FAQ[idioma]
+    dados['ui'] = ui_para(idioma)
+    # Intelligence é projeto pessoal, fora do portfólio
+    dados['navigation'].pop('intelligence', None)
+    dados['navigation']['menu'].pop('intelligence', None)
+    dados['navigation']['menu'].pop('intelligenceDesc', None)
     return dados
 
 
-pt = gerar('pt', PT_TEXTOS)
-en = gerar('en', EN_TEXTOS)
-PT.write_text(json.dumps(pt, ensure_ascii=False, indent=4) + '\n', encoding='utf-8')
-EN.write_text(json.dumps(en, ensure_ascii=False, indent=4) + '\n', encoding='utf-8')
+EXPERIENCIAS.update(es=EXPERIENCIAS_ES, ru=EXPERIENCIAS_RU)
+PROJETOS.update(es=PROJETOS_ES, ru=PROJETOS_RU)
+FAQ.update(es=FAQ_ES, ru=FAQ_RU)
+for idioma, textos in [('pt', PT_TEXTOS), ('en', EN_TEXTOS), ('es', ES_TEXTOS), ('ru', RU_TEXTOS)]:
+    destino = RAIZ / 'messages' / f'{idioma}.json'
+    destino.write_text(json.dumps(gerar(idioma, textos), ensure_ascii=False, indent=4) + '\n', encoding='utf-8')
 print('ok')

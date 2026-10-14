@@ -125,6 +125,7 @@ const InputGroup = ({ label, name, type = "text", value, onChange, required = fa
 };
 
 function ContactForm() {
+    const tu = useTranslations('ui');
     const t = useTranslations('contact');
     const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -133,10 +134,10 @@ function ContactForm() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const texto = [
-            `Olá, Vitor! Sou ${formData.name}.`,
-            formData.subject && `Assunto: ${formData.subject}`,
+            tu('waGreeting', { name: formData.name }),
+            formData.subject && `${tu('waSubject')}: ${formData.subject}`,
             formData.message,
-            formData.email && `Meu e-mail: ${formData.email}`,
+            formData.email && `${tu('waEmail')}: ${formData.email}`,
         ].filter(Boolean).join('\n\n');
         window.open(`https://wa.me/5516982141822?text=${encodeURIComponent(texto)}`, '_blank');
         setStatus('success');
@@ -197,6 +198,7 @@ function ContactForm() {
 }
 
 function FAQSection() {
+    const tu = useTranslations('ui');
     const t = useTranslations('contact');
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -227,7 +229,7 @@ function FAQSection() {
         <div className="w-full max-w-6xl mx-auto py-20 px-4 md:px-8">
             <div className="flex flex-col items-center mb-16 relative z-10 text-center">
 
-                <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4">Perguntas frequentes</h2>
+                <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4">{tu('faqTitle')}</h2>
                 <div className="h-1 w-20 bg-primary/20 rounded-full" />
             </div>
 
@@ -286,6 +288,7 @@ const socialDescriptions: Record<string, string> = {
 import { usePerformance } from '@/hooks/usePerformance';
 
 export default function ContactPage() {
+    const tu = useTranslations('ui');
     const t = useTranslations('contact');
     const { isLowPowerMode } = usePerformance();
 
@@ -294,7 +297,7 @@ export default function ContactPage() {
         return {
             name: (link?.platform || platform).charAt(0).toUpperCase() + (link?.platform || platform).slice(1),
             username: link?.username || '@user',
-            body: socialDescriptions[link?.platform || platform] || "Conectar",
+            body: tu.has(`social_${link?.platform || platform}`) ? tu(`social_${link?.platform || platform}`) : tu('connect'),
             image: socialIconsMap[platform.toLowerCase()] || ArrowUpRight,
             url: link?.url || '#'
         };

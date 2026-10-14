@@ -1,6 +1,8 @@
 
 import { notFound } from 'next/navigation';
 import { portfolioData } from '@/data/portfolio';
+import { getPortfolio } from '@/data/usePortfolio';
+import { getLocale } from 'next-intl/server';
 import { ProjectPageContent } from '@/components/projects/ProjectPageContent';
 
 export async function generateStaticParams() {
@@ -13,7 +15,7 @@ import { getProjectImages } from '@/app/actions/getProjectImages'; // Import ser
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const project = portfolioData.projects.find((p) => p.slug === slug);
+    const project = getPortfolio(await getLocale()).projects.find((p) => p.slug === slug);
 
     if (!project) {
         notFound();

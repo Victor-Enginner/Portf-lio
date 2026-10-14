@@ -24,7 +24,7 @@ import {
     Link2
 } from 'lucide-react';
 import { cn, formatDate } from '@/lib/utils';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolio } from '@/data/usePortfolio';
 import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
 import { Experience, Education } from '@/types';
@@ -37,19 +37,19 @@ type TabType = 'education' | 'journey' | 'experience';
 
 const highlightContent = {
     education: {
-        title: "Aprendendo",
-        highlight: "todo dia",
-        description: "Autodidata, com formação contínua na DIO em IA, agentes e cloud — em parceria com IBM, Santander e AWS."
+        title: "eduTitle",
+        highlight: "eduHighlight",
+        description: "eduDesc"
     },
     journey: {
-        title: "Do zero",
-        highlight: "ao cliente",
-        description: "Comecei construindo ferramentas para achar meus próprios clientes. Hoje entrego para negócios no Brasil e em Portugal."
+        title: "jourTitle",
+        highlight: "jourHighlight",
+        description: "jourDesc"
     },
     experience: {
-        title: "Ideias",
-        highlight: "no ar",
-        description: "Projetos reais, publicados e funcionando. Clique e teste cada um."
+        title: "projTitle",
+        highlight: "projHighlight",
+        description: "projDesc"
     }
 };
 
@@ -58,15 +58,16 @@ import { usePerformance } from '@/hooks/usePerformance';
 import { getJourneyImages } from '@/app/actions/getJourneyImages';
 
 function ExperienceHighlightSection({ type, isLowPowerMode }: { type: TabType; isLowPowerMode: boolean }) {
+    const tu = useTranslations('ui');
     const content = highlightContent[type];
 
     return (
         <div className="mt-6">
             <InnovativeExperienceHero
                 type={type}
-                title={content.title}
-                highlight={content.highlight}
-                description={content.description}
+                title={tu(content.title)}
+                highlight={tu(content.highlight)}
+                description={tu(content.description)}
             />
         </div>
     );
@@ -92,21 +93,23 @@ interface TabItem {
 import MagneticEffect from '@/components/ui/MagneticEffect';
 
 function ExperienceTabSlider({ isLowPowerMode }: { isLowPowerMode: boolean }) {
+    const tu = useTranslations('ui');
+    const portfolioData = usePortfolio();
     const contentRef = useRef<HTMLDivElement>(null);
     const [activeTab, setActiveTab] = useState<number>(1);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     const tabs: TabItem[] = [
-        { id: 'education', label: 'Formação', description: 'Cursos concluídos e verificáveis.' },
-        { id: 'journey', label: 'Trajetória', description: 'Clientes e trabalhos entregues.' },
-        { id: 'experience', label: 'Projetos', description: 'O que construí e publiquei.' },
+        { id: 'education', label: tu('tabEdu'), description: tu('tabEduDesc') },
+        { id: 'journey', label: tu('tabJourney'), description: tu('tabJourneyDesc') },
+        { id: 'experience', label: tu('tabProjects'), description: tu('tabProjectsDesc') },
     ];
 
     const categories = [
-        { id: 'professional', label: 'Trabalhos', icon: Briefcase, color: 'bg-blue-600', prefix: 'prof-' },
-        { id: 'leadership', label: 'Liderança', icon: Users, color: 'bg-purple-600', prefix: 'lead-' },
-        { id: 'volunteer', label: 'Voluntariado', icon: Heart, color: 'bg-orange-500', prefix: 'vol-' },
-        { id: 'certifications', label: 'Certificados', icon: Award, color: 'bg-emerald-500', prefix: 'cert-' },
+        { id: 'professional', label: tu('catWork'), icon: Briefcase, color: 'bg-blue-600', prefix: 'prof-' },
+        { id: 'leadership', label: tu('catLead'), icon: Users, color: 'bg-purple-600', prefix: 'lead-' },
+        { id: 'volunteer', label: tu('catVolunteer'), icon: Heart, color: 'bg-orange-500', prefix: 'vol-' },
+        { id: 'certifications', label: tu('certLabel'), icon: Award, color: 'bg-emerald-500', prefix: 'cert-' },
     ];
 
     const heightFix = () => {
@@ -333,7 +336,7 @@ function ExperienceTabSlider({ isLowPowerMode }: { isLowPowerMode: boolean }) {
                                                 className="group flex items-center gap-3 text-sm font-bold uppercase tracking-wider text-neutral-500 hover:text-black dark:hover:text-white transition-colors px-4 py-2 -ml-4 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800/50 w-fit"
                                             >
                                                 <ArrowRight className="w-4 h-4 rotate-180 group-hover:-translate-x-1 transition-transform" />
-                                                <span>Voltar</span>
+                                                <span>{tu('back')}</span>
                                             </button>
 
                                             <div className="space-y-2">
@@ -373,7 +376,7 @@ function ExperienceTabSlider({ isLowPowerMode }: { isLowPowerMode: boolean }) {
 
                                             {filteredExperiences.length === 0 && (
                                                 <div className="flex flex-col items-center justify-center py-20 text-neutral-400">
-                                                    <p>Nada por aqui ainda.</p>
+                                                    <p>{tu('nothing')}</p>
                                                 </div>
                                             )}
                                         </div>
@@ -645,6 +648,7 @@ const slugify = (text: string) => {
 };
 
 const LinkPreviewCard = ({ url, title, id, logo }: { url: string; title?: string; id: string; logo?: string }) => {
+    const tu = useTranslations('ui');
     const domain = useMemo(() => {
         try {
             return new URL(url).hostname;
@@ -676,7 +680,7 @@ const LinkPreviewCard = ({ url, title, id, logo }: { url: string; title?: string
                         {title || "Project Resource"}
                     </h4>
                     <p className="text-[9px] text-neutral-500 line-clamp-2 leading-relaxed opacity-80">
-                        Veja o projeto em {domain}.
+                        {tu('seeProjectAt')} {domain}.
                     </p>
                 </div>
                 {logo && (
@@ -845,6 +849,8 @@ function TimelineGallery({ images, id, title, externalLink, logo }: { images: st
 }
 
 function ExperienceTimeline({ isLowPowerMode }: { isLowPowerMode: boolean }) {
+    const tu = useTranslations('ui');
+    const portfolioData = usePortfolio();
     const experiences = portfolioData.experiences;
 
     const groupedExperiences = useMemo(() => {
@@ -923,7 +929,7 @@ function ExperienceTimeline({ isLowPowerMode }: { isLowPowerMode: boolean }) {
                             </div>
                             <div className="flex flex-col sm:items-end gap-2">
                                 <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-900 px-2 py-1 rounded w-fit">
-                                    {formatDate(exp.startDate)} - {exp.endDate ? formatDate(exp.endDate) : 'Atual'}
+                                    {formatDate(exp.startDate)} - {exp.endDate ? formatDate(exp.endDate) : tu('present')}
                                 </span>
                             </div>
                         </div>

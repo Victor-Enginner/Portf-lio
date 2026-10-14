@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -60,9 +61,11 @@ export const KineticTechGrid = ({ items, className }: KineticTechGridProps) => {
 };
 
 const TechCard = ({ tech, idx, isLowPowerMode }: { tech: TechItem, idx: number, isLowPowerMode?: boolean }) => {
+    const tu = useTranslations('ui');
     const cardRef = useRef<HTMLDivElement>(null);
 
-    const description = techDescriptions[tech.name] || `${tech.name} no dia a dia.`;
+    const chave = `tech_${tech.name.replace(/[^A-Za-z]/g, '')}`;
+    const description = tu.has(chave) ? tu(chave) : (techDescriptions[tech.name] || tu('techUsage', { name: tech.name }));
 
     return (
         <motion.div

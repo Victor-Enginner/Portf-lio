@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import React, { ReactNode, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle, Mail, ArrowUpRight } from 'lucide-react';
@@ -55,6 +56,7 @@ const Hover3DFlipText = ({ text }: { text: string }) => {
 
 // --- MAIN WRAPPER COMPONENT ---
 export const ProjectContact = ({ isLowPowerMode }: { isLowPowerMode?: boolean }) => {
+    const tu = useTranslations('ui');
     const ROBOT_SCENE_URL = "https://prod.spline.design/PyzDhpQ9E5f1E3MT/scene.splinecode";
 
     return (
@@ -68,17 +70,17 @@ export const ProjectContact = ({ isLowPowerMode }: { isLowPowerMode?: boolean })
             <div className="max-w-[1536px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-20">
                 <div className="relative z-10 w-full lg:w-1/2">
                     <BlockInTextCard
-                        tag="/ Vamos conversar"
+                        tag={tu('connectTag')}
                         isLowPowerMode={isLowPowerMode}
                         text={
                             <>
-                                <strong><Hover3DFlipText text="Pronto para tirar sua ideia do papel?" /></strong> <Hover3DFlipText text="Sites, automações e agentes de IA para o seu negócio vender mais. Me chama no WhatsApp." />
+                                <strong><Hover3DFlipText text={tu('connectTitle')} /></strong> <Hover3DFlipText text={tu('connectDesc')} />
                             </>
                         }
                         examples={[
-                            "Precisa de um site que venda?",
-                            "Quer automatizar seu WhatsApp?",
-                            "Quer um agente de IA prospectando por você?",
+                            tu('connectQ1'),
+                            tu('connectQ2'),
+                            tu('connectQ3'),
                         ]}
                     />
                 </div>
@@ -110,6 +112,7 @@ const BlockInTextCard = ({
     examples: string[];
     isLowPowerMode?: boolean;
 }) => {
+    const tu = useTranslations('ui');
     return (
         <div className="w-full max-w-3xl space-y-12 border-none">
             <div>
@@ -129,7 +132,7 @@ const BlockInTextCard = ({
                         className="group w-fit relative flex items-center gap-6 py-6 transition-all hover:px-2 border-none ring-0 outline-none"
                     >
                         <span className="relative text-2xl md:text-4xl font-bold uppercase tracking-wide text-foreground pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-foreground group-hover:after:w-full after:transition-all after:duration-300 after:ease-out">
-                            Falar comigo
+                            {tu('talkToMe')}
                         </span>
                         <div className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full bg-foreground text-background transition-all duration-300 ease-out group-hover:-rotate-45 group-hover:scale-110">
                             <ArrowUpRight className="h-6 w-6" />
@@ -149,6 +152,7 @@ const MAIN_FADE_DURATION = 0.25;
 const SWAP_DELAY_IN_MS = 5500;
 
 const Typewrite = ({ examples, isLowPowerMode }: { examples: string[]; isLowPowerMode?: boolean }) => {
+    const tu = useTranslations('ui');
     const [exampleIndex, setExampleIndex] = useState(0);
 
     useEffect(() => {
@@ -164,7 +168,7 @@ const Typewrite = ({ examples, isLowPowerMode }: { examples: string[]; isLowPowe
             <span className={twMerge("mt-1.5 shrink-0 size-2 rounded-full bg-emerald-500", !isLowPowerMode && "animate-pulse")} />
             <div className="flex-1">
                 <p className="text-xs font-mono text-muted-foreground mb-2 uppercase tracking-widest">
-                    ASSUNTO:
+                    {tu('topic')}
                 </p>
                 <div className="min-h-[3rem] text-lg font-medium text-foreground">
                     {isLowPowerMode ? examples[exampleIndex] : examples[exampleIndex].split("").map((l, i) => (

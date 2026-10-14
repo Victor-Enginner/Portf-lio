@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useAnimationFrame, useMotionValue } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolio } from '@/data/usePortfolio';
 import { SplineScene } from '@/components/ui/SplineScene';
 import { TextPressure } from '@/components/ui/TextPressure';
 import { KineticTechGrid } from '@/components/ui/KineticTechGrid';
@@ -153,6 +153,8 @@ function VaporFog({ className }: { className?: string }) {
 
 
 export default function SkillsPage() {
+    const tu = useTranslations('ui');
+    const portfolioData = usePortfolio();
     const t = useTranslations('skills');
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -225,7 +227,7 @@ export default function SkillsPage() {
                                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                                 className="relative z-10 text-[9vw] md:text-[7vw] font-semibold uppercase leading-[0.9] tracking-tight text-zinc-800 dark:text-zinc-400 group-hover:text-black dark:group-hover:text-white select-none transition-colors duration-500"
                             >
-                                HABILIDADES
+                                {tu('skillsHero')}
 
                                 {/* Crystalline Sheen (Subtle) */}
                                 <div className="absolute inset-x-0 inset-y-0 flex justify-center pointer-events-none overflow-hidden">
@@ -326,13 +328,13 @@ export default function SkillsPage() {
                                     transition={{ duration: 0.5, delay: 0.2 }}
                                     className="text-[10px] font-mono uppercase tracking-[0.5em] text-primary/80 font-bold block"
                                 >
-                                    TECNOLOGIAS
+                                    {tu('coreTech')}
                                 </motion.span>
                                 <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-foreground">
-                                    A base de tudo
+                                    {tu('coreTechTitle')}
                                 </h2>
                                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed pt-2">
-                                    As linguagens e frameworks que uso para colocar sites, automações e agentes no ar.
+                                    {tu('coreTechDesc')}
                                 </p>
                             </motion.div>
                         </div>
