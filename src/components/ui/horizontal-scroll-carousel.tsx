@@ -42,7 +42,8 @@ const montarCards = (dados: PortfolioData) => dados.softSkills.slice(0, 10).map(
   id: index + 1,
   title: skill.name,
   description: skill.description,
-  url: skillVisuals[skill.name] || 'https://illustrations.popsy.co/white/abstract-art-6.svg',
+  // Artes do próprio Vitor (public/designs), uma por card
+  url: `/designs/arte-0${(index % 8) + 1}.webp`,
   Icon: skillIcons[skill.name] || Users
 }));
 
@@ -107,15 +108,16 @@ const Card = ({ card }: { card: ReturnType<typeof montarCards>[number] }) => {
       <div className="absolute bottom-0 left-0 w-3 h-3 sm:w-4 sm:h-4 border-b-[2px] border-l-[2px] border-blue-600 dark:border-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 transform -translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0" />
       <div className="absolute bottom-0 right-0 w-3 h-3 sm:w-4 sm:h-4 border-b-[2px] border-r-[2px] border-blue-600 dark:border-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 transform translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0" />
 
-      <div className="absolute inset-0 z-0 flex items-center justify-center p-6 sm:p-8 transition-transform duration-700 group-hover:scale-[1.03] opacity-60 group-hover:opacity-100">
+      <div className="absolute inset-0 z-0 transition-transform duration-700 group-hover:scale-[1.04]">
         <img
           src={card.url}
           alt={card.title}
-          className="w-full h-full object-contain dark:invert-0 invert"
+          loading="lazy"
+          className="w-full h-full object-cover object-top"
         />
       </div>
 
-      <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-background/60 to-transparent transition-opacity duration-500 opacity-90 group-hover:opacity-100 pointer-events-none"></div>
+      <div className="absolute inset-x-0 bottom-0 h-2/3 z-10 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none"></div>
 
       <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-8 lg:p-10 pointer-events-none">
         <div className="flex items-center gap-3 mb-3 lg:mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -127,11 +129,11 @@ const Card = ({ card }: { card: ReturnType<typeof montarCards>[number] }) => {
           </span>
         </div>
 
-        <h3 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase text-foreground mb-2 lg:mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase text-white mb-2 lg:mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">
           {card.title}
         </h3>
 
-        <p className="text-muted-foreground text-xs sm:text-sm lg:text-base leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150 border-t border-border/50 pt-3 lg:pt-4">
+        <p className="text-white/80 text-xs sm:text-sm lg:text-base leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150 border-t border-border/50 pt-3 lg:pt-4">
           {card.description}
         </p>
       </div>

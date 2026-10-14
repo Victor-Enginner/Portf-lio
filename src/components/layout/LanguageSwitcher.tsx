@@ -13,7 +13,7 @@ const NOMES: Record<Locale, string> = {
     ru: 'Русский',
 };
 
-// Troca de idioma: grava o cookie lido em i18n/request.ts e recarrega a página
+// Troca de idioma: grava o cookie (só da sessão) lido em i18n/request.ts e recarrega
 export function LanguageSwitcher({ variant = 'icon' }: { variant?: 'icon' | 'list' }) {
     const atual = useLocale() as Locale;
     const [aberto, setAberto] = useState(false);
@@ -29,7 +29,8 @@ export function LanguageSwitcher({ variant = 'icon' }: { variant?: 'icon' | 'lis
 
     const trocar = (idioma: Locale) => {
         if (idioma === atual) return setAberto(false);
-        document.cookie = `locale=${idioma};path=/;max-age=31536000`;
+        // Cookie de sessão: ao abrir o site de novo, volta para português
+        document.cookie = `locale=${idioma};path=/`;
         window.location.reload();
     };
 
