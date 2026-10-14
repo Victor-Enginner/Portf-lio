@@ -79,7 +79,7 @@ function SocialCard({ item }: { item: any }) {
                 </div>
                 <div className="flex flex-col">
                     <span className="text-lg font-bold text-foreground group-hover:text-primary transition-colors tracking-tight">{item.name}</span>
-                    <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground/80">@{item.username}</span>
+                    <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground/80">{item.name === "LinkedIn" || item.name === "WhatsApp" ? item.username : `@${item.username}`}</span>
                 </div>
             </div>
 
