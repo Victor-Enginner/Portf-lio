@@ -11,6 +11,22 @@ export async function generateStaticParams() {
     }));
 }
 
+import type { Metadata } from 'next';
+
+// Prévia de link de cada projeto: título, descrição e o print do próprio projeto
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const project = getPortfolio(await getLocale()).projects.find((p) => p.slug === slug);
+    if (!project) return {};
+    const imagens = project.image ? [{ url: project.image.replace('/projetos/', '/projetos/og/').replace('.webp', '.jpg'), width: 1200, height: 630, alt: project.title }] : undefined;
+    return {
+        title: project.title,
+        description: project.description,
+        openGraph: { title: project.title, description: project.description, images: imagens, type: 'article' },
+        twitter: { card: 'summary_large_image', title: project.title, description: project.description, images: imagens?.map((i) => i.url) },
+    };
+}
+
 import { getProjectImages } from '@/app/actions/getProjectImages'; // Import server action
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {

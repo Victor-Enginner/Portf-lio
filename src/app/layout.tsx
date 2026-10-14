@@ -39,6 +39,8 @@ export const metadata: Metadata = {
     keywords: ['Vitor Borsari', 'engenheiro de IA', 'agentes de IA', 'criação de sites', 'automação de WhatsApp', 'Next.js', 'prospecção'],
     authors: [{ name: 'Vitor Borsari' }],
     creator: 'Vitor Borsari',
+    // URL pública: necessária para WhatsApp/LinkedIn acharem a imagem de prévia (opengraph-image.png)
+    metadataBase: new URL('https://vitorborsari.vercel.app'),
     openGraph: {
         type: 'website',
         locale: 'pt_BR',
