@@ -44,10 +44,7 @@ const MetricCTAHijack = () => {
         <>
             <StatsSection showOnly="top" />
             <section className="relative">
-                {/* Layer 1: The Blog/Book Slider (Sticky) */}
-                <div className="sticky top-0 z-0 overflow-hidden">
-                    <StatsSection showOnly="bottom" />
-                </div>
+                {/* Slider do blog removido até existirem posts reais */}
 
                 {/* Layer 2: The CTA Section (Slides Over) */}
                 <div className="relative z-20 bg-background dark:bg-black">

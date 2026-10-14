@@ -25,23 +25,10 @@ export default function StatsSection({ scrollYProgress, showOnly }: { scrollYPro
     const visibleCount = 3;
 
     useEffect(() => {
-        const galleryImages = [
-            { src: '/gallery/Foto Utama.webp', alt: 'Foto Utama' },
-            { src: '/gallery/FotoSC1.webp', alt: 'Foto SC1' },
-            { src: '/gallery/FotoSC2.webp', alt: 'Foto SC2' },
-            { src: '/gallery/FotoSC3.webp', alt: 'Foto SC3' },
-            { src: '/gallery/FotoSC4.webp', alt: 'Foto SC4' },
-            { src: '/gallery/FotoSC5.webp', alt: 'Foto SC5' },
-            { src: '/gallery/academicaffairsdivision1.webp', alt: 'Academic Affairs' },
-            { src: '/gallery/computernetworkpracticumassistant2.webp', alt: 'Computer Network' },
-            { src: '/gallery/dataentryassistant1.webp', alt: 'Data Entry' },
-            { src: '/gallery/delegateaiesecfutureleaders20241.webp', alt: 'AIESEC' },
-            { src: '/gallery/environmentalhygieneteam1.webp', alt: 'Hygiene Team 1' },
-            { src: '/gallery/environmentalhygieneteam2.webp', alt: 'Hygiene Team 2' },
-            { src: '/gallery/logisticsoperatorcampusexpo20242.webp', alt: 'Logistics' },
-            { src: '/gallery/researchassistant1.webp', alt: 'Research Assistant 1' },
-            { src: '/gallery/researchassistant2.webp', alt: 'Research Assistant 2' },
-        ];
+        // Prints reais dos projetos publicados
+        const galleryImages = portfolioData.projects
+            .filter(p => p.image)
+            .map(p => ({ src: p.image as string, alt: p.title }));
         // Shuffle images randomly
         const shuffledImages = [...galleryImages].sort(() => 0.5 - Math.random());
         setImages(shuffledImages);
@@ -85,7 +72,7 @@ export default function StatsSection({ scrollYProgress, showOnly }: { scrollYPro
                             viewport={{ once: true }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight"
                         >
-                            Journal & Insights
+                            Projetos no ar
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0 }}
@@ -94,7 +81,7 @@ export default function StatsSection({ scrollYProgress, showOnly }: { scrollYPro
                             transition={{ delay: 0.2 }}
                             className="text-muted-foreground/80 text-lg md:text-xl font-medium max-w-2xl mx-auto"
                         >
-                            A curated collection of technical articles, engineering blueprints, and reflections on building intelligent systems.
+                            Sites, automações e agentes de IA publicados — clique e teste cada um.
                         </motion.p>
                     </div>
 
@@ -102,10 +89,10 @@ export default function StatsSection({ scrollYProgress, showOnly }: { scrollYPro
                     <div className="w-full">
                         <ZoomParallax images={images}>
                             <Link 
-                                href="/gallery" 
+                                href="/projects" 
                                 className="group flex items-center gap-3 px-6 py-3.5 bg-foreground text-background rounded-full font-bold uppercase tracking-widest text-xs hover:scale-105 active:scale-95 transition-all shadow-xl border border-border/10"
                             >
-                                View Gallery
+                                Ver projetos
                                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                             </Link>
                         </ZoomParallax>
