@@ -206,7 +206,7 @@ export function Navbar() {
                                 className="p-2 md:p-2.5 rounded-full bg-muted/80 hover:bg-muted transition-colors"
                                 aria-label="Focus mode"
                             >
-                                <Link href="https://victor_enginnerworkspace.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <Link href="https://victor-hub-ai.vercel.app/" target="_blank" rel="noopener noreferrer">
                                     <Focus className="w-4 h-4" />
                                 </Link>
                             </motion.button>
