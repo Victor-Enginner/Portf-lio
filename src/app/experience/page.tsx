@@ -29,8 +29,6 @@ import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
 import { Experience, Education } from '@/types';
 
-import ExperienceMarquee from '../../components/sections/ExperienceMarquee';
-import ExperienceStickyScroll from '../../components/sections/ExperienceStickyScroll';
 import { Timeline } from '@/components/ui/timeline';
 import { InnovativeExperienceHero } from '@/components/sections/InnovativeExperienceHero';
 import { DeferredMount } from '@/components/ui/DeferredMount';
@@ -214,7 +212,7 @@ function ExperienceTabSlider({ isLowPowerMode }: { isLowPowerMode: boolean }) {
                             exit={{ opacity: 0, y: isLowPowerMode ? 0 : -20 }}
                             transition={{ duration: 0.4 }}
                         >
-                            <ExperienceStickyScroll />
+                            {/* Formação acadêmica do template removida: só cursos reais */}
                             <div className="pb-[clamp(40px,10vh,120px)]" />
                             <ExperienceHighlightSection type="education" isLowPowerMode={isLowPowerMode} />
                         </motion.div>
@@ -432,7 +430,7 @@ export default function ExperiencePage() {
                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                     className="w-full relative z-10 pt-20 mb-20 -mt-10 md:-mt-20 overflow-hidden"
                 >
-                    <ExperienceMarquee />
+                    {/* Faixa de logos de empresas removida (não eram clientes reais) */}
                 </motion.div>
 
                 <motion.div
