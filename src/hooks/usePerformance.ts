@@ -13,6 +13,7 @@ export function usePerformance() {
         isMobile: false,
         isTablet: false,
         isLowPowerMode: true, // Default to true (safe mode) initially
+        isWeakDevice: false,
     });
 
     useEffect(() => {
@@ -22,9 +23,18 @@ export function usePerformance() {
             const isMobile = width < 768;
             const isTablet = width >= 768 && width < 1024;
 
+            // Aparelho fraco pelo hardware, não pela tela: pouca RAM, poucos núcleos ou economia de dados.
+            // Não muda o visual; só reduz a resolução interna das cenas 3D.
+            const nav = navigator as Navigator & { deviceMemory?: number; connection?: { saveData?: boolean } };
+            const isWeakDevice =
+                (nav.deviceMemory !== undefined && nav.deviceMemory <= 4) ||
+                (nav.hardwareConcurrency !== undefined && nav.hardwareConcurrency <= 4) ||
+                nav.connection?.saveData === true;
+
             setState({
                 isMobile,
                 isTablet,
+                isWeakDevice,
                 // On mobile and tablet, we generally want to avoid heavy 3D/Shaders
                 isLowPowerMode: isMobile || isTablet,
             });
@@ -42,6 +52,7 @@ export function usePerformance() {
             isMobile: false,
             isTablet: false,
             isLowPowerMode: true,
+            isWeakDevice: false,
         };
     }
 

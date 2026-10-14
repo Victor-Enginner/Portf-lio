@@ -43,7 +43,7 @@ export function Lanyard({
     isLowPowerMode: isLowPowerModeProp
 }: LanyardProps) {
     const [isMobile, setIsMobile] = useState<boolean>(false);
-    const { isLowPowerMode: isLowPowerModeHook } = usePerformance();
+    const { isLowPowerMode: isLowPowerModeHook, isWeakDevice } = usePerformance();
     const isLowPowerMode = isLowPowerModeProp ?? isLowPowerModeHook;
     const { resolvedTheme } = useTheme();
     const isDark = resolvedTheme === 'dark';
@@ -97,7 +97,7 @@ export function Lanyard({
         <div className="relative z-0 w-full h-full flex justify-center items-center transform scale-100 origin-center">
             <Canvas
                 camera={{ position, fov }}
-                dpr={[1, isMobile ? 1.5 : 2]}
+                dpr={isWeakDevice ? 1 : [1, isMobile ? 1.5 : 2]}
                 gl={{ alpha: transparent, antialias: false, powerPreference: 'high-performance' }}
                 onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
             >
