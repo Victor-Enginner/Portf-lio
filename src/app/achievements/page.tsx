@@ -211,7 +211,7 @@ const AchievementCard = React.memo(React.forwardRef<HTMLDivElement, {
                             <div className="flex items-center gap-1.5">
                                 <Calendar className="w-3 h-3 text-white/70" />
                                 <span className="text-[10px] text-white/90 font-bold drop-shadow-sm">
-                                    {new Date(achievement.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }).toUpperCase()}
+                                    {new Date(achievement.date).toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' }).toUpperCase()}
                                 </span>
                             </div>
                         </div>

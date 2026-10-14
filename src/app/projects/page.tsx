@@ -230,7 +230,7 @@ function ProjectListItem({
                                     ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 dark:border-emerald-500/20"
                                     : "bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30 dark:border-blue-500/20"
                             )}>
-                                {isOngoing ? 'ongoing' : 'done'}
+                                {isOngoing ? 'em andamento' : 'no ar'}
                             </span>
                         </div>
                         <p className="text-muted-foreground text-sm sm:text-base truncate max-w-2xl hidden sm:block">
@@ -247,7 +247,7 @@ function ProjectListItem({
                         animate={{ x: isHovered ? -5 : 0, opacity: isHovered ? 1 : 0.4 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">view</span>
+                        <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">ver</span>
                         <motion.div animate={{ x: isHovered ? 5 : 0 }} transition={{ duration: 0.3 }}>
                             <ArrowRight className={cn("w-5 h-5 transition-colors", isHovered ? (isOngoing ? "text-emerald-500 dark:text-emerald-400" : "text-blue-500 dark:text-blue-400") : "text-muted-foreground")} />
                         </motion.div>
@@ -1019,10 +1019,10 @@ export default function ProjectsPage() {
     const [selectedCategory, setSelectedCategory] = useState('All');
 
     const categories = [
-        { id: 'All', label: 'All Realms', icon: Globe },
-        { id: 'AI & Machine Learning', label: 'Artificial Intelligence', icon: Brain },
-        { id: 'Software Engineering', label: 'Software Architecture', icon: Database },
-        { id: 'More', label: 'More', icon: Layers },
+        { id: 'All', label: 'Todos', icon: Globe },
+        { id: 'AI & Machine Learning', label: 'Inteligência Artificial', icon: Brain },
+        { id: 'Software Engineering', label: 'Sites e Sistemas', icon: Database },
+        { id: 'More', label: 'Criativos', icon: Layers },
     ];
 
     const [projects, setProjects] = useState(portfolioData.projects);
@@ -1156,7 +1156,7 @@ export default function ProjectsPage() {
                                 <div className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                                     <h2 className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground">
-                                        Projects Archive
+                                        Arquivo de projetos
                                     </h2>
                                     <span className="px-2 py-0.5 rounded-md bg-white/5 text-[10px] font-mono text-muted-foreground border border-white/5">
                                         {String(filteredProjects.length).padStart(2, '0')}
@@ -1327,7 +1327,7 @@ export default function ProjectsPage() {
                                     onClick={() => setVisibleCount(visibleCount < filteredProjects.length ? filteredProjects.length : 10)}
                                     showArrowFlip={visibleCount >= filteredProjects.length}
                                 >
-                                    {visibleCount < filteredProjects.length ? 'View All Projects' : 'View Less'}
+                                    {visibleCount < filteredProjects.length ? 'Ver todos' : 'Ver menos'}
                                 </MagneticFillButton>
                             </motion.div>
                         )

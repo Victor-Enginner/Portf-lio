@@ -149,7 +149,7 @@ function EducationContent() {
                                         <h4 className="font-semibold text-foreground">{edu.institution}</h4>
                                         <p className="text-sm text-muted-foreground">{edu.degree} - {edu.major}</p>
                                         <p className="text-xs text-muted-foreground mt-1">
-                                            {formatDate(edu.startDate)} - {edu.endDate ? formatDate(edu.endDate) : 'Present'}
+                                            {formatDate(edu.startDate)} - {edu.endDate ? formatDate(edu.endDate) : 'Atual'}
                                         </p>
                                     </div>
                                     {edu.gpa && (
@@ -197,7 +197,7 @@ function JourneyContent() {
         >
             <div className="space-y-2">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                    Changelog from my journey
+                    Minha trajetória
                 </h2>
                 <p className="text-muted-foreground max-w-lg">
                     I've been working on various projects and roles. Here's a timeline of my professional journey.
@@ -242,7 +242,7 @@ function JourneyContent() {
                                                 </p>
                                             </div>
                                             <span className="text-xs font-mono text-muted-foreground bg-secondary/50 px-2 py-1 rounded whitespace-nowrap">
-                                                {formatDate(exp.startDate)} - {exp.endDate ? formatDate(exp.endDate) : 'Present'}
+                                                {formatDate(exp.startDate)} - {exp.endDate ? formatDate(exp.endDate) : 'Atual'}
                                             </span>
                                         </div>
 
@@ -294,7 +294,7 @@ function ExperienceContent() {
             <div className="p-4 rounded-2xl bg-primary/10">
                 <Rocket className="w-12 h-12 text-primary" />
             </div>
-            <h3 className="text-2xl font-bold text-foreground">Coming Soon</h3>
+            <h3 className="text-2xl font-bold text-foreground">Em breve</h3>
             <p className="text-muted-foreground max-w-md">
                 Detailed experience breakdown with project highlights and achievements will be available here soon.
             </p>
@@ -326,14 +326,14 @@ export default function ExperienceTabsSection() {
                     {activeTab === 'experience' && <Rocket className="w-8 h-8 text-primary" />}
                 </div>
                 <h3 className="text-2xl font-bold text-center text-foreground capitalize">
-                    {activeTab === 'education' && 'Academic Foundation'}
-                    {activeTab === 'journey' && 'Professional Journey'}
-                    {activeTab === 'experience' && 'Work Experience'}
+                    {activeTab === 'education' && 'Formação'}
+                    {activeTab === 'journey' && 'Trajetória'}
+                    {activeTab === 'experience' && 'Projetos'}
                 </h3>
                 <p className="text-center text-muted-foreground mt-2 max-w-md mx-auto">
-                    {activeTab === 'education' && 'Building strong foundations through academic excellence'}
-                    {activeTab === 'journey' && 'A timeline of roles, responsibilities, and growth'}
-                    {activeTab === 'experience' && 'Detailed breakdown of professional experiences'}
+                    {activeTab === 'education' && 'Cursos concluídos e verificáveis'}
+                    {activeTab === 'journey' && 'Clientes e trabalhos entregues'}
+                    {activeTab === 'experience' && 'O que construí e publiquei'}
                 </p>
             </motion.div>
 

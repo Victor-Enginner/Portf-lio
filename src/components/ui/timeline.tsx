@@ -65,7 +65,7 @@ export const Timeline = ({ data, isLowPowerMode }: { data: TimelineEntry[]; isLo
             whileHover={{ scale: 1.02, originX: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
           >
-            Changelog from my journey
+            Minha trajetória
           </motion.h2>
           <motion.p
             className="text-neutral-600 dark:text-neutral-400 text-base md:text-xl max-w-2xl leading-relaxed"
@@ -73,7 +73,7 @@ export const Timeline = ({ data, isLowPowerMode }: { data: TimelineEntry[]; isLo
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            A timeline of roles, responsibilities, and professional growth across various organizations.
+            Clientes atendidos, produtos lançados e o que vem pela frente.
           </motion.p>
         </motion.div>
       </div>

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Contact',
-    description: 'Get in touch with me for collaborations and opportunities.',
+    title: 'Contato',
+    description: 'Peça um orçamento de site, automação ou agente de IA.',
 };
 
 export default function ContactLayout({

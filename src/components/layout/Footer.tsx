@@ -107,7 +107,7 @@ export function Footer() {
                 timeZone: 'America/Sao_Paulo'
             };
             const timeString = new Intl.DateTimeFormat('en-US', options).format(now);
-            // Jakarta is UTC+7
+            // Horário de São Paulo
             setLocalTime(`${timeString} UTC+7`);
         };
 
@@ -386,12 +386,12 @@ export function Footer() {
                                                 {localTime}
                                             </p>
                                             <a
-                                                href="https://www.google.com/maps/place/Jakarta,+Indonesia"
+                                                href="https://www.google.com/maps/place/S%C3%A3o+Paulo"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="text-zinc-900 dark:text-white text-[1.2vw] min-text-[14px] font-medium tracking-tight hover:text-zinc-500 dark:hover:text-zinc-400 transition-colors inline-block"
                                             >
-                                                Jakarta, Indonesia
+                                                São Paulo, Brasil
                                             </a>
                                         </FooterColumn>
 

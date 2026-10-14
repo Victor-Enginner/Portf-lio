@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Projects',
-    description: 'Explore my portfolio of projects and work.',
+    title: 'Projetos',
+    description: 'Sites, automações e agentes de IA publicados.',
 };
 
 export default function ProjectsLayout({

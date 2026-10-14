@@ -41,20 +41,18 @@ function Clock() {
     );
 }
 
-// Sub-links for the "About" dropdown
-// Sub-links for the "About" dropdown
+// Sub-links do menu "Sobre"
 const useNavItems = () => {
     const t = useTranslations('navigation.menu');
     return [
         {
-            label: "About",
+            label: "Sobre",
             links: [
-                { label: t('intelligence'), href: "/intelligence", description: t('intelligenceDesc') },
-                { label: t('achievements'), href: "/achievements", description: t('achievementsDesc') },
-                { label: t('skills'), href: "/skills", description: t('skillsDesc') },
-                { label: t('experience'), href: "/experience", description: t('experienceDesc') },
                 { label: t('projects'), href: "/projects", description: t('projectsDesc') },
-                { label: t('blog'), href: "/blog", description: t('blogDesc') },
+                { label: t('experience'), href: "/experience", description: t('experienceDesc') },
+                { label: t('skills'), href: "/skills", description: t('skillsDesc') },
+                { label: t('achievements'), href: "/achievements", description: t('achievementsDesc') },
+                { label: t('intelligence'), href: "/intelligence", description: t('intelligenceDesc') },
             ]
         }
     ];

@@ -225,7 +225,7 @@ export default function CardNav({
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    const aboutItem = items.find(i => i.label === "About") || items[0];
+    const aboutItem = items.find(i => i.label === "Sobre") || items[0];
     const allHrefs = ['/projects', '/experience', '/skills', '/achievements', '/blog', '/gallery', '/resume'];
     const isActive = useMemo(() => {
         return allHrefs.some(href => pathname === href || pathname.startsWith(`${href}/`));
@@ -290,14 +290,14 @@ export default function CardNav({
                             <div className="flex-1 p-5 flex flex-col gap-4">
                                 {/* Top 2 big boxes */}
                                 <div className="grid grid-cols-2 gap-4">
-                                    <MegaBoxBig href="/projects" icon={Rocket} title="Project" desc="Discover my latest builds" theme={theme} pathname={pathname} />
-                                    <MegaBoxBig href="/experience" icon={Briefcase} title="Experience" desc="My professional journey" theme={theme} pathname={pathname} />
+                                    <MegaBoxBig href="/projects" icon={Rocket} title="Projetos" desc="Tudo que está no ar" theme={theme} pathname={pathname} />
+                                    <MegaBoxBig href="/experience" icon={Briefcase} title="Experiência" desc="Clientes e trabalhos" theme={theme} pathname={pathname} />
                                 </div>
                                 {/* Bottom 3 small boxes */}
                                 <div className="grid grid-cols-3 gap-4">
-                                    <MegaBoxSmall href="/skills" icon={Navigation} title="Skill" desc="Technical expertise" theme={theme} pathname={pathname} />
-                                    <MegaBoxSmall href="/achievements" icon={Trophy} title="Achievement" desc="Milestones reached" theme={theme} pathname={pathname} />
-                                    <MegaBoxSmall href="/blog" icon={BookOpen} title="Blog" desc="Insights and docs" theme={theme} pathname={pathname} />
+                                    <MegaBoxSmall href="/skills" icon={Navigation} title="Habilidades" desc="O que eu uso" theme={theme} pathname={pathname} />
+                                    <MegaBoxSmall href="/achievements" icon={Trophy} title="Certificados" desc="Cursos verificáveis" theme={theme} pathname={pathname} />
+                                    <MegaBoxSmall href="/contact" icon={MessageCircle} title="Contato" desc="Pedir orçamento" theme={theme} pathname={pathname} />
                                 </div>
                             </div>
 
@@ -306,9 +306,9 @@ export default function CardNav({
                                 "w-[280px] p-4 flex flex-col justify-center gap-4 border-l",
                                 theme === 'dark' ? "border-white/5" : "border-black/5"
                             )}>
-                                <SidebarLink href="/gallery" icon={ImageIcon} title="Gallery" desc="Visual portfolio & moments" theme={theme} pathname={pathname} />
-                                <SidebarLink href="/resume" icon={FileText} title="Resume" desc="View or download my CV" theme={theme} pathname={pathname} />
-                                <SidebarLink href="#" icon={MessageCircle} title="Chat" desc="Coming soon to connect" theme={theme} pathname={pathname} />
+                                <SidebarLink href="https://wa.me/5516982141822" icon={MessageCircle} title="WhatsApp" desc="(16) 98214-1822" theme={theme} pathname={pathname} />
+                                <SidebarLink href="https://www.instagram.com/engenheiro.ai/" icon={ImageIcon} title="Instagram" desc="@engenheiro.ai" theme={theme} pathname={pathname} />
+                                <SidebarLink href="https://github.com/Victor-Enginner" icon={FileText} title="GitHub" desc="Código dos projetos" theme={theme} pathname={pathname} />
                             </div>
                         </div>
                     </motion.div>

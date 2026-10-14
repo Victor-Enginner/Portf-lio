@@ -118,13 +118,13 @@ const CenterImage = ({ scrollY }: { scrollY: MotionValue<number> }) => {
                     <div className="absolute inset-0 bg-primary/2 rounded-[clamp(2rem,6vw,4rem)] pointer-events-none" />
 
                     <h1 className="text-[clamp(3.5rem,15vw,15rem)] font-black text-foreground dark:text-white tracking-[-0.06em] leading-[0.8] uppercase text-center mb-[clamp(24px,4vh,48px)] -ml-2">
-                        EXPERIENCE
+                        EXPERIÊNCIA
                     </h1>
 
                     <p className="w-full max-w-4xl text-center text-[clamp(10px,1.2vw,14px)] font-bold text-foreground/50 dark:text-white/50 tracking-[clamp(0.1em,0.4em,0.4em)] leading-relaxed md:leading-[2.2] uppercase">
-                        Merging technical precision with creative vision.
+                        Do código ao cliente.
                         <br className="hidden md:block" />
-                        A curated timeline of my professional journey, from foundational code to AI solutions.
+                        Trabalhos entregues, projetos publicados e o que estou estudando.
                     </p>
                 </motion.div>
             </div>

@@ -39,19 +39,19 @@ type TabType = 'education' | 'journey' | 'experience';
 
 const highlightContent = {
     education: {
-        title: "Building the Future",
-        highlight: "Through Knowledge",
-        description: "Every line of code starts with understanding. My academic journey at Telkom University shapes how I approach complex problems with systematic thinking."
+        title: "Aprendendo",
+        highlight: "todo dia",
+        description: "Autodidata, com formação contínua na DIO em IA, agentes e cloud — em parceria com IBM, Santander e AWS."
     },
     journey: {
-        title: "Crafting Experiences",
-        highlight: "That Matter",
-        description: "From internships to leadership roles, each step has been a lesson in collaboration, innovation, and pushing boundaries."
+        title: "Do zero",
+        highlight: "ao cliente",
+        description: "Comecei construindo ferramentas para achar meus próprios clientes. Hoje entrego para negócios no Brasil e em Portugal."
     },
     experience: {
-        title: "Turning Ideas",
-        highlight: "Into Reality",
-        description: "Real-world projects that solve real problems. Building solutions that make a difference."
+        title: "Ideias",
+        highlight: "no ar",
+        description: "Projetos reais, publicados e funcionando. Clique e teste cada um."
     }
 };
 
@@ -99,16 +99,16 @@ function ExperienceTabSlider({ isLowPowerMode }: { isLowPowerMode: boolean }) {
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     const tabs: TabItem[] = [
-        { id: 'education', label: 'Education', description: 'Building strong foundations through academic excellence at Telkom University and SMAN 88 Jakarta.' },
-        { id: 'journey', label: 'Journey', description: 'A timeline of roles, responsibilities, and professional growth across various organizations.' },
-        { id: 'experience', label: 'Experience', description: 'Detailed breakdown of work experiences with project highlights and achievements.' },
+        { id: 'education', label: 'Formação', description: 'Cursos concluídos e verificáveis.' },
+        { id: 'journey', label: 'Trajetória', description: 'Clientes e trabalhos entregues.' },
+        { id: 'experience', label: 'Projetos', description: 'O que construí e publiquei.' },
     ];
 
     const categories = [
-        { id: 'professional', label: 'Professional Experience', icon: Briefcase, color: 'bg-blue-600', prefix: 'prof-' },
-        { id: 'leadership', label: 'Leadership & Organizational', icon: Users, color: 'bg-purple-600', prefix: 'lead-' },
-        { id: 'volunteer', label: 'Volunteer Experience', icon: Heart, color: 'bg-orange-500', prefix: 'vol-' },
-        { id: 'certifications', label: 'Certifications & Development', icon: Award, color: 'bg-emerald-500', prefix: 'cert-' },
+        { id: 'professional', label: 'Trabalhos', icon: Briefcase, color: 'bg-blue-600', prefix: 'prof-' },
+        { id: 'leadership', label: 'Liderança', icon: Users, color: 'bg-purple-600', prefix: 'lead-' },
+        { id: 'volunteer', label: 'Voluntariado', icon: Heart, color: 'bg-orange-500', prefix: 'vol-' },
+        { id: 'certifications', label: 'Certificados', icon: Award, color: 'bg-emerald-500', prefix: 'cert-' },
     ];
 
     const heightFix = () => {
@@ -335,7 +335,7 @@ function ExperienceTabSlider({ isLowPowerMode }: { isLowPowerMode: boolean }) {
                                                 className="group flex items-center gap-3 text-sm font-bold uppercase tracking-wider text-neutral-500 hover:text-black dark:hover:text-white transition-colors px-4 py-2 -ml-4 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800/50 w-fit"
                                             >
                                                 <ArrowRight className="w-4 h-4 rotate-180 group-hover:-translate-x-1 transition-transform" />
-                                                <span>Back to Selection</span>
+                                                <span>Voltar</span>
                                             </button>
 
                                             <div className="space-y-2">
@@ -375,7 +375,7 @@ function ExperienceTabSlider({ isLowPowerMode }: { isLowPowerMode: boolean }) {
 
                                             {filteredExperiences.length === 0 && (
                                                 <div className="flex flex-col items-center justify-center py-20 text-neutral-400">
-                                                    <p>No records found in this sector.</p>
+                                                    <p>Nada por aqui ainda.</p>
                                                 </div>
                                             )}
                                         </div>
@@ -678,7 +678,7 @@ const LinkPreviewCard = ({ url, title, id, logo }: { url: string; title?: string
                         {title || "Project Resource"}
                     </h4>
                     <p className="text-[9px] text-neutral-500 line-clamp-2 leading-relaxed opacity-80">
-                        View documentation and project details on {domain}.
+                        Veja o projeto em {domain}.
                     </p>
                 </div>
                 {logo && (
@@ -925,7 +925,7 @@ function ExperienceTimeline({ isLowPowerMode }: { isLowPowerMode: boolean }) {
                             </div>
                             <div className="flex flex-col sm:items-end gap-2">
                                 <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-900 px-2 py-1 rounded w-fit">
-                                    {formatDate(exp.startDate)} - {exp.endDate ? formatDate(exp.endDate) : 'Present'}
+                                    {formatDate(exp.startDate)} - {exp.endDate ? formatDate(exp.endDate) : 'Atual'}
                                 </span>
                             </div>
                         </div>
