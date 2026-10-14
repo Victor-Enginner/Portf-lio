@@ -46,13 +46,13 @@ export const ToolsSection = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-xs font-bold uppercase tracking-[0.4em] text-foreground block mb-6"
                 >
-                    WORKFLOW & INFRASTRUCTURE
+                    FLUXO DE TRABALHO
                 </motion.span>
                 <h2 className="text-5xl md:text-8xl font-bold tracking-tighter text-foreground mb-8 max-w-4xl mx-auto leading-[1.1]">
-                    Professional Tooling
+                    Ferramentas
                 </h2>
                 <p className="max-w-3xl mx-auto text-lg md:text-xl text-foreground/60 leading-relaxed font-medium px-4">
-                    Leveraging industrial-grade platforms for development, design, and deployment to ensure rapid and reliable software delivery.
+                    O que uso para programar, versionar, desenhar e publicar.
                 </p>
             </motion.div>
 

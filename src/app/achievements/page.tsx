@@ -241,7 +241,7 @@ const AchievementCard = React.memo(React.forwardRef<HTMLDivElement, {
                         )}>
                             <div className="flex items-center gap-2">
                                 <Eye className="w-4 h-4 text-muted-foreground/40" />
-                                <span className="text-[10px] text-muted-foreground/50 font-bold uppercase tracking-wider">Expand Archive</span>
+                                <span className="text-[10px] text-muted-foreground/50 font-bold uppercase tracking-wider">Abrir</span>
                             </div>
                             <motion.div
                                 animate={{ x: isHovered ? [0, 4, 0] : 0 }}
@@ -833,7 +833,7 @@ export default function AchievementsPage() {
                                     <div className="flex items-center gap-3 mb-2">
                                         <div className="w-2 h-2 rounded-full bg-foreground" />
                                         <h1 className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">
-                                            The Archive
+                                            Arquivo
                                         </h1>
                                     </div>
                                     <div className="h-1.5 w-20 bg-foreground opacity-100" />
@@ -861,16 +861,16 @@ export default function AchievementsPage() {
                             animate="show"
                         >
                             <motion.div variants={staggerItem}>
-                                <NavItem label="All Entries" active={activeCategory === 'all'} onClick={() => setActiveCategory('all')} count={getCategoryCount('all')} isCollapsed={isSidebarCollapsed} />
+                                <NavItem label="Todos" active={activeCategory === 'all'} onClick={() => setActiveCategory('all')} count={getCategoryCount('all')} isCollapsed={isSidebarCollapsed} />
                             </motion.div>
                             <motion.div variants={staggerItem}>
-                                <NavItem label="Certifications" active={activeCategory === 'certification'} onClick={() => setActiveCategory('certification')} count={getCategoryCount('certification')} isCollapsed={isSidebarCollapsed} />
+                                <NavItem label="Certificados" active={activeCategory === 'certification'} onClick={() => setActiveCategory('certification')} count={getCategoryCount('certification')} isCollapsed={isSidebarCollapsed} />
                             </motion.div>
                             <motion.div variants={staggerItem}>
-                                <NavItem label="Awards" active={activeCategory === 'award'} onClick={() => setActiveCategory('award')} count={getCategoryCount('award')} isCollapsed={isSidebarCollapsed} />
+                                <NavItem label="Prêmios" active={activeCategory === 'award'} onClick={() => setActiveCategory('award')} count={getCategoryCount('award')} isCollapsed={isSidebarCollapsed} />
                             </motion.div>
                             <motion.div variants={staggerItem}>
-                                <NavItem label="Competitions" active={activeCategory === 'competition'} onClick={() => setActiveCategory('competition')} count={getCategoryCount('competition')} isCollapsed={isSidebarCollapsed} />
+                                <NavItem label="Competições" active={activeCategory === 'competition'} onClick={() => setActiveCategory('competition')} count={getCategoryCount('competition')} isCollapsed={isSidebarCollapsed} />
                             </motion.div>
                         </motion.nav>
 
@@ -1028,10 +1028,10 @@ export default function AchievementsPage() {
                             className="text-center mb-12"
                         >
                             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-3">
-                                Technical Universe
+                                Tecnologias
                             </h2>
                             <p className="text-sm text-muted-foreground/60 max-w-lg mx-auto leading-relaxed">
-                                Interact with the core technologies and values that drive my research and development journey.
+                                As ferramentas que uso para construir sites, automações e agentes.
                             </p>
                         </motion.div>
 
@@ -1044,7 +1044,7 @@ export default function AchievementsPage() {
                         >
                             <ErrorBoundary fallback={<div className="text-center opacity-50">Visuals Unavailable</div>}>
                                 <FallingText
-                                    text="Python TensorFlow LangChain Next.js PyTorch OpenCV Blockchain Kubernetes Docker TypeScript DeepLearning Ultralytics Nodejs MLOps Cloud"
+                                    text="TypeScript Next.js React Nodejs Python Tailwind Threejs Ollama Agentes Automação WhatsApp Docker Vercel AWS"
                                     highlightWords={['Python', 'TensorFlow', 'LangChain', 'Blockchain', 'DeepLearning']}
                                     trigger="scroll"
                                     gravity={0.8}

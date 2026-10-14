@@ -3,7 +3,7 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { Send, CheckCircle, AlertCircle, Loader2, Disc, Music, ArrowUpRight, Sparkles, HelpCircle, MessageSquare, ExternalLink, Github, Linkedin, Twitter, Instagram, ChevronDown } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Loader2, Disc, Music, ArrowUpRight, Sparkles, HelpCircle, MessageSquare, ExternalLink, Github, Linkedin, Twitter, Instagram, ChevronDown, MessageCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { portfolioData } from '@/data/portfolio';
 import dynamic from 'next/dynamic';
@@ -56,7 +56,8 @@ const socialIconsMap: Record<string, React.ElementType> = {
     twitter: Twitter,
     instagram: Instagram,
     discord: Disc,
-    spotify: Music
+    spotify: Music,
+    whatsapp: MessageCircle
 };
 
 function SocialCard({ item }: { item: any }) {
@@ -128,31 +129,19 @@ function ContactForm() {
     const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    // Envia direto para o WhatsApp: sem backend, o lead cai na conversa na hora
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setStatus('loading');
-
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (response.ok) {
-                setStatus('success');
-                setFormData({ name: '', email: '', subject: '', message: '' });
-            } else {
-                setStatus('error');
-            }
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            setStatus('error');
-        } finally {
-            setTimeout(() => setStatus('idle'), 3000);
-        }
+        const texto = [
+            `Olá, Vitor! Sou ${formData.name}.`,
+            formData.subject && `Assunto: ${formData.subject}`,
+            formData.message,
+            formData.email && `Meu e-mail: ${formData.email}`,
+        ].filter(Boolean).join('\n\n');
+        window.open(`https://wa.me/5516982141822?text=${encodeURIComponent(texto)}`, '_blank');
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setStatus('idle'), 3000);
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -238,7 +227,7 @@ function FAQSection() {
         <div className="w-full max-w-6xl mx-auto py-20 px-4 md:px-8">
             <div className="flex flex-col items-center mb-16 relative z-10 text-center">
 
-                <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4">Frequently Asked Questions</h2>
+                <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4">Perguntas frequentes</h2>
                 <div className="h-1 w-20 bg-primary/20 rounded-full" />
             </div>
 
@@ -288,12 +277,10 @@ function FAQSection() {
 }
 
 const socialDescriptions: Record<string, string> = {
-    GitHub: "Open Source",
-    LinkedIn: "Professional",
-    Twitter: "Thoughts",
-    Instagram: "Lifestyle",
-    Discord: "Community",
-    Spotify: "Music"
+    GitHub: "Código",
+    LinkedIn: "Profissional",
+    Instagram: "Conteúdo",
+    WhatsApp: "Orçamento"
 };
 
 import { usePerformance } from '@/hooks/usePerformance';
@@ -307,14 +294,14 @@ export default function ContactPage() {
         return {
             name: (link?.platform || platform).charAt(0).toUpperCase() + (link?.platform || platform).slice(1),
             username: link?.username || '@user',
-            body: socialDescriptions[link?.platform || platform] || "Connect",
+            body: socialDescriptions[link?.platform || platform] || "Conectar",
             image: socialIconsMap[platform.toLowerCase()] || ArrowUpRight,
             url: link?.url || '#'
         };
     };
 
     const row1Real = ['linkedin', 'github', 'instagram'].map(getSocialItem);
-    const row2Real = ['twitter', 'discord', 'spotify'].map(getSocialItem);
+    const row2Real = ['whatsapp', 'instagram', 'linkedin'].map(getSocialItem);
 
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({

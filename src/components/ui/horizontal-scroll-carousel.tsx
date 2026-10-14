@@ -68,11 +68,11 @@ export const HorizontalScrollCarousel = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-foreground to-foreground/40 leading-[0.9] pb-2">
-              Strategic Directives
+              Como eu trabalho
             </h2>
             <div className="w-20 h-1.5 bg-primary mt-4 mb-4 rounded-full opacity-80"></div>
             <p className="text-muted-foreground text-base md:text-lg lg:text-xl font-medium max-w-2xl leading-relaxed">
-              Interpersonal capabilities engineered for high-impact leadership and systemic problem solving in complex environments.
+              Foco em entregar resultado: do briefing ao site no ar, com comunicação direta.
             </p>
           </motion.div>
         </div>

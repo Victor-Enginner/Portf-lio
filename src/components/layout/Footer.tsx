@@ -205,7 +205,7 @@ export function Footer() {
                                             >
                                                 {copyrightIndex === 0
                                                     ? `${portfolioData.personal.name}.`
-                                                    : "All rights reserved."}
+                                                    : "Todos os direitos reservados."}
                                             </motion.span>
                                         )}
                                     </AnimatePresence>
@@ -339,7 +339,7 @@ export function Footer() {
                                     <div className="w-full grid grid-cols-4 gap-x-[5vw] gap-y-[4vh]">
                                         <FooterColumn title={t('links')}>
                                             <FooterLink href="/">{tNav('home')}</FooterLink>
-                                            <FooterLink href="/resume">{tNav('resume')}</FooterLink>
+                                            <FooterLink href="/projects">{tNav('projects')}</FooterLink>
                                             <FooterLink href="/contact">{tNav('contact')}</FooterLink>
                                             <AboutHoverMenu tNav={tNav} onExpandChange={setIsAboutExpanded} />
                                         </FooterColumn>

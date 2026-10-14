@@ -69,8 +69,7 @@ export const SoftSkills = () => {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="text-foreground text-lg font-sans max-w-2xl pt-6 leading-relaxed border-t border-border mt-4"
                     >
-                        Interpersonal capabilities engineered for high-impact
-                        leadership and systemic problem solving in complex environments.
+                        Foco em entregar resultado: do briefing ao site no ar, com comunicação direta.
                     </motion.p>
                 </div>
 

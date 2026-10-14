@@ -253,7 +253,8 @@ export const portfolioData: PortfolioData = {
             type: 'Curso',
             tags: ['Cloud', 'AWS'],
             category: 'certification',
-            image: '/certificados/ZETD6UKC.pdf',
+            image: '/certificados/ZETD6UKC.webp',
+            credentialUrl: '/certificados/ZETD6UKC.pdf',
         },
         {
             id: 'cert-2',
@@ -264,7 +265,8 @@ export const portfolioData: PortfolioData = {
             type: 'Curso',
             tags: ['IA', 'Lovable'],
             category: 'certification',
-            image: '/certificados/XEA9XJ5X.pdf',
+            image: '/certificados/XEA9XJ5X.webp',
+            credentialUrl: '/certificados/XEA9XJ5X.pdf',
         },
         {
             id: 'cert-3',
@@ -275,7 +277,8 @@ export const portfolioData: PortfolioData = {
             type: 'Curso',
             tags: ['IA', 'Agentes'],
             category: 'certification',
-            image: '/certificados/MPSUID7O.pdf',
+            image: '/certificados/MPSUID7O.webp',
+            credentialUrl: '/certificados/MPSUID7O.pdf',
         },
         {
             id: 'cert-4',
@@ -286,7 +289,8 @@ export const portfolioData: PortfolioData = {
             type: 'Curso',
             tags: ['IA', 'Enterprise'],
             category: 'certification',
-            image: '/certificados/0SW9FA4V.pdf',
+            image: '/certificados/0SW9FA4V.webp',
+            credentialUrl: '/certificados/0SW9FA4V.pdf',
         },
     ],
     techStack: [

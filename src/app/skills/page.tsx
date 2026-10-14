@@ -225,7 +225,7 @@ export default function SkillsPage() {
                                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                                 className="relative z-10 text-[9vw] md:text-[7vw] font-semibold uppercase leading-[0.9] tracking-tight text-zinc-800 dark:text-zinc-400 group-hover:text-black dark:group-hover:text-white select-none transition-colors duration-500"
                             >
-                                SKILLS & TOOLS
+                                HABILIDADES
 
                                 {/* Crystalline Sheen (Subtle) */}
                                 <div className="absolute inset-x-0 inset-y-0 flex justify-center pointer-events-none overflow-hidden">
@@ -326,13 +326,13 @@ export default function SkillsPage() {
                                     transition={{ duration: 0.5, delay: 0.2 }}
                                     className="text-[10px] font-mono uppercase tracking-[0.5em] text-primary/80 font-bold block"
                                 >
-                                    CORE TECHNOLOGIES
+                                    TECNOLOGIAS
                                 </motion.span>
                                 <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-foreground">
-                                    The Engineering Foundation
+                                    A base de tudo
                                 </h2>
                                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed pt-2">
-                                    Building scalable architectures using modern languages and frameworks optimized for high-performance execution.
+                                    As linguagens e frameworks que uso para colocar sites, automações e agentes no ar.
                                 </p>
                             </motion.div>
                         </div>

@@ -16,22 +16,22 @@ interface KineticTechGridProps {
 
 // Map tech names to descriptions that mimic the professional tone of Image 1
 const techDescriptions: Record<string, string> = {
-    'Python': 'High-performance AI modeling and automation.',
-    'TypeScript': 'Type-safe scalable application logic.',
-    'JavaScript': 'Dynamic and interactive web development.',
+    'Python': 'Automações e scripts de dados.',
+    'TypeScript': 'Código tipado e seguro.',
+    'JavaScript': 'Interatividade na web.',
     'Solidity': 'Immutable blockchain smart contracts.',
-    'React': 'Interactive component-based user interfaces.',
-    'Next.js': 'Production-grade React application framework.',
-    'Node.js': 'Scalable asynchronous server-side execution.',
+    'React': 'Interfaces em componentes.',
+    'Next.js': 'Sites rápidos e prontos para SEO.',
+    'Node.js': 'Back-end e agentes.',
     'TensorFlow': 'Deep learning and neural network architectures.',
     'Scikit-learn': 'Predictive data analysis and machine learning.',
     'Pandas': 'High-performance data manipulation and analysis.',
     'NumPy': 'Fundamental scientific computing capabilities.',
-    'Tailwind CSS': 'Rapid utility-first styling and design.',
+    'Tailwind CSS': 'Design rápido e consistente.',
     'Redis': 'In-memory data structure store and caching.',
     'PostgreSQL': 'Robust relational database architecture.',
     'Kubernetes': 'Automated container deployment and scaling.',
-    'Docker': 'Standardized containerized environments.',
+    'Docker': 'Ambientes isolados e reproduzíveis.',
     'Terraform': 'Infrastructure as code provisioning.',
     'LangChain': 'Large language model application orchestration.',
     'PyTorch': 'Dynamic neural networks for research and production.',
@@ -62,7 +62,7 @@ export const KineticTechGrid = ({ items, className }: KineticTechGridProps) => {
 const TechCard = ({ tech, idx, isLowPowerMode }: { tech: TechItem, idx: number, isLowPowerMode?: boolean }) => {
     const cardRef = useRef<HTMLDivElement>(null);
 
-    const description = techDescriptions[tech.name] || `Builds cutting-edge ${tech.name} architectures.`;
+    const description = techDescriptions[tech.name] || `${tech.name} no dia a dia.`;
 
     return (
         <motion.div

@@ -260,19 +260,19 @@ const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ onDownloadClick
                     className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-50 pt-10 pb-32"
                 >
                     <div className="inline-block px-4 py-1.5 rounded-full bg-secondary/50 backdrop-blur-md border border-border/50 text-xs font-medium mb-6 animate-fade-in-up">
-                        Professional Milestones
+                        Aprendizado verificável
                     </div>
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/50 animate-fade-in-up delay-100">
-                        Certificates<br />& Awards
+                        Certificados
                     </h1>
                     <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10 animate-fade-in-up delay-200">
-                        A visual journey through certifications and achievements.
+                        Cursos de IA, agentes e cloud — cada um com código de validação.
                     </p>
                     <button
                         onClick={() => window.scrollTo({ top: window.innerHeight * 1.2, behavior: 'smooth' })}
                         className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-all group animate-fade-in-up delay-300 pointer-events-auto"
                     >
-                        <span>Scroll to Explore</span>
+                        <span>Role para ver</span>
                         <ChevronDown className="w-4 h-4 animate-bounce" />
                     </button>
                 </div>
