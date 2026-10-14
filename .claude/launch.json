@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "portfolio", "runtimeExecutable": "C:\dev\Portf-lio\node_modules\.bin\next.cmd", "runtimeArgs": ["dev", "-p", "3001"], "cwd": "C:\dev\Portf-lio", "port": 3001 }
+  ]
+}
