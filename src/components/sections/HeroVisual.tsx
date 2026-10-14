@@ -176,7 +176,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-[10px] md:text-xs text-muted-foreground text-start md:text-right leading-relaxed max-w-[200px] md:max-w-[220px] font-medium uppercase tracking-[0.2em]"
             >
-              Hi, I'm {personal.name}. I build scalable systems powered by intelligence.
+              Oi, eu sou o {personal.name}. Crio sites, automações e agentes de IA que trazem cliente.
             </motion.p>
             <div className="relative">
               <div ref={githubRef} className="absolute -top-4 right-0 md:right-2 text-primary/60 hover:text-primary z-20 opacity-0">
@@ -194,7 +194,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                 className="text-[clamp(3rem,11vw,13rem)] font-black leading-[0.85] tracking-tighter text-shiny will-change-transform px-4"
               >
-                AI & DATA
+                AI & WEB
               </motion.h1>
             </div>
           </div>
@@ -230,8 +230,8 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
                 <div
                   ref={zapRef}
                   className="hidden lg:block mx-[0.05em] relative cursor-pointer group"
-                  onClick={() => window.open('https://victor_enginnerworkspace.vercel.app/', '_blank')}
-                  onMouseEnter={(e) => setTooltip({ show: true, text: "Go to Workspace", icon: 'zap', x: e.clientX, y: e.clientY })}
+                  onClick={() => window.open('https://victor-hub-ai.vercel.app/', '_blank')}
+                  onMouseEnter={(e) => setTooltip({ show: true, text: "Abrir Victor Hub AI", icon: 'zap', x: e.clientX, y: e.clientY })}
                   onMouseMove={(e) => setTooltip(prev => ({ ...prev, x: e.clientX, y: e.clientY }))}
                   onMouseLeave={() => setTooltip(prev => ({ ...prev, show: false }))}
                 >
@@ -240,8 +240,8 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
                 <div
                   ref={zapSmallRef}
                   className="block lg:hidden mx-[0.02em] relative cursor-pointer group"
-                  onClick={() => window.open('https://victor_enginnerworkspace.vercel.app/', '_blank')}
-                  onMouseEnter={(e) => setTooltip({ show: true, text: "Go to Workspace", icon: 'zap', x: e.clientX, y: e.clientY })}
+                  onClick={() => window.open('https://victor-hub-ai.vercel.app/', '_blank')}
+                  onMouseEnter={(e) => setTooltip({ show: true, text: "Abrir Victor Hub AI", icon: 'zap', x: e.clientX, y: e.clientY })}
                   onMouseMove={(e) => setTooltip(prev => ({ ...prev, x: e.clientX, y: e.clientY }))}
                   onMouseLeave={() => setTooltip(prev => ({ ...prev, show: false }))}
                 >
@@ -270,7 +270,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
                     detail: { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 }
                   }));
                 }}
-                onMouseEnter={(e) => setTooltip({ show: true, text: "Talk to my AI Assistant", icon: 'bot', x: e.clientX, y: e.clientY })}
+                onMouseEnter={(e) => setTooltip({ show: true, text: "Falar com meu assistente de IA", icon: 'bot', x: e.clientX, y: e.clientY })}
                 onMouseMove={(e) => setTooltip(prev => ({ ...prev, x: e.clientX, y: e.clientY }))}
                 onMouseLeave={() => setTooltip(prev => ({ ...prev, show: false }))}
               >
@@ -285,7 +285,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-[10px] md:text-xs text-muted-foreground pt-4 md:pt-8 leading-relaxed max-w-[250px] md:max-w-[200px] font-medium uppercase tracking-widest"
             >
-              Open to all forms of collaboration, regardless of location and language.
+              Atendo Brasil e exterior — projetos 100% remotos.
             </motion.p>
           </div>
         </div>
@@ -295,17 +295,17 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
           <div className="flex items-center gap-6">
             <Separator className="flex-1 h-[1px] bg-foreground/10 hidden md:block" />
             <div className="text-[10px] md:text-xs whitespace-nowrap font-bold tracking-[0.3em] text-muted-foreground uppercase">
-              JAKARTA, ID — 2026
+              SÃO PAULO, BR — 2026
             </div>
             <Link
-              href="/resume"
+              href={personal.resumeUrl ?? "/contact"} target="_blank"
               className="group flex items-center"
             >
               <motion.div
                 className="relative flex items-center bg-zinc-100 dark:bg-white h-12 w-12 group-hover:w-44 rounded-full transition-all duration-500 ease-[0.23,1,0.32,1] overflow-hidden shadow-xl"
               >
                 <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 group-hover:delay-150 text-[10px] font-black uppercase tracking-widest text-zinc-900 dark:text-black pl-6 pr-12">
-                  View Resume
+                  Pedir orçamento
                 </span>
                 <div className="absolute right-0 flex items-center justify-center size-12 text-zinc-900 dark:text-black group-hover:rotate-45 transition-transform duration-500">
                   <ArrowDownRight className="w-5 h-5" />
@@ -329,7 +329,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
             className="bg-white text-black py-10 px-4 text-[10px] font-black uppercase tracking-[0.5em] shadow-2xl rounded-r-3xl border-r border-y border-zinc-200 cursor-pointer"
           >
             <span className="rotate-0 [writing-mode:vertical-rl]">
-              AVAILABLE FOR OPPORTUNITY
+              ACEITANDO PROJETOS
             </span>
           </motion.div>
         </div>
@@ -347,8 +347,8 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
             >
               <ProfileCard
                 name={personal.name}
-                title="AI Engineer & Software Engineer"
-                description={`${personal.name} is a dedicated AI & Software Engineer focused on building scalable, intelligent systems and robust software architectures. He specializes in bridging technical innovation with high-performance execution to deliver meaningful and impactful digital solutions.`}
+                title={personal.title}
+                description={`${personal.name} cria sites, automações de WhatsApp e agentes de IA para pequenos negócios venderem mais. Do briefing ao deploy, com projetos publicados no Brasil e em Portugal.`}
                 imageUrl={personal.avatar}
                 githubUrl={personal.socialLinks.find(s => s.platform === 'GitHub')?.url}
                 linkedinUrl={personal.socialLinks.find(s => s.platform === 'LinkedIn')?.url}

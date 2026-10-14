@@ -32,27 +32,24 @@ const signature = Alex_Brush({
 
 export const metadata: Metadata = {
     title: {
-        default: 'Victor Borsari | AI Systems Engineer & Autonomous Intelligence',
-        template: '%s | Victor Borsari',
+        default: 'Vitor Borsari | Sites, Automação e Agentes de IA',
+        template: '%s | Vitor Borsari',
     },
-    description: 'AI Systems Engineer and Autonomous Intelligence Architect. Autonomous multi-agent orchestration, LLM quantization (4-bit NF4), and financial friction data mining.',
-    keywords: ['Victor Borsari', 'AI Engineer', 'Autonomous Agents', 'A2A', 'LLM Quantization', 'Next.js', 'PyTorch', 'Falcon-11B'],
-    authors: [{ name: 'Victor Borsari' }],
-    creator: 'Victor Borsari',
-    metadataBase: new URL('https://github.com/Victor-Enginner/intelligence'),
+    description: 'Sites, automações de WhatsApp e agentes de IA para pequenos negócios venderem mais. Projetos publicados no Brasil e em Portugal.',
+    keywords: ['Vitor Borsari', 'engenheiro de IA', 'agentes de IA', 'criação de sites', 'automação de WhatsApp', 'Next.js', 'prospecção'],
+    authors: [{ name: 'Vitor Borsari' }],
+    creator: 'Vitor Borsari',
     openGraph: {
         type: 'website',
         locale: 'pt_BR',
-        url: 'https://github.com/Victor-Enginner/intelligence',
-        title: 'Victor Borsari | AI Systems Engineer',
-        description: 'Autonomous multi-agent orchestration, LLM quantization (4-bit NF4), and financial friction data mining.',
-        siteName: 'Victor Borsari — AI Systems Engineer',
+        title: 'Vitor Borsari | Sites, Automação e Agentes de IA',
+        description: 'Sites, automações de WhatsApp e agentes de IA para pequenos negócios venderem mais. Projetos publicados no Brasil e em Portugal.',
+        siteName: 'Vitor Borsari',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Victor Borsari | AI Systems Engineer',
-        description: 'Autonomous multi-agent orchestration, LLM quantization (4-bit NF4), and financial friction data mining.',
-        creator: '@Victor_Enginner',
+        title: 'Vitor Borsari | Sites, Automação e Agentes de IA',
+        description: 'Sites, automações de WhatsApp e agentes de IA para pequenos negócios venderem mais. Projetos publicados no Brasil e em Portugal.',
     },
     robots: {
         index: true,
@@ -67,8 +64,7 @@ export const metadata: Metadata = {
     },
     icons: {
         icon: [
-            { url: '/Victor-Enginner_light.svg', media: '(prefers-color-scheme: light)' },
-            { url: '/Victor-Enginner_dark.svg', media: '(prefers-color-scheme: dark)' },
+            { url: '/favicon.svg' },
         ],
     },
 };

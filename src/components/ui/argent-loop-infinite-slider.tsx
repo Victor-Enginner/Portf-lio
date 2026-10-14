@@ -4,6 +4,7 @@ import { ArrowRight, ChevronDown, Github, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import MagneticEffect from "@/components/ui/MagneticEffect";
+import { portfolioData } from "@/data/portfolio";
 
 interface ProjectData {
   title: string;
@@ -14,48 +15,19 @@ interface ProjectData {
   slug: string;
 }
 
-const PROJECT_DATA: ProjectData[] = [
-  {
-    title: "Browser Automation Agent",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&fm=webp",
-    category: "AI & Automation",
-    year: "2026",
-    description: "AI-driven browser interaction & testing engine.",
-    slug: "browser-automation-agent"
-  },
-  {
-    title: "Swarm AI Blog Writer",
-    image: "/project/swarmaiblogwriter1.webp",
-    category: "AI & Content",
-    year: "2025",
-    description: "Multi-agent orchestration for research-backed content.",
-    slug: "swarm-ai-blog-writer"
-  },
-  {
-    title: "Creative Portfolio Website",
-    image: "/project/creativeportfoliowebsite1.webp",
-    category: "Creative Tech",
-    year: "2025",
-    description: "Immersive 3D portfolio with WebGL shaders.",
-    slug: "creative-portfolio-website"
-  },
-  {
-    title: "SNBTIn Platform",
-    image: "/project/snbtinplatformpersiapansnbt20251.webp",
-    category: "EdTech",
-    year: "2025",
-    description: "Leading e-learning platform for SNBT preparation.",
-    slug: "snbtin-platform"
-  },
-  {
-    title: "Terraflow Platform",
-    image: "/project/terraflowplatform1.webp",
-    category: "IoT & Embedded",
-    year: "2025",
-    description: "Enterprise IoT solution for precision agriculture.",
-    slug: "terraflow-platform"
-  },
-];
+// Destaques da home: vêm direto de portfolioData (projetos com print)
+const DESTAQUES = ['inovare-pintura', 'nexus-scan', 'repass-ai', 'whatsapp-automation', 'victor-ads'];
+const PROJECT_DATA: ProjectData[] = DESTAQUES
+  .map(slug => portfolioData.projects.find(p => p.slug === slug))
+  .filter((p): p is NonNullable<typeof p> => !!p && !!p.image)
+  .map(p => ({
+    title: p.title,
+    image: p.image as string,
+    category: p.category ?? '',
+    year: p.startDate.slice(0, 4),
+    description: p.description,
+    slug: p.slug,
+  }));
 
 export function ArgentLoopInfiniteSlider() {
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -333,7 +305,7 @@ export function ArgentLoopInfiniteSlider() {
                                 href={`/projects/${data.slug}`} 
                                 className="pointer-events-auto font-medium text-[10px] opacity-60 hover:opacity-100 hover:text-black transition-all duration-300 text-right group/link"
                             >
-                              <span className="border-b border-black/10 group-hover/link:border-black pb-1">View More</span>
+                              <span className="border-b border-black/10 group-hover/link:border-black pb-1">Ver mais</span>
                             </Link>
                           </div>
                         </div>

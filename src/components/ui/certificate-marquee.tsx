@@ -6,23 +6,14 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-const certificates = [
-  "/certificate/Data Analytics on Google Cloud.webp",
-  "/certificate/Deep Learning Beginner.webp",
-  "/certificate/Docker, Kubernetes dan DevOps.webp",
-  "/certificate/Fullstack Programming Untuk Pemula.webp",
-  "/certificate/Introduction to Generative AI.webp",
-  "/certificate/Machine Learning Foundations.webp",
-  "/certificate/Mastering Smart Contract.webp",
-  "/certificate/Started with Databases.webp",
-  "/certificate/Supervised Machine Learning Regression and Classification.webp",
-  "/certificate/elevAIte with Dicoding Program 2025.webp",
-];
+// Certificados reais (DIO), repetidos para preencher o marquee
+const reais = ["ZETD6UKC", "XEA9XJ5X", "MPSUID7O", "0SW9FA4V"].map(id => `/certificados/${id}.webp`);
+const certificates = [...reais, ...reais, ...reais];
 
 function ScrambleButton({ href }: { href: string }) {
-  const [displayText, setDisplayText] = useState("View All Achievements");
+  const [displayText, setDisplayText] = useState("Ver certificados");
   const [isScrambling, setIsScrambling] = useState(false);
-  const originalText = "View All Achievements";
+  const originalText = "Ver certificados";
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
 
   const scramble = () => {
@@ -143,13 +134,13 @@ export function CertificateShowcase() {
           <div className="space-y-6 w-full">
             <div className="space-y-4">
               <h2 className="text-sm font-bold tracking-[0.2em] text-primary/60 uppercase">
-                Certifications & Achievements
+                Certificados
               </h2>
               <h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] tracking-tight max-w-none text-foreground">
-                Validating <span className="text-shiny">Excellence</span> through Global Standards.
+                Aprendizado <span className="text-shiny">verificável</span>.
               </h3>
               <p className="text-lg text-muted-foreground max-w-none leading-relaxed lg:whitespace-nowrap">
-                A collection of my professional certifications in AI, Web Development, and Cloud Engineering from industry leaders.
+                Cursos de IA, agentes e cloud concluídos na DIO, em parceria com IBM, Santander e AWS — cada um com código de validação.
               </p>
             </div>
           </div>

@@ -53,7 +53,7 @@
     "about": {
         "title": "About Me",
         "subtitle": "Tech Explorer & Problem Solver",
-        "description": "A passionate tech explorer specializing in Full Stack Development, Artificial Intelligence, and Data Science. Currently diving deep into AI Agents and Blockchain technology.",
+        "description": "Results-driven developer building websites, WhatsApp automations and AI agents that help small businesses sell more.",
         "stats": {
             "experience": "Years Learning",
             "projects": "Projects Done",
@@ -73,8 +73,8 @@
             "scope": "Focusing on predictive models, optimized data processing, and RAG pipelines designed for production environments and measurable performance.",
             "bridging": "Bridging labs and live systems.",
             "integration": "Beyond models, I architect full-stack ecosystems: secure backends, robust data architectures, and scalable pipelines.",
-            "signature": "Victor Borsari",
-            "role": "AI Systems & Autonomous Intelligence Engineer",
+            "signature": "Vitor Borsari",
+            "role": "AI Engineer & Web Developer",
             "aboutMe": "About Me",
             "scroll": "Scroll to Explore",
             "shortStory": "My Short Story"
@@ -85,9 +85,9 @@
             "p1": "I develop applied AI systems using TensorFlow, Scikit-learn, and LangChain, structuring workflows and exposing models as services through Flask and FastAPI.",
             "p2": "Integrated into full-stack apps with Next.js, Express.js, and Spring Boot, backed by PostgreSQL and Prisma ORM.",
             "p3": "All projects use disciplined version control, Docker containerization, and are built for stable production deployment.",
-            "gpa": "Academic GPA",
-            "projects": "Projects Built",
-            "years": "Years Exp."
+            "gpa": "Certificates",
+            "projects": "Live Projects",
+            "years": "Clients"
         },
         "emergingResearch": {
             "label": "Exploration Phase",
@@ -97,15 +97,15 @@
                 "desc": "Exploring autonomous agents, multi-agent orchestration, and reasoning frameworks — extending my applied AI foundation into self-directed decision-making systems."
             },
             "web3": {
-                "title": "WEB3 & BLOCKCHAIN",
-                "desc": "Building decentralized applications with Solidity and Hardhat. Currently hands-on with smart contract development through projects like the Web3 Guestbook DApp on Ethereum."
+                "title": "CLOUD & DEPLOYMENT",
+                "desc": "AWS and cloud fundamentals to take agents from my local machine to production."
             }
         },
         "profile": {
             "title": "Architecting Scalable Systems <br /> Where Intelligence Meets Engineering.",
             "narrativeLabel": "Core Narrative",
-            "narrative": "As an Information Technology student specializing in Artificial Intelligence and Software Engineering, I focus on building systems that bridge research foundations with production-ready implementation.",
-            "narrative2": "My work combines algorithmic thinking, backend engineering, and scalable architecture to deliver solutions that are intelligent, reliable, and built for real-world impact.",
+            "narrative": "I taught myself to code with no funding, building tools to solve my own problem: finding clients.",
+            "narrative2": "Today I ship websites, automations and AI agents for businesses in Brazil and Portugal — every project here is live for you to try.",
             "pillars": {
                 "reliable": {
                     "title": "Robust by Design",
@@ -128,8 +128,8 @@
         "closing": {
             "experience": {
                 "label": "BACKGROUND",
-                "title1": "KEY",
-                "title2": "EXPERIENCE",
+                "title1": "CLIENT",
+                "title2": "WORK",
                 "viewMore": "Full Experience"
             },
             "projects": {
@@ -140,51 +140,36 @@
             },
             "experiencesList": [
                 {
-                    "company": "Dicoding Academy",
-                    "role": "MACHINE LEARNING CODE REVIEWER",
-                    "desc": "Technical evaluation and quality assurance of ML project submissions. Validating logical correctness, efficiency, and enforcing industry best practices for learners."
+                    "company": "Inovare Pintura (Portugal)",
+                    "role": "WEB DEVELOPER — FREELANCE",
+                    "desc": "Website for a painting and renovation company in Olhão: project gallery, services and quote requests. Live at inovarepintura.com."
                 },
                 {
-                    "company": "Advanced Software Engineering Laboratory",
-                    "role": "SYSTEM ANALYST INTERN",
-                    "desc": "Translating complex requirements into SRS documentation and designing system architectures using UML diagrams. focused on software design."
-                },
-                {
-                    "company": "Cyber Physical System Laboratory",
-                    "role": "RESEARCH ASSISTANT (CONTRACT)",
-                    "desc": "Developing AI-driven research products and designing learning materials for Deep Learning and Computer Vision. Contributing to intelligent systems."
-                },
-                {
-                    "company": "HUMIC Engineering Research Center",
-                    "role": "AI DEVELOPER INTERN",
-                    "desc": "Built Transformer-based attack detection models for cybersecurity applications. Managed large-scale datasets through the full ML pipeline."
-                },
-                {
-                    "company": "Cyber Physical System Laboratory",
-                    "role": "COMPUTER VISION RESEARCHER INTERN",
-                    "desc": "End-to-end development of intelligent models using state-of-the-art Deep Learning architectures. Implemented ML algorithms for real-world applications."
+                    "company": "Victor Soluções Digitais",
+                    "role": "FOUNDER",
+                    "desc": "Websites, WhatsApp automations and AI-powered prospecting tools for small businesses."
                 }
             ],
             "projectsList": [
                 {
-                    "title": "Creative Portfolio Website",
-                    "desc": "Modern, animated portfolio with 3D elements, physics-simulated interactions, and shader-based warp effects. Engineered for high performance & optimization."
+                    "title": "NEXUS SCAN",
+                    "desc": "Scans Google Maps for a city, finds businesses without a website and writes the WhatsApp pitch for each one."
                 },
                 {
-                    "title": "SNBTIn - Platform Persiapan SNBT 2025",
-                    "desc": "Leading EdTech platform in Indonesia for exam preparation. Featuring a comprehensive learning ecosystem with interactive and real-time analytics."
+                    "title": "REPASS AI",
+                    "desc": "Agentic engine for local-lead OSINT with autonomous 3D website generation."
                 },
                 {
-                    "title": "TerraFlow Platform",
-                    "desc": "Enterprise IoT solution for precision agriculture. ESP32 sensor nodes communicate with Firebase via a Go (Gin), with a Next.js dashboard for real-time monitoring"
+                    "title": "Prospector 3D",
+                    "desc": "Team of local AI agents (Ollama) that finds companies, audits their site and drafts the pitch, inside a 3D office."
                 },
                 {
-                    "title": "DocsInsight Engine",
-                    "desc": "Private RAG platform for intelligent document analysis. Powered by local LLMs through Ollama, with LangChain orchestration and ChromaDB vector search."
+                    "title": "Inovare Pintura",
+                    "desc": "Client website in Portugal with custom domain and quote capture."
                 },
                 {
-                    "title": "POLABDC Dental Management",
-                    "desc": "AI-powered dental clinic SaaS with disease prediction, real-time queue management, and a Monorepo architecture Next.js, Express.js, and Python"
+                    "title": "WhatsApp Automation",
+                    "desc": "Dashboard to create and track automated WhatsApp campaigns."
                 }
             ],
             "discoverMore": "Discover More"
@@ -353,24 +338,24 @@
         },
         "faqData": [
             {
-                "q": "What is your main area of expertise?",
-                "a": "As an Information Technology student at Telkom University and a Research Assistant at the Cyber Physical System Laboratory, I specialize in the intersection of Artificial Intelligence (Computer Vision & Deep Learning), Full-stack Development (Next.js & Node.js), and emerging Blockchain/Web3 technologies."
+                "q": "What do you do?",
+                "a": "Websites that sell, WhatsApp automations and AI agents that find and reach customers for your business."
             },
             {
-                "q": "Are you available for research or freelance collaborations?",
-                "a": "Absolutely. I am currently active in AI research at the CPS Lab and HUMIC Research Center, but I'm always open to innovative freelance projects, internships, or technical collaborations that bridge innovation with strategic execution."
+                "q": "Do you work outside Brazil?",
+                "a": "Yes. I delivered the Inovare Pintura website in Portugal, fully remote."
             },
             {
-                "q": "What is your typical tech stack for production?",
-                "a": "For AI projects, I primarily use Python with TensorFlow, PyTorch, and YOLO. For web applications, my go-to is the T3-style stack: Next.js, TypeScript, and Tailwind CSS, often integrated with AI Agents or Smart Contracts where appropriate."
+                "q": "What is your stack?",
+                "a": "Next.js, TypeScript and Tailwind on the front end; Node.js and Python for automations; Ollama and LLMs for agents; Vercel for deploys."
             },
             {
-                "q": "Do you have experience with enterprise or lab projects?",
-                "a": "Yes, I've served as a System Analyst and AI Developer in various research-driven environments. I've architected everything from AIoT platforms and attack detection systems to student practicum modules for global audiences."
+                "q": "How long does a website take?",
+                "a": "It depends on scope. A simple landing page takes a few days; message me for an exact quote."
             },
             {
-                "q": "How can we start a partnership or project?",
-                "a": "The most efficient way is to use the contact form above or reach out directly via email at shoponsup@gmail.com. I'm usually able to respond within 24 hours to discuss how my technical skill set can add value to your initiatives."
+                "q": "How do we start?",
+                "a": "Message me on WhatsApp +55 16 98214-1822 or email shoponsup@gmail.com."
             }
         ]
     },
@@ -379,12 +364,12 @@
         "madeWith": "Made with",
         "more": "More",
         "marquee": [
-            "Open to Opportunities",
-            "Frontend Development",
-            "Backend Architecture",
-            "UI/UX Design",
-            "Creative Coding",
-            "System Optimization"
+            "Open for projects",
+            "Websites that sell",
+            "WhatsApp automation",
+            "AI agents",
+            "3D experiences",
+            "Data-driven prospecting"
         ],
         "cta": {
             "title": "Let's Work",
@@ -400,17 +385,17 @@
     "ctaSection": {
         "title": "Let's Build Something",
         "together": "Together",
-        "subtitle": "Open to strategic collaborations in AI driven systems and scalable full Stack Engineering. Let’s transform ambitious ideas into production ready solutions.",
-        "start": "Hire Me",
-        "work": "View My Resume",
+        "subtitle": "Websites, automations and AI agents that help your business sell more.",
+        "start": "Message me on WhatsApp",
+        "work": "See projects",
         "words": {
             "amazing": "Amazing",
             "innovative": "Innovative",
             "intelligent": "Intelligent",
             "creative": "Creative"
         },
-        "ribbon1": "Next.js • React • Python • PyTorch • Pandas • TypeScript • Node.js • Scikit-Learn • TensorFlow • SQL",
-        "ribbon2": "Software Engineer • AI Engineer • Data Scientist • Data Analyst • Machine Learning Engineer • Backend Developer • Full Stack Engineer • NLP Engineer • Data Engineer • Web Developer"
+        "ribbon1": "Next.js • React • TypeScript • Node.js • Python • Tailwind • Three.js • Ollama • Vercel",
+        "ribbon2": "Websites • Landing pages • WhatsApp automation • AI agents • Prospecting • 3D experiences"
     },
     "stats": {
         "systemStatus": "System Status: Analytics Active",
@@ -433,8 +418,8 @@
         "loadStable": "SYSTEM_LOAD: STABLE"
     },
     "projectHeader": {
-        "title": "Architecting Digital Reality",
-        "subtitle": "A curated showcase of technical innovation and creative engineering. Exploring the frontiers of <span class='font-bold text-foreground'>Artificial Intelligence</span>, Blockchain, Data, and Immersive Web experiences."
+        "title": "Live Projects",
+        "subtitle": "Everything here is published — click and try it. <span class='font-bold text-foreground'>AI agents</span>, automations, prospecting tools and client websites."
     },
     "common": {
         "loading": "Loading...",
@@ -500,7 +485,7 @@
     },
     "chatbot": {
         "title": "AI Assistant",
-        "subtitle": "Ask me about Azril",
+        "subtitle": "Ask me about Vitor",
         "placeholder": "Type a message...",
         "greeting": "Hi! I'm an AI assistant for **{name}**. 👋\n\nI can answer questions about:\n- Skills & technical expertise\n- Projects and work\n- Experience\n- Education\n- And more!\n\nAnything you'd like to ask?",
         "suggestions": [

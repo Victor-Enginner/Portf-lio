@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUp, ExternalLink } from "lucide-react";
+import { portfolioData } from "@/data/portfolio";
 import { motion, AnimatePresence, useMotionValue, useTransform, animate, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -33,38 +34,39 @@ export default function Testimonial1() {
     cta: string;
   }
 
+  // Números reais, calculados a partir de portfolioData
   const stats: StatItem[] = [
     {
-      value: 3.62,
-      decimals: 2,
-      suffix: "/4.0",
-      label: "Current GPA",
-      href: "/resume",
-      cta: "View Resume",
-    },
-    {
-      value: 20,
+      value: portfolioData.projects.filter(p => p.demoUrl).length,
       decimals: 0,
-      suffix: "+",
-      label: "Projects Completed",
+      suffix: "",
+      label: "Projetos no ar",
       href: "/projects",
-      cta: "View Projects",
+      cta: "Ver projetos",
     },
     {
-      value: 2,
+      value: portfolioData.experiences.filter(e => e.type === 'freelance').length,
       decimals: 0,
-      suffix: " Years",
-      label: "Professional Exp",
-      href: "/experience",
-      cta: "Explore Career",
+      suffix: "",
+      label: "Cliente internacional",
+      href: "https://inovarepintura.com",
+      cta: "Ver o site",
     },
     {
-      value: 34,
+      value: portfolioData.achievements.filter(a => a.category === 'certification').length,
       decimals: 0,
-      suffix: "+",
-      label: "Tech & Tools",
+      suffix: "",
+      label: "Certificados",
+      href: "/achievements",
+      cta: "Ver certificados",
+    },
+    {
+      value: portfolioData.techStack.length + portfolioData.tools.length,
+      decimals: 0,
+      suffix: "",
+      label: "Tecnologias e ferramentas",
       href: "/skills",
-      cta: "See Skills",
+      cta: "Ver habilidades",
     },
   ];
 
@@ -89,17 +91,17 @@ export default function Testimonial1() {
               />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]" />
             </span>
-            Professional Statistics
+            Em números
           </div>
         </div>
 
         {/* Main Heading with Refined Block Reveal Animation */}
         <div className="text-center max-w-5xl mx-auto relative text-neutral-900 dark:text-white px-4 space-y-1 md:space-y-2">
           {[
-            { text: "Data that speaks. AI that reasons.", color: "#6366f1", delay: 0 },
-            { text: "Software that ships.", color: "#10b981", delay: 0.15 },
-            { text: "Three disciplines, one engineer", color: "#f59e0b", delay: 0.3 },
-            { text: "and the numbers behind the work.", color: "#ef4444", delay: 0.45 }
+            { text: "Sites que vendem. IA que trabalha.", color: "#6366f1", delay: 0 },
+            { text: "Projetos no ar.", color: "#10b981", delay: 0.15 },
+            { text: "Tudo que está aqui é real", color: "#f59e0b", delay: 0.3 },
+            { text: "e você pode clicar e testar.", color: "#ef4444", delay: 0.45 }
           ].map((line, i) => (
             <div key={i} className="relative block overflow-hidden py-1.5">
               <motion.h1

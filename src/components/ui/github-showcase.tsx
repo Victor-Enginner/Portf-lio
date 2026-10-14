@@ -29,52 +29,52 @@ const GITHUB_USER = "Victor-Enginner";
 
 const PINNED_REPOS = [
   {
-    name: "PersonalBlog",
-    desc: "Professional portfolio built with Next.js 15, TypeScript, and Tailwind CSS. Features 3D physics (R3F), GSAP animations, and real-time coding stats via WakaTime and GitHub APIs. Support EN/ID.",
-    stars: 67,
-    forks: 12,
+    name: "Scanner-Leads",
+    desc: "NEXUS SCAN: varre o Google Maps da cidade, acha negócios sem site e gera a abordagem de WhatsApp pronta.",
+    stars: 0,
+    forks: 0,
     lang: "TypeScript",
-    url: "https://github.com/Victor-Enginner/PersonalBlog"
+    url: "https://github.com/Victor-Enginner/Scanner-Leads"
   },
   {
-    name: "Browser-Automation-Agent",
-    desc: "A robust CLI powering autonomous web agents. Seamlessly integrate Playwright, browser-use, and LangChain to automate your daily web workflows.",
-    stars: 10,
-    forks: 2,
+    name: "VIRTUAL-3D-",
+    desc: "Prospector: equipe de agentes de IA locais (Ollama) que acha empresas, audita o site e prepara a abordagem, num escritório 3D.",
+    stars: 0,
+    forks: 0,
+    lang: "JavaScript",
+    url: "https://github.com/Victor-Enginner/VIRTUAL-3D-"
+  },
+  {
+    name: "REPASSAI",
+    desc: "Motor agêntico de OSINT de leads locais com geração autônoma de sites 3D.",
+    stars: 0,
+    forks: 0,
+    lang: "JavaScript",
+    url: "https://github.com/Victor-Enginner/REPASSAI"
+  },
+  {
+    name: "orquestrador",
+    desc: "Orquestrador multiagente: descoberta com evidência, validação com veto e simulação.",
+    stars: 0,
+    forks: 0,
     lang: "Python",
-    url: "https://github.com/Victor-Enginner/Browser-Automation-Agent"
+    url: "https://github.com/Victor-Enginner/orquestrador"
   },
   {
-    name: "Security-Automation-GenAI",
-    desc: "Deep Learning and Generative AI (Transformers & Attention Mechanisms) for automated cybersecurity threat detection, covering SQL Injection, DDoS, Network Intrusion, and Malware analysis.",
-    stars: 9,
-    forks: 2,
-    lang: "Jupyter Notebook",
-    url: "https://github.com/Victor-Enginner/Security-Automation-GenAI"
-  },
-  {
-    name: "POLABDC",
-    desc: "POLABDC (Pondok Labu Dental Care) Dental Clinic Management System (SaaS) powered by AI. Built with Typescript Next.js, Express, Prisma, Supabase, and Google Gemini AI for assistance.",
-    stars: 8,
-    forks: 15,
+    name: "Inovarepintura",
+    desc: "Site entregue para cliente em Portugal (inovarepintura.com).",
+    stars: 0,
+    forks: 0,
     lang: "TypeScript",
-    url: "https://github.com/Victor-Enginner/POLABDC"
+    url: "https://github.com/Victor-Enginner/Inovarepintura"
   },
   {
-    name: "Digilibzx",
-    desc: "Modern Full-Stack Digital Library System built with Java Spring Boot and TypeScript Next.js . Features AI-powered book summarization (Gemini), smart borrowing cart, and Dockerized deployment.",
-    stars: 12,
-    forks: 2,
-    lang: "TypeScript",
-    url: "https://github.com/Victor-Enginner/Digilibzx"
-  },
-  {
-    name: "Swarm-Agent-Orchestrator",
-    desc: "Autonomous multi-agent content orchestration system for high-performance blog drafting and research. Powered by OpenAI Swarm architecture.",
-    stars: 10,
-    forks: 5,
-    lang: "Vue",
-    url: "https://github.com/Victor-Enginner/Swarm-Agent-Orchestrator"
+    name: "Whatsapp-automation-campaign",
+    desc: "Painel de campanhas automatizadas de WhatsApp.",
+    stars: 0,
+    forks: 0,
+    lang: "Python",
+    url: "https://github.com/Victor-Enginner/Whatsapp-automation-campaign"
   }
 ];
 

@@ -104,7 +104,7 @@ export function Footer() {
                 hour: 'numeric',
                 minute: '2-digit',
                 hour12: true,
-                timeZone: 'Asia/Jakarta'
+                timeZone: 'America/Sao_Paulo'
             };
             const timeString = new Intl.DateTimeFormat('en-US', options).format(now);
             // Jakarta is UTC+7

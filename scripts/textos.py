@@ -1,0 +1,248 @@
+# Gera messages/pt.json e corrige messages/en.json a partir de uma única fonte.
+# Mantém a estrutura de chaves do template (lida de en.json) e sobrescreve só o conteúdo.
+import json
+import pathlib
+
+RAIZ = pathlib.Path(__file__).resolve().parent.parent
+EN = RAIZ / 'messages' / 'en.json'
+PT = RAIZ / 'messages' / 'pt.json'
+
+# Conteúdo real que vale para os dois idiomas (substitui as invenções do template)
+EXPERIENCIAS = {
+    'pt': [
+        {'company': 'Inovare Pintura (Portugal)', 'role': 'DESENVOLVEDOR WEB — FREELANCE',
+         'desc': 'Site da empresa de pintura e remodelação em Olhão: portfólio de obras, serviços e pedido de orçamento. No ar em inovarepintura.com.'},
+        {'company': 'Victor Soluções Digitais', 'role': 'FUNDADOR',
+         'desc': 'Sites, automações de WhatsApp e ferramentas de prospecção com IA para pequenos negócios.'},
+    ],
+    'en': [
+        {'company': 'Inovare Pintura (Portugal)', 'role': 'WEB DEVELOPER — FREELANCE',
+         'desc': 'Website for a painting and renovation company in Olhão: project gallery, services and quote requests. Live at inovarepintura.com.'},
+        {'company': 'Victor Soluções Digitais', 'role': 'FOUNDER',
+         'desc': 'Websites, WhatsApp automations and AI-powered prospecting tools for small businesses.'},
+    ],
+}
+PROJETOS = {
+    'pt': [
+        {'title': 'NEXUS SCAN', 'desc': 'Varre o Google Maps da cidade, acha negócios sem site e entrega a mensagem de WhatsApp pronta para abordar.'},
+        {'title': 'REPASS AI', 'desc': 'Motor agêntico de OSINT de leads locais com geração autônoma de sites 3D.'},
+        {'title': 'Prospector 3D', 'desc': 'Equipe de agentes de IA locais (Ollama) que acha empresas, audita o site e prepara a abordagem, num escritório 3D.'},
+        {'title': 'Inovare Pintura', 'desc': 'Site para cliente em Portugal, com domínio próprio e captação de orçamentos.'},
+        {'title': 'WhatsApp Automation', 'desc': 'Painel para criar e acompanhar campanhas automatizadas de WhatsApp.'},
+    ],
+    'en': [
+        {'title': 'NEXUS SCAN', 'desc': 'Scans Google Maps for a city, finds businesses without a website and writes the WhatsApp pitch for each one.'},
+        {'title': 'REPASS AI', 'desc': 'Agentic engine for local-lead OSINT with autonomous 3D website generation.'},
+        {'title': 'Prospector 3D', 'desc': 'Team of local AI agents (Ollama) that finds companies, audits their site and drafts the pitch, inside a 3D office.'},
+        {'title': 'Inovare Pintura', 'desc': 'Client website in Portugal with custom domain and quote capture.'},
+        {'title': 'WhatsApp Automation', 'desc': 'Dashboard to create and track automated WhatsApp campaigns.'},
+    ],
+}
+FAQ = {
+    'pt': [
+        {'q': 'O que você faz?', 'a': 'Sites que vendem, automações de WhatsApp e agentes de IA que encontram e abordam clientes para o seu negócio.'},
+        {'q': 'Atende fora do Brasil?', 'a': 'Sim. Já entreguei o site da Inovare Pintura, em Portugal, 100% remoto.'},
+        {'q': 'Quais tecnologias você usa?', 'a': 'Next.js, TypeScript e Tailwind no front; Node.js e Python nas automações; Ollama e LLMs nos agentes; deploy na Vercel.'},
+        {'q': 'Quanto tempo leva um site?', 'a': 'Depende do escopo. Uma landing page simples fica pronta em poucos dias; me chama que eu passo prazo e valor certos.'},
+        {'q': 'Como começamos?', 'a': 'Me chama no WhatsApp (16) 98214-1822 ou no e-mail shoponsup@gmail.com com o que você precisa.'},
+    ],
+    'en': [
+        {'q': 'What do you do?', 'a': 'Websites that sell, WhatsApp automations and AI agents that find and reach customers for your business.'},
+        {'q': 'Do you work outside Brazil?', 'a': 'Yes. I delivered the Inovare Pintura website in Portugal, fully remote.'},
+        {'q': 'What is your stack?', 'a': 'Next.js, TypeScript and Tailwind on the front end; Node.js and Python for automations; Ollama and LLMs for agents; Vercel for deploys.'},
+        {'q': 'How long does a website take?', 'a': 'It depends on scope. A simple landing page takes a few days; message me for an exact quote.'},
+        {'q': 'How do we start?', 'a': 'Message me on WhatsApp +55 16 98214-1822 or email shoponsup@gmail.com.'},
+    ],
+}
+
+PT_TEXTOS = {
+    'navigation': {
+        'home': 'Início', 'about': 'Sobre', 'projects': 'Projetos', 'experience': 'Experiência', 'skills': 'Habilidades',
+        'achievements': 'Certificados', 'blog': 'Blog', 'gallery': 'Galeria', 'contact': 'Contato', 'resume': 'Currículo',
+        'tools': 'Ferramentas', 'intelligence': 'IA Intelligence',
+        'menu': {
+            'intelligence': 'Intelligence', 'intelligenceDesc': 'Motor de oportunidades de mercado com agentes',
+            'achievements': 'Certificados', 'achievementsDesc': 'Cursos concluídos e verificáveis',
+            'skills': 'Habilidades', 'skillsDesc': 'Tecnologias e ferramentas que uso',
+            'experience': 'Experiência', 'experienceDesc': 'Clientes e trabalhos entregues',
+            'projects': 'Projetos', 'projectsDesc': 'Tudo que está no ar',
+            'blog': 'Blog', 'blogDesc': 'Em breve', 'gallery': 'Galeria', 'galleryDesc': 'Em breve',
+        },
+        'shortcuts': {'volume1': 'Volume I: Identidade', 'volume2': 'Volume II: Trajetória', 'volume3': 'Volume III: Habilidades',
+                      'volume4': 'Volume IV: Projetos', 'preview': 'Pré-visualização', 'idRef': 'ID_REF'},
+    },
+    'hero': {
+        'greeting': 'Bem-vindo', 'subtitle': 'Sites • Automação • Agentes de IA',
+        'cta': {'primary': 'Ver projetos', 'secondary': 'Falar no WhatsApp', 'exploreMore': 'Explorar'},
+        'badge': 'Aceitando projetos', 'scroll': 'Role para baixo', 'role': 'Engenheiro de IA',
+        'description': "Construo <span class='text-primary font-semibold'>sites</span>, <span class='text-secondary font-semibold'>automações</span> e <span class='text-accent font-semibold'>agentes de IA</span> que trazem cliente para o seu negócio.",
+    },
+    'about': {
+        'title': 'Sobre mim', 'subtitle': 'Do briefing ao deploy',
+        'description': 'Desenvolvedor focado em resultado: sites, automações de WhatsApp e agentes de IA para pequenos negócios venderem mais.',
+        'stats': {'experience': 'Anos estudando', 'projects': 'Projetos no ar', 'certifications': 'Certificados', 'competitions': 'Competições'},
+        'identity': 'Identidade confirmada', 'architecting': 'Construindo', 'digitalReality': 'Realidade digital',
+        'leadIn': {
+            'label': 'O QUE EU FAÇO', 'tagline': 'FOCO', 'headlineAI': 'IA aplicada.', 'headlineData': 'Automação.',
+            'headlineSoftware': 'Sites que vendem',
+            'thesis': "Construo sistemas inteligentes e a <span class='text-primary italic font-serif-elegant font-normal'>presença digital</span> que transforma visita em cliente.",
+            'scope': 'Ferramentas de prospecção, agentes que trabalham sozinhos e automações de WhatsApp — tudo publicado e funcionando.',
+            'bridging': 'Da ideia ao site no ar.',
+            'integration': 'Além do código: design, conteúdo, domínio e deploy. Você recebe o projeto pronto para usar.',
+            'signature': 'Vitor Borsari', 'role': 'Engenheiro de IA & Desenvolvedor Web',
+            'aboutMe': 'Sobre mim', 'scroll': 'Role para explorar', 'shortStory': 'Minha história',
+        },
+        'coreEngineering': {
+            'label': 'Engenharia', 'title': "Stack <span class='text-primary italic font-serif font-light lowercase'>enxuta.</span> <br /> Resultado <span class='italic font-serif font-light text-foreground'>no ar.</span>",
+            'p1': 'Desenvolvo agentes de IA com LLMs locais (Ollama) e APIs, orquestrando tarefas como descoberta de leads, auditoria de sites e redação de abordagens.',
+            'p2': 'Os front-ends são feitos em Next.js, TypeScript e Tailwind, com experiências 3D em Three.js quando o projeto pede.',
+            'p3': 'Tudo versionado no GitHub e publicado na Vercel, com domínio próprio para clientes.',
+            'gpa': 'Certificados', 'projects': 'Projetos no ar', 'years': 'Clientes',
+        },
+        'emergingResearch': {
+            'label': 'Estudando agora', 'title': "AGENTES <span class='italic font-serif font-light text-primary lowercase'>&</span> AUTOMAÇÃO",
+            'agentic': {'title': 'SISTEMAS MULTIAGENTE', 'desc': 'Orquestração de agentes que trabalham em equipe: cada um com uma função, validando o trabalho do outro.'},
+            'web3': {'title': 'CLOUD & DEPLOY', 'desc': 'Fundamentos de AWS e computação em nuvem para levar os agentes do computador local para produção.'},
+        },
+        'profile': {
+            'title': 'Tecnologia a serviço <br /> de vender mais.',
+            'narrativeLabel': 'Minha história',
+            'narrative': 'Comecei a programar sozinho, sem investimento, construindo ferramentas para resolver o meu próprio problema: achar clientes.',
+            'narrative2': 'Hoje entrego sites, automações e agentes de IA para negócios no Brasil e em Portugal — e cada projeto aqui está publicado para você testar.',
+            'pillars': {
+                'reliable': {'title': 'Feito para converter', 'desc': 'Cada página tem um objetivo: levar o visitante a falar com você.'},
+                'optimized': {'title': 'Entregue no ar', 'desc': 'Nada de protótipo esquecido: domínio, deploy e tudo funcionando.'},
+                'maintainable': {'title': 'Fácil de evoluir', 'desc': 'Código organizado e versionado, pronto para crescer junto com o negócio.'},
+                'evolvable': {'title': 'IA que trabalha', 'desc': 'Agentes que prospectam, qualificam e escrevem a abordagem por você.'},
+            },
+        },
+        'closing': {
+            'experience': {'label': 'TRAJETÓRIA', 'title1': 'TRABALHOS', 'title2': 'ENTREGUES', 'viewMore': 'Ver tudo'},
+            'projects': {'label': 'PORTFÓLIO', 'title1': 'PROJETOS', 'title2': 'EM DESTAQUE', 'viewMore': 'Todos os projetos'},
+            'discoverMore': 'Ver mais',
+        },
+    },
+    'projects': {
+        'title': 'Projetos', 'subtitle': 'Tudo que construí e está no ar', 'search': 'Buscar projetos...',
+        'viewAll': 'Ver todos', 'viewProject': 'Ver projeto', 'liveDemo': 'Abrir site', 'sourceCode': 'Código',
+        'techStack': 'Tecnologias', 'tools': 'Ferramentas', 'highlights': 'Destaques', 'challenges': 'Desafios',
+        'filters': {'all': 'Todos', 'ongoing': 'Em andamento', 'completed': 'Concluídos'},
+        'sections': {'missionBrief': 'Resumo', 'keyFeatures': 'Funcionalidades', 'engineeringChronicles': 'Bastidores',
+                     'visualGallery': 'Galeria', 'installation': 'Como rodar', 'projectAccess': 'Acesso',
+                     'technologies': 'Tecnologias', 'contents': 'Conteúdo', 'moreProjects': 'Mais projetos',
+                     'backToProjects': 'Voltar aos projetos', 'viewMore': 'Ver mais', 'viewLess': 'Ver menos',
+                     'solution': 'Solução', 'liveDemo': 'Abrir site', 'sourceCode': 'Código'},
+        'status': {'ongoing': 'Em desenvolvimento', 'completed': 'Concluído'},
+        'metadata': {'role': 'Função', 'timeline': 'Período', 'team': 'Equipe', 'techStack': 'Tecnologias',
+                     'roleValue': 'Full Stack', 'teamValue': 'Individual', 'techStackValue': '{count} tecnologias'},
+    },
+    'experience': {
+        'title': 'Experiência', 'subtitle': 'Clientes e trabalhos entregues', 'showDetail': 'Ver detalhes',
+        'hideDetail': 'Ocultar', 'tasks': 'TAREFAS', 'learned': 'APRENDIZADOS', 'impact': 'IMPACTO', 'present': 'Atual',
+        'responsibilities': 'Responsabilidades', 'skills': 'Habilidades', 'month': 'mês', 'months': 'meses',
+        'year': 'ano', 'years': 'anos',
+        'type': {'full-time': 'Tempo integral', 'part-time': 'Meio período', 'internship': 'Estágio', 'freelance': 'Freelance',
+                 'contract': 'Contrato', 'apprenticeship': 'Aprendiz', 'volunteer': 'Voluntário'},
+        'filters': {'all': 'Todos', 'latest': 'Mais recentes', 'oldest': 'Mais antigos', 'ongoing': 'Em andamento'},
+        'education': {'title': 'Formação'},
+    },
+    'expertise': {'title': 'O que eu entrego', 'subtitle': 'Tecnologia aplicada para gerar cliente e economizar tempo', 'dragHint': 'Arraste para explorar'},
+    'skills': {'title': 'Habilidades e ferramentas', 'subtitle': 'O que uso no dia a dia', 'hard': 'Habilidades técnicas',
+               'soft': 'Comportamentais', 'technical': 'Domínio técnico', 'tools': 'Ferramentas', 'pillars': 'Pilares',
+               'achievements': 'Certificados',
+               'level': {'beginner': 'Iniciante', 'intermediate': 'Intermediário', 'advanced': 'Avançado', 'expert': 'Especialista'}},
+    'achievements': {'title': 'Certificados', 'subtitle': 'Cursos concluídos com código de validação', 'search': 'Buscar...',
+                     'viewCredential': 'Ver certificado',
+                     'category': {'all': 'Todos', 'certification': 'Certificado', 'award': 'Prêmio', 'publication': 'Publicação', 'competition': 'Competição'},
+                     'sort': {'newest': 'Mais recentes', 'oldest': 'Mais antigos'},
+                     'stats': {'total': 'Total', 'awards': 'Prêmios', 'certifications': 'Certificados'}},
+    'contact': {
+        'title': 'Contato', 'subtitle': 'Vamos tirar seu projeto do papel',
+        'form': {'name': 'Seu nome', 'email': 'Seu e-mail', 'subject': 'Assunto', 'message': 'Mensagem',
+                 'messagePlaceholder': 'Conte o que você precisa...', 'send': 'Enviar', 'submit': 'ENVIAR',
+                 'sending': 'ENVIANDO...', 'sent': 'ENVIADO!', 'success': 'Mensagem enviada!', 'error': 'Algo deu errado. Tente de novo.'},
+        'social': {'title': 'Redes'}, 'faq': {'title': 'Perguntas frequentes'},
+        'info': {'email': 'E-mail', 'phone': 'WhatsApp', 'location': 'Local', 'availability': 'Aceitando projetos'},
+        'hero': {'title': 'VAMOS CONVERSAR', 'subtitle': 'Tem uma ideia? Me chama e a gente coloca no ar.',
+                 'ticker': {'build': 'Vamos construir algo · ', 'freelance': 'Disponível para projetos · '}},
+    },
+    'footer': {
+        'copyright': 'Todos os direitos reservados.', 'madeWith': 'Feito com', 'more': 'Mais',
+        'marquee': ['Aceitando projetos', 'Sites que vendem', 'Automação de WhatsApp', 'Agentes de IA', 'Experiências 3D', 'Prospecção com dados'],
+        'cta': {'title': 'Vamos trabalhar', 'titleHighlight': 'juntos', 'subtitle': 'Tem um projeto em mente? Vamos construir algo que resolva um problema real.'},
+        'links': 'LINKS', 'socials': 'REDES', 'localTime': 'HORÁRIO LOCAL', 'version': 'VERSÃO', 'versionEdition': 'Edição 2026',
+    },
+    'ctaSection': {
+        'title': 'Vamos construir algo', 'together': 'juntos',
+        'subtitle': 'Sites, automações e agentes de IA para o seu negócio vender mais. Me chama e eu te mostro como.',
+        'start': 'Falar no WhatsApp', 'work': 'Ver projetos',
+        'words': {'amazing': 'incrível', 'innovative': 'inovador', 'intelligent': 'inteligente', 'creative': 'criativo'},
+        'ribbon1': 'Next.js • React • TypeScript • Node.js • Python • Tailwind • Three.js • Ollama • Vercel',
+        'ribbon2': 'Sites • Landing pages • Automação de WhatsApp • Agentes de IA • Prospecção • Experiências 3D',
+    },
+    'projectHeader': {
+        'title': 'Projetos no ar',
+        'subtitle': "Tudo aqui está publicado: clique e teste. <span class='font-bold text-foreground'>Agentes de IA</span>, automações, prospecção e sites para clientes reais.",
+    },
+    'common': {'loading': 'Carregando...', 'error': 'Algo deu errado', 'notFound': 'Página não encontrada', 'backHome': 'Voltar ao início',
+               'viewMore': 'Ver mais', 'readMore': 'Ler mais', 'close': 'Fechar', 'download': 'Baixar', 'share': 'Compartilhar', 'scrollAudit': 'Role para explorar'},
+    'technical': {
+        'github': {'title': 'Contribuições no GitHub', 'description': 'Minha atividade no último ano.', 'total': 'Total',
+                   'thisWeek': 'Esta semana', 'best': 'Melhor', 'average': 'Média', 'less': 'Menos', 'more': 'Mais'},
+    },
+    'chatbot': {
+        'title': 'Assistente', 'subtitle': 'Pergunte sobre o Vitor', 'placeholder': 'Digite uma mensagem...',
+        'greeting': 'Oi! Sou o assistente do **{name}**. 👋\n\nPosso responder sobre:\n- Serviços e habilidades\n- Projetos\n- Como contratar\n\nO que você quer saber?',
+        'suggestions': ['O que você faz?', 'Qual seu melhor projeto?', 'Atende fora do Brasil?', 'Como contrato?'],
+        'error': 'Ocorreu um erro. Tente de novo.', 'invalidResponse': 'Resposta inválida do servidor.',
+        'unknownError': 'Erro desconhecido.', 'retry': 'Tentar de novo', 'inputHint': 'Enter envia, Shift+Enter quebra linha', 'close': 'Fechar chat',
+    },
+}
+
+# Correções em inglês: só o que era falso ou de outra pessoa
+EN_TEXTOS = {
+    'about': {
+        'description': 'Results-driven developer building websites, WhatsApp automations and AI agents that help small businesses sell more.',
+        'leadIn': {'signature': 'Vitor Borsari', 'role': 'AI Engineer & Web Developer'},
+        'coreEngineering': {'gpa': 'Certificates', 'projects': 'Live Projects', 'years': 'Clients'},
+        'emergingResearch': {'web3': {'title': 'CLOUD & DEPLOYMENT', 'desc': 'AWS and cloud fundamentals to take agents from my local machine to production.'}},
+        'profile': {
+            'narrative': 'I taught myself to code with no funding, building tools to solve my own problem: finding clients.',
+            'narrative2': 'Today I ship websites, automations and AI agents for businesses in Brazil and Portugal — every project here is live for you to try.',
+        },
+        'closing': {'experience': {'title1': 'CLIENT', 'title2': 'WORK'}},
+    },
+    'footer': {'marquee': ['Open for projects', 'Websites that sell', 'WhatsApp automation', 'AI agents', '3D experiences', 'Data-driven prospecting']},
+    'ctaSection': {
+        'subtitle': 'Websites, automations and AI agents that help your business sell more.',
+        'start': 'Message me on WhatsApp', 'work': 'See projects',
+        'ribbon1': 'Next.js • React • TypeScript • Node.js • Python • Tailwind • Three.js • Ollama • Vercel',
+        'ribbon2': 'Websites • Landing pages • WhatsApp automation • AI agents • Prospecting • 3D experiences',
+    },
+    'projectHeader': {'title': 'Live Projects', 'subtitle': "Everything here is published — click and try it. <span class='font-bold text-foreground'>AI agents</span>, automations, prospecting tools and client websites."},
+    'chatbot': {'subtitle': 'Ask me about Vitor'},
+}
+
+
+def mesclar(base, extra):
+    for chave, valor in extra.items():
+        if isinstance(valor, dict) and isinstance(base.get(chave), dict):
+            mesclar(base[chave], valor)
+        else:
+            base[chave] = valor
+
+
+def gerar(idioma, textos):
+    dados = json.loads(EN.read_text(encoding='utf-8'))
+    mesclar(dados, textos)
+    dados['about']['closing']['experiencesList'] = EXPERIENCIAS[idioma]
+    dados['about']['closing']['projectsList'] = PROJETOS[idioma]
+    dados['contact']['faqData'] = FAQ[idioma]
+    return dados
+
+
+pt = gerar('pt', PT_TEXTOS)
+en = gerar('en', EN_TEXTOS)
+PT.write_text(json.dumps(pt, ensure_ascii=False, indent=4) + '\n', encoding='utf-8')
+EN.write_text(json.dumps(en, ensure_ascii=False, indent=4) + '\n', encoding='utf-8')
+print('ok')

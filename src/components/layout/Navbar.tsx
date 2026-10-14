@@ -72,7 +72,7 @@ export function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [mounted, setMounted] = useState(false);
-    const [currentLocale, setCurrentLocale] = useState('en');
+    const [currentLocale, setCurrentLocale] = useState('pt');
     
     // Consume preload state directly from context
     const { isPreloading: isPreloadActive } = usePreloadState();
@@ -81,7 +81,7 @@ export function Navbar() {
 
     useEffect(() => {
         setMounted(true);
-        const locale = document.cookie.split('; ').find(row => row.startsWith('locale='))?.split('=')[1] || 'en';
+        const locale = document.cookie.split('; ').find(row => row.startsWith('locale='))?.split('=')[1] || 'pt';
         setCurrentLocale(locale);
     }, []);
 
@@ -122,7 +122,7 @@ export function Navbar() {
     }, []);
 
     const toggleLocale = useCallback(() => {
-        const newLocale = currentLocale === 'en' ? 'id' : 'en';
+        const newLocale = currentLocale === 'pt' ? 'en' : 'pt';
         document.cookie = `locale=${newLocale};path=/;max-age=31536000`;
         setCurrentLocale(newLocale);
         window.location.reload();
@@ -345,7 +345,7 @@ export function Navbar() {
                                         onClick={toggleLocale}
                                         className="px-6 py-3 rounded-full glass-card text-sm font-medium hover:bg-muted/50 transition-colors"
                                     >
-                                        {currentLocale === 'en' ? 'English' : 'Indonesia'}
+                                        {currentLocale === 'pt' ? 'Português' : 'English'}
                                     </button>
                                     {mounted && (
                                         <AnimatedThemeToggler

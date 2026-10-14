@@ -27,88 +27,36 @@ import { ArgentLoopInfiniteSlider } from "@/components/ui/argent-loop-infinite-s
 import { HorizontalTimeline } from "@/components/ui/horizontal-timeline";
 import { CertificateShowcase } from "@/components/ui/certificate-marquee";
 import { GitHubShowcase } from "@/components/ui/github-showcase";
-import KaggleShowcase from "@/components/ui/kaggle-showcase";
-import { WakaTimeShowcase } from "@/components/ui/wakatime-showcase";
 import { ShowcaseStack } from "@/components/ui/showcase-stack";
 
+// Linha do tempo real: trabalhos entregues, com o print do projeto correspondente
+const imagemPorLink: Record<string, string> = {
+    'https://inovarepintura.com': '/projetos/inovare.webp',
+    'https://victor-solu-es-digitais.vercel.app': '/projetos/solucoes-digitais.webp',
+};
 const showcaseMembers = [
-    // 1. Cyber Physical Systems Laboratory
-    ...portfolioData.experiences.filter(exp => exp.id === 'prof-7').map(exp => ({
-        id: exp.id,
-        name: "Cyber Physical Systems Laboratory",
-        role: exp.position.replace(' (Contract-Based)', ''),
-        description: exp.description,
-        period: "August 2025 - Present",
-        image: "/journey/researchassistant2.webp",
-        social: exp.externalLink ? { website: Array.isArray(exp.externalLink) ? exp.externalLink[0] : exp.externalLink } : undefined
-    })),
-    // 2. HUMIC Engineering
-    ...portfolioData.experiences.filter(exp => exp.id === 'prof-3').map(exp => ({
-        id: exp.id,
-        name: "HUMIC Engineering",
-        role: exp.position,
-        description: exp.description,
-        period: "September 2025 - December 2025",
-        image: "/journey/aideveloperintern1.webp",
-        social: exp.externalLink ? { website: Array.isArray(exp.externalLink) ? exp.externalLink[0] : exp.externalLink } : undefined
-    })),
-    // 3. Informatics Laboratory, Telkom University
-    ...portfolioData.experiences.filter(exp => exp.id === 'prof-6').map(exp => ({
-        id: exp.id,
-        name: exp.company,
-        role: exp.position.replace(' (Contract-Based)', ''),
-        description: exp.description,
-        period: "September 2025 - January 2026",
-        image: "/journey/computernetworkpracticumassistant2.webp",
-        social: exp.externalLink ? { website: Array.isArray(exp.externalLink) ? exp.externalLink[0] : exp.externalLink } : undefined
-    })),
-    // 4. Digistar Club by Telkom Indonesia
-    ...portfolioData.experiences.filter(exp => exp.id === 'lead-2').map(exp => ({
-        id: exp.id,
-        name: exp.company,
-        role: exp.position,
-        description: exp.description,
-        period: "October 2025 - December 2025",
-        image: "/journey/chiefcommittee1.webp",
-        social: exp.externalLink ? { website: Array.isArray(exp.externalLink) ? exp.externalLink[0] : exp.externalLink } : undefined
-    })),
-    // 5. Food and Agriculture Office of Bandung City
-    ...portfolioData.experiences.filter(exp => exp.id === 'prof-8').map(exp => ({
-        id: exp.id,
-        name: "Food and Agriculture Office of Bandung City",
-        role: exp.position,
-        description: exp.description,
-        period: "July - September 2025",
-        image: "/journey/dataentryassistant1.webp",
-        social: exp.externalLink ? { website: Array.isArray(exp.externalLink) ? exp.externalLink[0] : exp.externalLink } : undefined
-    })),
-    // 6. View more
+    ...portfolioData.experiences.map(exp => {
+        const link = Array.isArray(exp.externalLink) ? exp.externalLink[0] : exp.externalLink;
+        return {
+            id: exp.id,
+            name: exp.company,
+            role: exp.position,
+            description: exp.description,
+            period: exp.isOngoing ? 'Atual' : new Date(exp.startDate).getFullYear().toString(),
+            image: (link && imagemPorLink[link]) || '/projetos/victor-hub.webp',
+            social: link ? { website: link } : undefined,
+        };
+    }),
     {
         id: 'view-more',
-        name: 'View more',
-        role: 'Explore all experiences',
-        image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop',
-        social: { website: '/experience' }
+        name: 'Ver projetos',
+        role: 'Todos os projetos',
+        image: '/projetos/nexus-scan.webp',
+        social: { website: '/projects' }
     }
 ];
 
-const GALLERY_IMAGES = [
-    "/gallery/Foto Utama.webp",
-    "/gallery/FotoSC1.webp",
-    "/gallery/FotoSC2.webp",
-    "/gallery/FotoSC3.webp",
-    "/gallery/FotoSC4.webp",
-    "/gallery/FotoSC5.webp",
-    "/gallery/academicaffairsdivision1.webp",
-    "/gallery/computernetworkpracticumassistant2.webp",
-    "/gallery/dataentryassistant1.webp",
-    "/gallery/delegateaiesecfutureleaders20241.webp",
-    "/gallery/environmentalhygieneteam1.webp",
-    "/gallery/environmentalhygieneteam2.webp",
-    "/gallery/logisticsoperatorcampusexpo20242.webp",
-    "/gallery/researchassistant1.webp",
-    "/gallery/researchassistant2.webp"
-];
+const GALLERY_IMAGES = portfolioData.projects.filter(p => p.image).map(p => p.image as string);
 
 const AboutLeadInImageStack = () => {
     const [randomData, setRandomData] = useState<{ src: string, rotate: number, x: number, y: number }[]>([]);
@@ -581,7 +529,6 @@ const ScrollHijackSection = () => {
 };
 
 export default function AboutSection() {
-    console.log('SHOWCASE MEMBERS:', showcaseMembers.map(m => m.id));
     const containerRef = useRef<HTMLElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -633,12 +580,12 @@ export default function AboutSection() {
                             </div>
                             <div className="w-full pb-0">
                                 <HorizontalTimeline data={showcaseMembers.map((member) => ({
-                                    title: member.id === 'view-more' ? 'Explore all experiences' : (member.role || member.name),
+                                    title: member.id === 'view-more' ? 'Ver todos os projetos' : (member.role || member.name),
                                     isEnd: member.id === 'view-more',
                                     period: 'period' in member ? member.period : undefined,
                                     content: member.id === 'view-more' ? (
                                         <Link
-                                            href={member.social?.website || '/experience'}
+                                            href={member.social?.website || '/projects'}
                                             className="relative flex items-center h-[140px] w-[250px] z-30"
                                         >
                                             <div className="flex items-center gap-4">
@@ -646,7 +593,7 @@ export default function AboutSection() {
                                                     <ArrowUpRight className="w-8 h-8 text-neutral-600 dark:text-neutral-400 transition-all duration-500 group-hover:text-primary-foreground group-hover:rotate-45 group-hover:scale-110" />
                                                 </div>
                                                 <span className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white opacity-0 -translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 whitespace-nowrap drop-shadow-sm">
-                                                    View more
+                                                    Ver mais
                                                 </span>
                                             </div>
                                         </Link>
@@ -675,7 +622,7 @@ export default function AboutSection() {
                                                 {member.social?.website && (
                                                     <div className="absolute inset-0 bg-black/50 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
                                                         <Link href={member.social.website} target="_blank" className="px-5 py-2.5 bg-white text-black text-xs font-bold rounded-full hover:scale-105 transition-transform">
-                                                            View Details
+                                                            Abrir
                                                         </Link>
                                                     </div>
                                                 )}
@@ -695,12 +642,6 @@ export default function AboutSection() {
                         <ShowcaseStack>
                             <div className="w-full">
                                 <GitHubShowcase />
-                            </div>
-                            <div className="w-full">
-                                <KaggleShowcase />
-                            </div>
-                            <div className="w-full">
-                                <WakaTimeShowcase />
                             </div>
                         </ShowcaseStack>
                     </div>

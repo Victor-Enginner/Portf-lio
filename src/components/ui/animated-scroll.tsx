@@ -14,9 +14,9 @@ const pages = [
         leftComponent: <Loader type="ai" />,
         leftContent: null,
         rightContent: {
-            heading: 'Intelligence Systems',
-            description: 'Specializing in architecting autonomous systems and intelligence-driven platforms. From fine-tuning LLMs and engineering RAG architectures to developing deep learning models for Computer Vision and NLP.',
-            skills: ["LLM Fine-tuning", "RAG Systems", "Deep Learning", "Computer Vision", "MLOps", "Data Analytics"],
+            heading: 'Agentes de IA',
+            description: 'Agentes que trabalham por você: encontram empresas, auditam o site, decidem a abordagem e escrevem a mensagem. Rodando com LLMs locais (Ollama) ou APIs.',
+            skills: ["Multiagente", "Ollama", "LLMs", "Prospecção", "OSINT", "Automação"],
             hoverColor: "bg-red-600/10"
         },
     },
@@ -26,9 +26,9 @@ const pages = [
         leftComponent: null,
         rightComponent: <Loader type="software" />,
         leftContent: {
-            heading: 'Scalable Systems',
-            description: 'Building the foundation for resilient digital ecosystems. I engineer full-stack solutions with a focus on system architecture, modular design, and high-performance backends using Go, Next.js, and Python.',
-            skills: ["System Architecture", "Full-Stack Dev", "Docker & K8s", "API Design", "DevOps", "Software Design"],
+            heading: 'Sites que vendem',
+            description: 'Sites e landing pages pensados para converter visita em contato. Design, código, domínio e deploy — entregue no ar, inclusive para cliente fora do Brasil.',
+            skills: ["Next.js", "TypeScript", "Tailwind", "Three.js", "SEO local", "Vercel"],
             hoverColor: "bg-blue-600/10"
         },
         rightContent: null,
@@ -39,16 +39,16 @@ const pages = [
         leftComponent: <Loader type="softskill" />,
         leftContent: null,
         rightContent: {
-            heading: 'Strategic Innovation',
-            description: 'Translating complex technical requirements into impactful business solutions through systemic thinking, strategic leadership, and clear communication within cross-functional teams.',
-            skills: ["Systemic Thinking", "Leadership", "Problem Solving", "Teamwork", "Communication", "Research"],
+            heading: 'Automação de WhatsApp',
+            description: 'Campanhas e fluxos automáticos para atender e prospectar sem ficar o dia inteiro no celular. Você foca em fechar, o sistema cuida do resto.',
+            skills: ["Campanhas", "Funil", "Atendimento", "Dashboard", "Python", "Node.js"],
             hoverColor: "bg-purple-600/10"
         },
     },
     {
         isBridge: true,
-        heading: 'Discover my latest work and creative solutions that bring ideas to life',
-        subheading: 'SCROLL TO EXPLORE',
+        heading: 'Veja os projetos que já estão no ar',
+        subheading: 'ROLE PARA VER',
     }
 ];
 
