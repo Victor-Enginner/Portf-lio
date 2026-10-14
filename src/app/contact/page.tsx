@@ -286,6 +286,7 @@ const socialDescriptions: Record<string, string> = {
 };
 
 import { usePerformance } from '@/hooks/usePerformance';
+import { ProjectContact } from '@/components/sections/ProjectContact';
 
 export default function ContactPage() {
     const tu = useTranslations('ui');
@@ -438,6 +439,11 @@ export default function ContactPage() {
                 {/* Ultra-Smooth Sheet Edge: Tallest gradient for deep cinematic transition */}
                 < div className="absolute top-0 left-0 right-0 h-[40rem] bg-gradient-to-t from-background via-background/95 to-transparent -translate-y-full pointer-events-none" />
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
+                {/* Mesma chamada da página de projetos, com o robô, acima das perguntas frequentes */}
+                <div className="relative z-10 pt-24">
+                    <ProjectContact isLowPowerMode={isLowPowerMode} ctaHref="https://wa.me/5516982141822" />
+                </div>
 
                 <div className="container-creative px-4 md:px-8 max-w-[1700px] mx-auto py-32 pb-32 relative z-10">
                     <FAQSection />

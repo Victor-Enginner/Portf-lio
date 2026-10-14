@@ -55,7 +55,8 @@ const Hover3DFlipText = ({ text }: { text: string }) => {
 };
 
 // --- MAIN WRAPPER COMPONENT ---
-export const ProjectContact = ({ isLowPowerMode }: { isLowPowerMode?: boolean }) => {
+// ctaHref permite apontar o botão para o WhatsApp quando a seção já está na página de contato
+export const ProjectContact = ({ isLowPowerMode, ctaHref = '/contact' }: { isLowPowerMode?: boolean; ctaHref?: string }) => {
     const tu = useTranslations('ui');
     const ROBOT_SCENE_URL = "https://prod.spline.design/PyzDhpQ9E5f1E3MT/scene.splinecode";
 
@@ -71,6 +72,7 @@ export const ProjectContact = ({ isLowPowerMode }: { isLowPowerMode?: boolean })
                 <div className="relative z-10 w-full lg:w-1/2">
                     <BlockInTextCard
                         tag={tu('connectTag')}
+                        href={ctaHref}
                         isLowPowerMode={isLowPowerMode}
                         text={
                             <>
@@ -106,7 +108,9 @@ const BlockInTextCard = ({
     text,
     examples,
     isLowPowerMode,
+    href,
 }: {
+    href: string;
     tag: string;
     text: ReactNode;
     examples: string[];
@@ -128,7 +132,8 @@ const BlockInTextCard = ({
 
                 <div className="pt-8">
                     <Link
-                        href="/contact"
+                        href={href}
+                        target={href.startsWith('http') ? '_blank' : undefined}
                         className="group w-fit relative flex items-center gap-6 py-6 transition-all hover:px-2 border-none ring-0 outline-none"
                     >
                         <span className="relative text-2xl md:text-4xl font-bold uppercase tracking-wide text-foreground pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-foreground group-hover:after:w-full after:transition-all after:duration-300 after:ease-out">
