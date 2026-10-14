@@ -11,7 +11,7 @@ export const portfolioData: PortfolioData = {
         title: 'Engenheiro de IA & Desenvolvedor Web',
         subtitle: 'Sites, automações e agentes de IA que trazem cliente para o seu negócio',
         bio: 'Construo sites de alta conversão, automações de WhatsApp e agentes de IA para pequenos negócios que querem vender mais sem contratar uma equipe. Trabalho do briefing ao deploy: design, código, prospecção automatizada e publicação.',
-        avatar: '/about/vitor.webp',
+        avatar: '/about/github.jpg',
         location: 'São Paulo, Brasil',
         email: 'shoponsup@gmail.com',
         phone: '+55 16 98214-1822',
